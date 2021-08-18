@@ -1,7 +1,18 @@
-@import './reset.css';
+/* Reset the website css format */
+@import './reset.css';   
+
+
+h1,h2,h3,h4,h5,p{
+  font-family: 'Dancing Script', cursive;
+  /* font-weight:400/700 看import进来多少个尺寸;
+  font-size: 1rem;
+  margin-top: 0px;
+  margin-bottom: 0px; */
+}
+
 
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {

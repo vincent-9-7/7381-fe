@@ -18,6 +18,7 @@
   "no-return-assign": ["off"],
   "no-undef": ["off"],
   "semi": [1, "always"],
-  "no-console":["off"]
+  "no-console":["off"],
+  "no-unused-vars":"warn"
 }
 }

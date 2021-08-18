@@ -1,0 +1,23 @@
+.home-page {
+  background-color: azure;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.home-page__btn-1 {
+  color: red;
+}
+
+.home-page__how-we-work {
+  color: #dbdb3a;
+}
+
+.home-page__how-we-work--btn-1 {
+  color: #5e5e10;
+}
+
+.home-page h1 {
+  font-size: 1.5rem;
+  color: rebeccapurple;
+}
+/*# sourceMappingURL=t.css.map */
