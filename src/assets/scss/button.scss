@@ -1,0 +1,33 @@
+@import 'color';
+
+#root {
+  .btn--primary {
+    color: $B;
+    background-color: $A;
+    width: 200px;
+    height: 100px;
+    // border: none;
+
+    &:hover {
+      color: $A;
+      border-color: $B;
+    }
+  }
+
+  .btn--warning {
+    // color: $primary;
+    // background-color: $primary;
+    // border: none;
+    
+    &:hover {
+      // color: $primary;
+      // border-color: $primary;
+    }
+  }
+
+
+
+
+
+
+}

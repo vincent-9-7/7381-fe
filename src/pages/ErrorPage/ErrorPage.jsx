@@ -1,6 +1,6 @@
 import React from 'react';
 // import HomePageStyle from './HomePage.scss';
-import './ErrorPage.css';
+import './ErrorPage.scss';
 
 function Error() {
 

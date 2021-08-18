@@ -1,24 +1,26 @@
+@import '../../assets/scss/color.scss';
+
 .home-page {
   // background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
     // url(../../../assets/cleaner1.jpg);
-  background-color: azure;
-  background-size: cover;
-  min-height: 100vh;
+  // background-color: azure;
+  // background-size: cover;
+  // min-height: 100vh;
   
   &__btn-1 {
-    color: red;
+    color: $A;
   }
 
   &__how-we-work {
-    color: rgb(219, 219, 58);
+    color: $B;
   }
 
   &__how-we-work--btn-1 {
-    color: rgb(94, 94, 16);
+    color: $C;
   }
   
   h1 {
-    font-size: 1.5rem;
-    color: rebeccapurple;
+    // font-size: 1.5rem;
+    color: $C;
   }
 }
