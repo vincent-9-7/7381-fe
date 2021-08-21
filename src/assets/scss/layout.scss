@@ -1,10 +1,9 @@
 @import 'color';
 @import 'media-size';
 
-
 .container {
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto; // center
   padding: 0 20px;
   min-width: 960px;
   background-color: $bg;
@@ -12,16 +11,56 @@
   @media screen and (min-width: $LG) {
     width: 100%;
     width: 960px;
-    background-color:rgb(181, 241, 252);
+    background-color: rgb(181, 241, 252);
   }
   @media screen and (min-width: $XL) {
     width: 100%;
     max-width: 1140px;
-    background-color:rgb(189, 240, 189);
+    background-color: rgb(189, 240, 189);
   }
   @media screen and (min-width: $XXL) {
     width: 100%;
     max-width: 1320px;
-    background-color:rgb(231, 231, 182);
+    background-color: rgb(231, 231, 182);
   }
 }
+
+// Ref: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+.container-col { // 1.竖着排列
+  display: flex; 
+  flex-direction: column;
+  padding: 20px;
+}
+
+.container-wrap { // 2.是否换行
+  display: flex; 
+  flex-wrap: wrap; // nowrap | wrap | wrap-reverse
+  padding: 20px;
+}
+
+.container-flow {  // 3.横竖和是否换行的合并写法
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
+}
+
+.container-justify {  // 4.横轴排列方式
+  display: flex;
+  justify-content: center; // flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+  padding: 20px;
+}
+
+.container-align {  // 5.纵轴排列方式
+  display: flex;
+  align-items: center; // stretch拉伸 | flex-start | flex-end | center | baseline | first baseline | last baseline | start | end | self-start | self-end + ... safe | unsafe;
+  padding: 20px;
+}
+
+.container-content {  // 6.内部对其容器的行。前提：多行，wrap属性
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center; // flex-start | flex-end | center | space-between | space-around | space-evenly | stretch | start | end | baseline | first baseline | last baseline + ... safe | unsafe;
+  padding: 20px;
+}
+
