@@ -13,21 +13,44 @@
 
 // Reset h1-h5 font
 h1 {
-  color: $C;
+  color: $brown;
   font-weight:700;
-  // font-size: 1rem;
-  // margin-top: 0px;
-  // margin-bottom: 0px;
+  font-size: 2.5rem;
+  margin: 0.67rem 0em;
 }
 
-h2,h3,h4,h5 {
-  color: $C;
-  font-weight:400;
+h2 {
+  color: $black;
+  font-size: 1.5em;
+  font-weight:700;
+  margin: 0.83rem 0em;
+}
+
+h3 {
+  color: $black;
+  font-size: 1.17em;
+  font-weight:700;
+  margin: 0.83rem 0em;
+}
+
+h4 {
+  color: $black;
+  font-weight:700;
+  margin: 0.83rem 0em;
+}
+
+h5 {
+  color: $black;
+  font-size: 0.83em;
+  font-weight:700;
+  margin: 0.83rem 0em;
 }
 
 p {
-  color: $C;
-  font-weight:300;
+  color: $black;
+  font-weight:400;
+  font-size: 1rem;
+  margin: 1rem 0em;
 }
 
 

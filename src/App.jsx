@@ -7,6 +7,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 import TestImport from './workflow/import_example/Test';
 import Flex from './workflow/flexbox/Flex';
+import Button from './workflow/button/Button';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         {/* <Redirect exact from="/admin" to="/admin/dashboard" /> */}
         <Route path="/scss" exact component={TestImport} />
         <Route path="/flex" exact component={Flex} />
+        <Route path="/button" exact component={Button} />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>

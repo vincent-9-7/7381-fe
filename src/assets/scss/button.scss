@@ -1,33 +1,116 @@
 @import 'color';
 
+// Default button style reference: 
+//https://css-tricks.com/overriding-default-button-styles/
+button {
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  // font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  line-height: 1;
+}
+
 #root {
-  .btn--primary {
-    color: $B;
-    background-color: $A;
+  .btn--search { 
+    background: $green-primary;
+    color: #ffffff;
+    width: 250px;
+    height: 64px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: x-large;
+    margin: 10px;
+    font-weight: bold;
+
+    &:hover, &:focus {
+      background: $green-dark;
+    }
+    // &:focus {
+    //   outline: 1px solid #fff;
+    //   outline-offset: -4px;
+    // }
+    // &:active {
+    //     transform: scale(0.99);
+    // }
+  }
+
+  .btn--see-more { 
+    background: $green-light;
+    color: #ffffff;
+    width: 283px;
+    height: 64px;
+    border-radius: 25px;
+    padding: 1rem 2rem;
+    margin: 10px;
+    font-size: x-large;
+    font-weight: bold;
+
+    &:hover, &:focus {
+      background: $green-dark;
+    }
+  }
+
+  .btn--add-to-cart { 
+    background: $green-primary;
+    color: #ffffff;
     width: 200px;
-    height: 100px;
-    // border: none;
+    height: 40px;
+    border-radius: 25px;
+    padding: 0.1rem 2rem;
+    margin: 10px;
+    font-size:large;
 
-    &:hover {
-      color: $A;
-      border-color: $B;
+    &:hover, &:focus {
+      background: $green-dark;
     }
   }
 
-  .btn--warning {
-    // color: $primary;
-    // background-color: $primary;
-    // border: none;
-    
-    &:hover {
-      // color: $primary;
-      // border-color: $primary;
+  .btn--register {
+    background: $green-primary;
+    color: #ffffff;
+    width: 350px;
+    height: 64px;
+    padding: 1rem 2rem;
+    margin: 10px;
+    font-size: x-large;
+
+    &:hover, &:focus {
+      background: $green-dark;
     }
   }
 
+  .btn--post { 
+    background: $brown;
+    color: #ffffff;
+    width: 200px;
+    height: 64px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin: 10px;
+    font-size: large;
 
+    &:hover, &:focus {
+      background: $brown-hover;
+    }
+  }
 
+  .btn--save { 
+    background: $green-primary;
+    color: #ffffff;
+    width: 200px;
+    height: 64px;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin: 10px;
+    font-size: large;
 
-
-
+    &:hover, &:focus {
+      background: $green-dark;
+    }
+  }
 }
