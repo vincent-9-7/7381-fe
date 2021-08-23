@@ -19,6 +19,7 @@
   "no-undef": ["off"],
   "semi": [1, "always"],
   "no-console":["off"],
-  "no-unused-vars":"warn"
+  "no-unused-vars":"warn",
+  "no-shadow":"off"
 }
 }
