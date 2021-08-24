@@ -5,12 +5,12 @@
   width: 100%;
   margin: 0 auto; // center
   padding: 0 20px;
-  min-width: 960px;
+  // min-width: 960px;
   // background-color: $green-light;
 
   @media screen and (min-width: $LG) {
     width: 100%;
-    width: 960px;
+    max-width: 960px;
     // background-color: rgb(181, 241, 252);
   }
   @media screen and (min-width: $XL) {
