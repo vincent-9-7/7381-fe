@@ -1,0 +1,73 @@
+@import '../../assets//scss//color.scss';
+
+
+.home-page {
+  &__slide {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+  }
+
+  &__slide--title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 25px;
+    background-color: $yellow;
+    border-radius: 25px;
+  }
+
+  &__title--words {
+    color: $green-dark;
+  }
+
+  
+  &__slide--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__slide--left {
+    margin: 20px;
+    max-width: 400px;
+  }
+
+  &__slide--right {
+    margin: 20px;
+    max-width: 800px;
+  }
+
+  &__right--image{
+    width: 350px;
+    height:100%;
+  }
+
+
+  &__slide--point {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 50%;
+    margin: 0px 20px;
+    // text-align: center;
+
+    &.active {
+      background: $yellow;
+      // color: #fff;
+    }
+  }
+}
+
+.indicators {
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+}
+
+
