@@ -4,6 +4,7 @@ import { Redirect, BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/HomePage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import ComingSoon from './pages/ComingSoonPage/ComingSoonPage';
 
 import TestImport from './workflow/import_example/Test';
 import Flex from './workflow/flexbox/Flex';
@@ -14,7 +15,15 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={HomePage} />
-        {/* <Route path="/order" exact component={OrderPage} /> */}
+        <Route path="/productions/fruit/:id" exact component={ComingSoon} />
+        <Route path="/productions/vegetable/:id" exact component={ComingSoon} />
+        <Route path="/productions/:id" exact component={ComingSoon} />
+        <Route path="/about-us" exact component={ComingSoon} />
+
+        <Route path="/sign-in" exact component={ComingSoon} />
+        <Route path="/join" exact component={ComingSoon} />
+        <Route path="/profile" exact component={ComingSoon} />
+        <Route path="/shopping-cart" exact component={ComingSoon} />
         {/* <ProtectedRoute path="/order" exact component={Order} /> */}
         {/* <Redirect exact from="/admin" to="/admin/dashboard" /> */}
         <Route path="/scss" exact component={TestImport} />
