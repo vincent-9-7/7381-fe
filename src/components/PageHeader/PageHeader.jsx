@@ -56,7 +56,7 @@ function Header() {
           </button>
 
           <button
-            onClick={() => (document.location.href = '/productions/all')}
+            onClick={() => (document.location.href = '/productions')}
             type="button"
             className="page-header__desktop--button-words"
           >
