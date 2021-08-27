@@ -21,28 +21,28 @@ const content = [
     Title: 'TOMATO',
     Image: 'tomato',
     Describe:
-      'Perfection fresh B-grade tomato form farmer Pick out your favourite ktjebandjandakjknalk Fbjandkansdlknksdlnalkdnalkdnkandlkanslkd Kfas;ldma;sldosakdsmal kasmdlknalksdnlka',
+      'We’ll always source the ones for your local store from as close as possible, to minimise transport time. Our low prices don’t mean they’re lower quality than other supermarkets. Our zucchini come from the same farms all over Australia, in places like Bowen in QLD, Shepparton in VIC, Riverland in SA and Gingin in WA.',
   },
   {
     ID: '#00C49F',
     Title: 'POTATO',
     Image: 'potato',
     Describe:
-      'Perfection fresh B-grade tomato form farmer Pick out your favourite ktjebandjandakjknalk Fbjandkansdlknksdlnalkdnalkdnkandlkanslkd Kfas;ldma;sldosakdsmal kasmdlknalksdnlka',
+      'It’s because of our Aussie first supplier policy, committing us to buy fresh produce from Aussie farmers, whenever possible. In fact, 97% of our entire fresh produce range comes from Australian farms. It’s just another reason why you should eat your greens.',
   },
   {
     ID: '#FFBB28',
     Title: 'BANANA',
     Image: 'banana',
     Describe:
-      'Perfection fresh B-grade tomato form farmer Pick out your favourite ktjebandjandakjknalk Fbjandkansdlknksdlnalkdnalkdnkandlkanslkd Kfas;ldma;sldosakdsmal kasmdlknalksdnlka',
+      'Our Aussie first supplier policy means we’ll always source our fresh produce from local farms whenever we can. That’s why 97% of our entire fresh produce range is Australian grown. Grab a bunch in store and support Aussie farmers today.',
   },
   {
     ID: '#FFBB28',
     Title: 'ORANGE',
     Image: 'orange',
     Describe:
-      'Perfection fresh B-grade tomato form farmer Pick out your favourite ktjebandjandakjknalk Fbjandkansdlknksdlnalkdnalkdnkandlkanslkd Kfas;ldma;sldosakdsmal kasmdlknalksdnlka',
+      'Imperial Mandarins are the first variety to be picked when mandarin season comes to town. Which is around about April. Since we get ours from local farmers, you’ll get them very quickly.',
   },
 ];
 
