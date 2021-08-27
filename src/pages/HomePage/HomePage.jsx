@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import './HomePage.scss';
 import SlideShow from '../../components/SlideShow/SlideShow';
@@ -39,7 +40,7 @@ function Home() {
                 image={tomatoVerticality}
                 title="Tomato 10kg"
                 delivery="free delivery"
-                description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
+                description="fresh & juicy."
                 oldPrice="AU $78"
                 price="AU $54.32"
               />
@@ -48,7 +49,7 @@ function Home() {
                 image={potatoVerticality}
                 title="Potato 10kg"
                 delivery="free delivery"
-                description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
+                description="fresh & juicy."
                 oldPrice="AU $66"
                 price="AU $34.32"
               />
@@ -57,7 +58,7 @@ function Home() {
                 image={bananaVerticality}
                 title="Banana 10kg"
                 delivery="free delivery"
-                description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
+                description="fresh & juicy."
                 oldPrice="AU $88"
                 price="AU $56.32"
               />
@@ -66,7 +67,7 @@ function Home() {
                 image={orangeVerticality}
                 title="Orange 10kg"
                 delivery="free delivery"
-                description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
+                description="With sweet flesh and easy-to-peel skin."
                 oldPrice="AU $58"
                 price="AU $24.32"
               />
@@ -75,7 +76,7 @@ function Home() {
                 image={orangeVerticality}
                 title="Orange 10kg"
                 delivery="free delivery"
-                description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
+                description="With sweet flesh and easy-to-peel skin."
                 oldPrice="AU $68"
                 price="AU $33.2"
               />
@@ -84,7 +85,7 @@ function Home() {
                 image={orangeVerticality}
                 title="Orange 10kg"
                 delivery="free delivery"
-                description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
+                description="With sweet flesh and easy-to-peel skin."
                 oldPrice="AU $78"
                 price="AU $27.72"
               />
