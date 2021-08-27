@@ -37,7 +37,7 @@ function Home() {
             <div className="home-page__deals--cards">
               <TodayDeals
                 image={tomatoVerticality}
-                title="Cavendish Bananas 2kg"
+                title="Tomato 10kg"
                 delivery="free delivery"
                 description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
                 oldPrice="AU $78"
@@ -46,47 +46,47 @@ function Home() {
 
               <TodayDeals
                 image={potatoVerticality}
-                title="Cavendish Bananas 2kg"
+                title="Potato 10kg"
                 delivery="free delivery"
                 description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
-                oldPrice="AU $78"
-                price="AU $54.32"
+                oldPrice="AU $66"
+                price="AU $34.32"
               />
 
               <TodayDeals
                 image={bananaVerticality}
-                title="Cavendish Bananas 2kg"
+                title="Banana 10kg"
                 delivery="free delivery"
                 description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
-                oldPrice="AU $78"
-                price="AU $54.32"
+                oldPrice="AU $88"
+                price="AU $56.32"
               />
 
               <TodayDeals
                 image={orangeVerticality}
-                title="Cavendish Bananas 2kg"
+                title="Orange 10kg"
                 delivery="free delivery"
                 description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
-                oldPrice="AU $78"
-                price="AU $54.32"
+                oldPrice="AU $58"
+                price="AU $24.32"
               />
 
               <TodayDeals
                 image={orangeVerticality}
-                title="Cavendish Bananas 2kg"
+                title="Orange 10kg"
                 delivery="free delivery"
                 description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
-                oldPrice="AU $78"
-                price="AU $54.32"
+                oldPrice="AU $68"
+                price="AU $33.2"
               />
 
               <TodayDeals
                 image={orangeVerticality}
-                title="Cavendish Bananas 2kg"
+                title="Orange 10kg"
                 delivery="free delivery"
                 description="nfskdas Fkdsnkgkvvvd off lsnd jsndskam."
                 oldPrice="AU $78"
-                price="AU $54.32"
+                price="AU $27.72"
               />
             </div>
           </div>
