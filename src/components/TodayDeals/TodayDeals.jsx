@@ -14,7 +14,10 @@ function TodayDeals(props) {
         <p>{description}</p>
 
         <div className="home-page__deals--describe-price">
-          <p className="home-page__deals--describe-old-price">{oldPrice}</p>
+          {
+            oldPrice && <p className="home-page__deals--describe-old-price">{oldPrice}</p>
+          }
+          
           <p style={{ fontSize: '2rem', fontWeight: 700, color: '#E0A604' }}>{price}</p>
         </div>
 
