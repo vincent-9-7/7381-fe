@@ -1,9 +1,9 @@
 import React from 'react';
 import './PageHeader.scss';
-import Bmarket from '../../assets/img/Bmarket.jpg';
-import B from '../../assets/img/B.jpg';
-import User from '../../assets/img/User.jpg';
-import Cart from '../../assets/img/Cart.jpg';
+import Bmarket from '../../assets/img/Bmarket.svg';
+import B from '../../assets/img/LogoB.svg';
+import User from '../../assets/img/User.svg';
+import Cart from '../../assets/img/Cart.svg';
 
 function Header() {
   return (
