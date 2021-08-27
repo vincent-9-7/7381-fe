@@ -5,6 +5,8 @@ import './Product.scss';
 import Header from '../../components/PageHeader/PageHeader';
 import Loading from '../../components/Loading/Loading';
 import Footer from '../../components/PageFooter/PageFooter';
+import TodayDeals from '../../components/TodayDeals/TodayDeals';
+import box from '../../assets/img/box.svg';
 
 function Product() {
   const dispatch = useDispatch();
@@ -18,20 +20,24 @@ function Product() {
   // console.log(items);
   return (
     <div>
-      <Header />    
+      <Header />
       {/* <Loading /> */}
       {loading && <Loading />}
       {!loading && (
-        <>
+        <div className="product-page container">
           {items.map((item) => (
-              <div key={item._id} style={{display:"flex", flexDirection:"row", alignItems:"flex-end"}}>
-                <h3 style={{margin:"10px"}}>Title: {item.title}</h3>
-                <h3 style={{margin:"10px"}}>Price: {item.price}</h3>
-                <h3 style={{margin:"10px"}}>Quantity: {item.quantity}</h3>
-                <h3 style={{margin:"10px"}}>Description: {item.description}</h3>
-              </div>
-            ))}
-        </>
+            <div key={item._id}>
+              <TodayDeals
+                image={box}
+                title={`${item.title} ${item.quantity}kg`}
+                delivery="free delivery"
+                description={item.description}
+                oldPrice={false}
+                price={`AU $${item.price}`}
+              />
+            </div>
+          ))}
+        </div>
       )}
       {/* <Footer /> */}
     </div>
