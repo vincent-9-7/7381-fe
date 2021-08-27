@@ -1,7 +1,7 @@
 import React from 'react';
 import './PageFooter.scss';
-import B from '../../assets/img/B.jpg';
-import Market from '../../assets/img/market.jpg';
+import B from '../../assets/img/LogoB.svg';
+import Market from '../../assets/img/market.svg';
 
 function Footer() {
   return (

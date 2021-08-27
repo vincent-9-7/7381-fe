@@ -20,6 +20,9 @@
   "semi": [1, "always"],
   "no-console":["off"],
   "no-unused-vars":"warn",
-  "no-shadow":"off"
+  "no-shadow":"off",
+  "default-case":"off",
+  "no-underscore-dangle":"off"
+  
 }
 }
