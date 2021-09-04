@@ -20,9 +20,80 @@ function userReducer(state = initialItemState, action) {
       return {
         ...state,
         loading: false,
-        error:action.message
+        error: action.message
       };
-
+    // Buyer REGISTER
+    case actionType.BUYER_REGISTER_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case actionType.BUYER_REGISTER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        userDetails: action.user,
+      };
+    case actionType.BUYER_REGISTER_FAILED:
+      return {
+        ...state,
+        loading: false,
+        error: action.message,
+      };
+    // Seller REGISTER
+    case actionType.SELLER_REGISTER_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case actionType.SELLER_REGISTER_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        userDetails: action.user,
+      };
+    case actionType.SELLER_REGISTER_FAILED:
+      return {
+        ...state,
+        loading: false,
+        error: action.message,
+      };
+    // Buyer SIGNIN
+    case actionType.BUYER_SIGNIN_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case actionType.BUYER_SIGNIN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        userDetails: action.user,
+      };
+    case actionType.BUYER_SIGNIN_FAILED:
+      return {
+        ...state,
+        loading: false,
+        error: action.message,
+      };
+    // Seller SIGNIN
+    case actionType.SELLER_SIGNIN_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case actionType.SELLER_SIGNIN_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        userDetails: action.user,
+      };
+    case actionType.SELLER_SIGNIN_FAILED:
+      return {
+        ...state,
+        loading: false,
+        error: action.message,
+      };
     default:
       return state;
   }
