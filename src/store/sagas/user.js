@@ -74,7 +74,7 @@ function* sellerSignin(action) {
     console.log(sellerInfo);
     console.log(sellerInfo.data);
     console.log(user);
-    yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: buyerInfo.data });
+    yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: sellerInfo.data });
     sessionStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
     document.location.href = './';
   } catch (e) {
