@@ -1,11 +1,17 @@
 import React from 'react';
-import { Redirect, BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import ProtectedRoute from './routes/ProtectedRoute';
 
 import HomePage from './pages/HomePage/HomePage';
 import Product from './pages/ProductPage/Product';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ComingSoon from './pages/ComingSoonPage/ComingSoonPage';
+import RoleSeclectPage from './pages/SigninPage/RoleSelectPage';
+import SigninPage from './pages/SigninPage/SigninPage';
+import JoinInPage from './pages/RegisterPage/JoinInPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
+
+
 import UploadImages from './pages/PostPage/PostPage';
 import TestImport from './workflow/import_example/Test';
 import Flex from './workflow/flexbox/Flex';
@@ -34,6 +40,10 @@ function App() {
         <Route path="/flex" exact component={Flex} />
         <Route path="/button" exact component={Button} />
         <Route path="/profile-saga-test/:id" exact component={Saga} />
+        <Route path="/role-select" exact component={RoleSeclectPage} />
+        <Route path="/signin" exact component={SigninPage} />
+        <Route path="/join-in" exact component={JoinInPage} />
+        <Route path="/register" exact component={RegisterPage} />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
