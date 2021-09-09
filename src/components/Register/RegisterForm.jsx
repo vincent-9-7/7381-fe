@@ -26,7 +26,7 @@ function RegisterForm(props) {
   const buyerRegister = useSelector((state) => state.buyerRegister)
 
   return (
-    <div className="container">
+    <div>
       <div className="log-in" style={{ marginTop: "30px" }}>
         <form className="log-in-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="log-in-title">
