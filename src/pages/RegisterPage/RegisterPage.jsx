@@ -8,11 +8,13 @@ import Footer from '../../components/PageFooter/PageFooter';
 function RegisterPage(props) {
   const { data } = props;
   return (
-    <div className="container">
+    <>
       <Header />
-      <RegisterForm />
+      <div className="container">
+        <RegisterForm />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
