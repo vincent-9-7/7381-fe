@@ -9,11 +9,13 @@ function JoinInPage(props) {
   const { data } = props;
 
   return (
-    <div className="container">
+    <>
       <Header />
-      <JoinIn />
+      <div className="container">
+        <JoinIn />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
