@@ -32,21 +32,23 @@ function App() {
         <Route path="/productions/vegetable/:id" exact component={ComingSoon} />
         <Route path="/about-us" exact component={ComingSoon} />
 
-        <Route path="/sign-in" exact component={ComingSoon} />
-        <Route path="/join" exact component={ComingSoon} />
+        {/* <Route path="/sign-in" exact component={ComingSoon} />
+        <Route path="/join" exact component={ComingSoon} /> */}
+        <Route path="/role-select" exact component={RoleSeclectPage} />
+        <Route path="/signin" exact component={SigninPage} />
+        <Route path="/join-in" exact component={JoinInPage} />
+        <Route path="/register" exact component={RegisterPage} />
+
         <Route path="/profile" exact component={ComingSoon} />
         <Route path="/shopping-cart" exact component={ComingSoon} />
         <Route path="/upload" exact component={UploadImages} />
         {/* <ProtectedRoute path="/order" exact component={Order} /> */}
         {/* <Redirect exact from="/admin" to="/admin/dashboard" /> */}
+
         <Route path="/scss" exact component={TestImport} />
         <Route path="/flex" exact component={Flex} />
         <Route path="/button" exact component={Button} />
         <Route path="/profile-saga-test/:id" exact component={Saga} />
-        <Route path="/role-select" exact component={RoleSeclectPage} />
-        <Route path="/signin" exact component={SigninPage} />
-        <Route path="/join-in" exact component={JoinInPage} />
-        <Route path="/register" exact component={RegisterPage} />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>

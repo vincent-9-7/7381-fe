@@ -74,7 +74,7 @@ function Header() {
           <div className="page-header__desktop--four-icons">
             <div className="page-header__desktop--left-two-icons">
               <button
-                onClick={() => (document.location.href = '/sign-in')}
+                onClick={() => (document.location.href = '/role-select')}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -92,7 +92,7 @@ function Header() {
 
             <div className="page-header__desktop--right-two-icons">
               <button
-                onClick={() => (document.location.href = '/join')}
+                onClick={() => (document.location.href = '/join-in')}
                 type="button"
                 className="page-header__desktop--button-words"
               >
