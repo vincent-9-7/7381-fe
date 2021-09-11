@@ -6,6 +6,7 @@ import TodayDeals from '../../components/TodayDeals/TodayDeals';
 import Star from '../../components/Star/Star';
 import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import tomatoVerticality from '../../assets/img/tomato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/8016790/
 import potatoVerticality from '../../assets/img/potato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2286776/
 import bananaVerticality from '../../assets/img/banana_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2116020/
@@ -18,10 +19,18 @@ import c from '../../assets/img/c.svg';
 
 
 function Home() {
+  window.sessionStorage.setItem("key", "value");
+  // console.log(window.sessionStorage.getItem("key"));
+  // sessionStorage.removeItem('key');
+
+  // localStorage.setItem("key", "value"); 
+  // console.log(localStorage.getItem('key'));
+  // localStorage.removeItem('key')
+
   return (
     <div className="home-page">
       <Header />
-      
+      <SearchBar />
       <div className="container">
         <div className="home-page__slides-style">
           <SlideShow />

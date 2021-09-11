@@ -22,7 +22,10 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
+      {/* http://localhost:8000/location?is=25
+      http://localhost:8000/productions/sort */} 
         <Route path="/" exact component={HomePage} />
+        <Route path="/search" exact component={Product} />
         <Route path="/productions" exact component={Product} />
         <Route path="/productions/:id" exact component={ComingSoon} />
         <Route path="/productions/fruit/:id" exact component={ComingSoon} />
