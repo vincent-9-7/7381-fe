@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { CookiesProvider } from 'react-cookie';
 import ReactDOM from 'react-dom';
 import './assets/scss/main.scss';
 import App from './App';
@@ -8,9 +9,11 @@ import reportWebVitals from './reportWebVitals';
 
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <CookiesProvider>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </CookiesProvider>,
   document.getElementById('root'),
 );
 
