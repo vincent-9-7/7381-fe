@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { useCookies } from 'react-cookie';
 import './HomePage.scss';
 import SlideShow from '../../components/SlideShow/SlideShow';
 import TodayDeals from '../../components/TodayDeals/TodayDeals';
@@ -12,14 +13,18 @@ import potatoVerticality from '../../assets/img/potato_ver.jpg'; // https://www.
 import bananaVerticality from '../../assets/img/banana_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2116020/
 import orangeVerticality from '../../assets/img/orange_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2294477/
 import vegetables from '../../assets/img/vegetable.png';
-
+import {ExpireOneHour} from '../../components/ExpiresTime/ExpiresTime';
 import a from '../../assets/img/a.svg';
 import b from '../../assets/img/b.svg';
 import c from '../../assets/img/c.svg';
 
 
 function Home() {
-  window.sessionStorage.setItem("key", "value");
+
+  const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
+  setCookie('Saving','123456',{path:'/', expires:ExpireOneHour()});
+
+  // window.sessionStorage.setItem("key", "value");
   // console.log(window.sessionStorage.getItem("key"));
   // sessionStorage.removeItem('key');
 
@@ -29,6 +34,7 @@ function Home() {
 
   return (
     <div className="home-page">
+      <h1>{cookies.Saving}</h1>
       <Header />
       <SearchBar />
       <div className="container">
