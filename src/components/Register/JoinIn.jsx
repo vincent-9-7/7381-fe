@@ -17,7 +17,7 @@ function JoinIn() {
 
 
   return (
-    <div className="container">
+    <div>
       <div className="role-selection">
         <h1>Join for Seller or Buyer? </h1>
         <div className="avators">
