@@ -1,9 +1,16 @@
 import React from 'react';
-import './TodayDeals.scss';
+import '../Product.scss';
+import { useDispatch, useSelector } from 'react-redux';
+// import { actFetchProductsRequest, AddCart,getShopRequest } from "../../store/actions";
 
 function TodayDeals(props) {
   const { image, title, delivery, description, oldPrice, price } = props;
+  const dispatch = useDispatch();
 
+  const addCart = () => {
+    console.log("aa");
+    dispatch(AddCart(title));
+  };
   return (
     <div className="home-page__deals--card">
       <img src={image} alt={title} className="home-page__deals--image" />
@@ -25,7 +32,9 @@ function TodayDeals(props) {
           <button
             className="btn--add-to-cart"
             type="button"
-            onClick={() => (document.location.href = '/productions/101311')}
+            // onClick={() => (document.location.href = '/productions/101311')}
+            onClick={() => addCart()}
+
           >
             Add to cart
           </button>

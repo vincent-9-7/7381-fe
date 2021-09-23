@@ -1,0 +1,32 @@
+@import '../../assets//scss//color.scss';
+
+.cart{
+
+  &__details{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__details--text {
+    font-size: 28px;
+  }
+
+  &__remove-btn{
+    background-color: transparent;
+    margin: 0 30px;
+  }
+
+  &__remove-btn-image{
+    height: 25px;
+  }
+
+  &__checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 350px;
+    margin-bottom: 100px;
+    // justify-content: center;
+  }
+
+}
