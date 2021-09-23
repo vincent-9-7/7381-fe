@@ -4,9 +4,6 @@ const initialState = {
     itemDetails: [],
     error:null
   },
-  shopCart: {
-
-  },
   user:{
     loading: false,
     userDetails: [],
