@@ -6,9 +6,9 @@ import B from '../../assets/img/LogoB.svg';
 import User from '../../assets/img/User.svg';
 import Cart from '../../assets/img/Cart.svg';
 
-function Header(props) {
+function Header() {
   return (
-    <div {...props} className="page-header">
+    <div className="page-header">
       <div className="container">
        
         {/* Mobile Style */}
