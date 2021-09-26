@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getItemsRequest, getUserRequest } from '../../store/actions/index';
 import Load from './Load';
 
+// toLowerCase()
+//  { array[index].slice(0,1).toUpperCase()+array[index].slice(1).toLowerCase()}
+
 function Saga(match) {
   const dispatch = useDispatch();
 

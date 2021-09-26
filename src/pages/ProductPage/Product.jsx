@@ -1,47 +1,17 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getItemsRequest } from '../../store/actions/index';
-import './Product.scss';
+import React from 'react';
 import Header from '../../components/PageHeader/PageHeader';
-import Loading from '../../components/Loading/Loading';
 import Footer from '../../components/PageFooter/PageFooter';
-import TodayDeals from '../../components/TodayDeals/TodayDeals';
-import box from '../../assets/img/box.svg';
+import ProductList from '../../components/Product/ProductList';
 
-function Product() {
-  const dispatch = useDispatch();
+function ProductPage() {
 
-  useEffect(() => {
-    dispatch(getItemsRequest());
-  }, []);
-
-  const loading = useSelector((state) => state.itemslist.loading);
-  const items = useSelector((state) => state.itemslist.itemDetails);
-  // console.log(items);
-  return (
-    <div>
+  return(
+    <>
       <Header />
-      {/* <Loading /> */}
-      {loading && <Loading />}
-      {!loading && (
-        <div className="product-page container">
-          {items.map((item) => (
-            <div key={item._id}>
-              <TodayDeals
-                image={box}
-                title={`${item.title} ${item.quantity}kg`}
-                delivery="free delivery"
-                description={item.description}
-                oldPrice={false}
-                price={`AU $${item.price}`}
-              />
-            </div>
-          ))}
-        </div>
-      )}
-      {/* <Footer /> */}
-    </div>
+      <ProductList />
+      <Footer />
+    </>
   );
 }
 
-export default Product;
+export default ProductPage;

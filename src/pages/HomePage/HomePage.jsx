@@ -1,27 +1,38 @@
 /* eslint-disable max-len */
 import React from 'react';
+// import { useCookies } from 'react-cookie';
 import './HomePage.scss';
 import SlideShow from '../../components/SlideShow/SlideShow';
-import TodayDeals from '../../components/TodayDeals/TodayDeals';
+import ProductList from '../../components/Product/ProductList';
 import Star from '../../components/Star/Star';
 import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
-import tomatoVerticality from '../../assets/img/tomato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/8016790/
-import potatoVerticality from '../../assets/img/potato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2286776/
-import bananaVerticality from '../../assets/img/banana_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2116020/
-import orangeVerticality from '../../assets/img/orange_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2294477/
+import SearchBar from '../../components/SearchBar/SearchBar';
 import vegetables from '../../assets/img/vegetable.png';
-
+// import {ExpireOneHour} from '../../components/ExpiresTime/ExpiresTime';
 import a from '../../assets/img/a.svg';
 import b from '../../assets/img/b.svg';
 import c from '../../assets/img/c.svg';
 
 
 function Home() {
+
+  // const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
+  // setCookie('Saving','123456',{path:'/', expires:ExpireOneHour()});
+
+  // window.sessionStorage.setItem("key", "value");
+  // console.log(window.sessionStorage.getItem("key"));
+  // sessionStorage.removeItem('key');
+
+  // localStorage.setItem("key", "value"); 
+  // console.log(localStorage.getItem('key'));
+  // localStorage.removeItem('key')
+
   return (
     <div className="home-page">
+      {/* <h1>{cookies.Saving}</h1> */}
       <Header />
-      
+      <SearchBar />
       <div className="container">
         <div className="home-page__slides-style">
           <SlideShow />
@@ -36,7 +47,9 @@ function Home() {
             </div>
 
             <div className="home-page__deals--cards">
-              <TodayDeals
+              {/* 需要展示几个这里就放几个，不填的话默认展示所有 */}
+              <ProductList num={6} /> 
+              {/* <ProductDetails
                 image={tomatoVerticality}
                 title="Tomato 10kg"
                 delivery="free delivery"
@@ -45,7 +58,7 @@ function Home() {
                 price="AU $54.32"
               />
 
-              <TodayDeals
+              <ProductDetails
                 image={potatoVerticality}
                 title="Potato 10kg"
                 delivery="free delivery"
@@ -54,7 +67,7 @@ function Home() {
                 price="AU $34.32"
               />
 
-              <TodayDeals
+              <ProductDetails
                 image={bananaVerticality}
                 title="Banana 10kg"
                 delivery="free delivery"
@@ -63,7 +76,7 @@ function Home() {
                 price="AU $56.32"
               />
 
-              <TodayDeals
+              <ProductDetails
                 image={orangeVerticality}
                 title="Orange 10kg"
                 delivery="free delivery"
@@ -72,7 +85,7 @@ function Home() {
                 price="AU $24.32"
               />
 
-              <TodayDeals
+              <ProductDetails
                 image={orangeVerticality}
                 title="Orange 10kg"
                 delivery="free delivery"
@@ -81,14 +94,14 @@ function Home() {
                 price="AU $33.2"
               />
 
-              <TodayDeals
+              <ProductDetails
                 image={orangeVerticality}
                 title="Orange 10kg"
                 delivery="free delivery"
                 description="With sweet flesh and easy-to-peel skin."
                 oldPrice="AU $78"
                 price="AU $27.72"
-              />
+              /> */}
             </div>
           </div>
         </div>

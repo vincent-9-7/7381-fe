@@ -1,12 +1,22 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import './PageHeader.scss';
+import {useHistory, Link} from "react-router-dom";
 import Bmarket from '../../assets/img/Bmarket.svg';
 import B from '../../assets/img/LogoB.svg';
 import User from '../../assets/img/User.svg';
 import Cart from '../../assets/img/Cart.svg';
 
 function Header() {
+  // 跳转push方式：
+  // 1. class：
+  // this.props.history.push("/")
+  // 2. function hooks：
+  // import {useHistory, Link} from "react-router-dom";
+  // const history = useHistory();
+  // history.push('/test-cart2')
+
+  const history = useHistory();
   return (
     <div className="page-header">
       <div className="container">
@@ -14,7 +24,7 @@ function Header() {
         {/* Mobile Style */}
         <div className="page-header__mobile">
           <button
-            onClick={() => (document.location.href = '/')}
+            onClick={()=>history.push('/')}
             type="button"
             className="page-header__mobile--logo-button"
           >
@@ -22,7 +32,7 @@ function Header() {
           </button>
 
           <button
-            onClick={() => (document.location.href = '/shopping-cart')}
+            onClick={()=>history.push('/shopping-cart')}
             type="button"
             className="page-header__mobile--button"
           >
@@ -33,7 +43,7 @@ function Header() {
         {/* Destop Style */}
         <div className="page-header__desktop">
           <button
-            onClick={() => (document.location.href = '/')}
+            onClick={()=>history.push('/')}
             type="button"
             className="page-header__desktop--logo-button"
           >
@@ -41,7 +51,7 @@ function Header() {
           </button>
 
           <button
-            onClick={() => (document.location.href = '/productions/fruit')}
+            onClick={()=>history.push('/productions/fruit')}
             type="button"
             className="page-header__desktop--button-words"
           >
@@ -49,7 +59,7 @@ function Header() {
           </button>
 
           <button
-            onClick={() => (document.location.href = '/productions/vegetable')}
+            onClick={()=>history.push('/productions/vegetable')}
             type="button"
             className="page-header__desktop--button-words"
           >
@@ -57,7 +67,7 @@ function Header() {
           </button>
 
           <button
-            onClick={() => (document.location.href = '/productions')}
+            onClick={()=>history.push('/productions')}
             type="button"
             className="page-header__desktop--button-words"
           >
@@ -65,7 +75,7 @@ function Header() {
           </button>
 
           <button
-            onClick={() => (document.location.href = '/about-us')}
+            onClick={()=>history.push('/about-us')}
             type="button"
             className="page-header__desktop--button-words"
           >
@@ -75,7 +85,7 @@ function Header() {
           <div className="page-header__desktop--four-icons">
             <div className="page-header__desktop--left-two-icons">
               <button
-                onClick={() => (document.location.href = '/sign-in')}
+                onClick={()=>history.push('/role-select')}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -83,7 +93,7 @@ function Header() {
               </button>
 
               <button
-                onClick={() => (document.location.href = '/profile')}
+                onClick={()=>history.push('/profile')}
                 type="button"
                 className="page-header__desktop--button"
               >
@@ -93,7 +103,7 @@ function Header() {
 
             <div className="page-header__desktop--right-two-icons">
               <button
-                onClick={() => (document.location.href = '/join')}
+                onClick={()=>history.push('/join-in')}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -101,7 +111,8 @@ function Header() {
               </button>
 
               <button
-                onClick={() => (document.location.href = '/shopping-cart')}
+                // onClick={() => (document.location.href = '/shopping-cart')}
+                onClick={()=>history.push('/Shopping-cart')}
                 type="button"
                 className="page-header__desktop--button"
               >
