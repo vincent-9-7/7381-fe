@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import './PageHeader.scss';
 import Bmarket from '../../assets/img/Bmarket.svg';
@@ -5,9 +6,9 @@ import B from '../../assets/img/LogoB.svg';
 import User from '../../assets/img/User.svg';
 import Cart from '../../assets/img/Cart.svg';
 
-function Header() {
+function Header(props) {
   return (
-    <div className="page-header">
+    <div {...props} className="page-header">
       <div className="container">
        
         {/* Mobile Style */}
