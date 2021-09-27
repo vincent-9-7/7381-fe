@@ -1,0 +1,11 @@
+@import '../../assets//scss//color.scss';
+
+.page-title {
+  background-color: rgba($color: $green-light, $alpha: 0.45);
+  display: flex;
+  justify-content: center;
+
+  &__details{
+    border-bottom: 3px solid $brown;
+  }
+}
