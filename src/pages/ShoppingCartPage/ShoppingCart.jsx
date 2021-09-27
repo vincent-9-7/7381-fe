@@ -48,7 +48,7 @@ class Cart extends Component {
   render() {
     const { products, total, error, checkoutPending, checkout } = this.props;
     const checkoutAllowed = products.length > 0 && !checkoutPending;
-
+    const { history } = this.props;
     return (
       <>
         <Header />
@@ -78,7 +78,7 @@ class Cart extends Component {
           </div>
 
           <div className="cart__right">
-            <CalculatTotal num={2} total={total} postageFee="Free" />
+            <CalculatTotal num={2} total={total} postageFee="Free" history={history} />
           </div>
         </div>
         <Footer />

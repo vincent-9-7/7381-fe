@@ -11,6 +11,7 @@ export default class CalculatTotal extends Component {
   // console.log(data);
   render() {
   const {num, total, postageFee} = this.props;
+  const { history } = this.props;
   return (
     <div className="cart__right--border">
       <div className="cart__right--line">
@@ -30,7 +31,9 @@ export default class CalculatTotal extends Component {
       </div>
 
       <div className="cart__right--button">
-        <button className="btn--goCheckout" type="button">Checkout</button>
+        <button className="btn--goCheckout" type="button" onClick={
+          ()=>history.push("/checkout")
+        }>Checkout</button>
       </div>
     </div>
   );
