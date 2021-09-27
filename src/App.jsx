@@ -3,7 +3,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 // import ProtectedRoute from './routes/ProtectedRoute';
 
 import HomePage from './pages/HomePage/HomePage';
-import ProductPage from './pages/ProductPage/Product';
+import FruitPage from './pages/FruitPage/Fruit';
+import VegetablePage from './pages/VegetablePage/Vegetable';
+import ProductPage from './pages/ProductionPage/Production';
 import ShoppingCart from './pages/ShoppingCartPage/ShoppingCart';
 
 import RoleSeclectPage from './pages/SigninPage/RoleSelectPage';
@@ -28,15 +30,18 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/search" exact component={ProductPage} />
         <Route path="/productions" exact component={ProductPage} />
-
         <Route path="/productions/:id" exact component={ComingSoon} />
-        <Route path="/productions/fruit/:id" exact component={ComingSoon} />
-        <Route path="/productions/vegetable/:id" exact component={ComingSoon} />
+
+        <Route path="/fruit" exact component={FruitPage} />
+        <Route path="/fruit/:id" exact component={ComingSoon} />
+
+        <Route path="/vegetable" exact component={VegetablePage} />
+        <Route path="/vegetable/:id" exact component={ComingSoon} />
+
         <Route path="/about-us" exact component={ComingSoon} />
 
         <Route path="/shopping-cart" exact component={ShoppingCart} />
         <Route path="/test-cart2" exact component={ProductPage} />
-
 
         <Route path="/role-select" exact component={RoleSeclectPage} />
         <Route path="/signin" exact component={SigninPage} />

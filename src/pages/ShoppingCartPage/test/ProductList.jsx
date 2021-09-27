@@ -1,20 +1,18 @@
 /* eslint-disable */
-
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { useHistory, Link } from 'react-router-dom';
 import ProductItem from './ProductItem';
 import { filterProducts, getProducts } from '../../../store/actions/test/products';
 import { addToCart } from '../../../store/actions/test/cart';
 import { getVisibleProducts } from '../../../store/reducers/test/products';
-import { useHistory, Link } from 'react-router-dom';
 
 import ShoppingCart from '../ShoppingCart';
 
 class ProductList extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
+    this.state = {  };
 
     // this.handleChange = this.handleChange.bind(this);
     // this.createProductItems = this.createProductItems.bind(this);
@@ -40,13 +38,14 @@ class ProductList extends Component {
   // }
 
   render() {
+    const{history} = this.props;
     return (
       <div>
         <h1>Productss</h1>
         {/* {this.createProductItems()} */}
 
         <h1>-----</h1>
-        <button type="button" onClick={() => this.props.history.push('/')}>
+        <button type="button" onClick={() => history.push('/')}>
           {' '}
           Home page{' '}
         </button>

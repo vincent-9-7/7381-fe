@@ -1,6 +1,6 @@
 import React from 'react';
 import './PageHeader.scss';
-import {useHistory, Link} from "react-router-dom";
+import { useHistory, Link } from 'react-router-dom';
 import Bmarket from '../../assets/img/Bmarket.svg';
 import B from '../../assets/img/LogoB.svg';
 import User from '../../assets/img/User.svg';
@@ -16,49 +16,53 @@ function Header() {
   // history.push('/test-cart2')
 
   const history = useHistory();
+  const notEmpty = window.sessionStorage.getItem('cart');
   return (
     <div className="page-header">
       <div className="container">
-       
         {/* Mobile Style */}
         <div className="page-header__mobile">
-          <button
-            onClick={()=>history.push('/')}
-            type="button"
-            className="page-header__mobile--logo-button"
-          >
+          <button onClick={() => history.push('/')} type="button" className="page-header__mobile--logo-button">
             <img src={B} alt="B" className="page-header__logo" />
           </button>
 
-          <button
-            onClick={()=>history.push('/shopping-cart')}
-            type="button"
-            className="page-header__mobile--button"
-          >
+          {/* <button onClick={() => 
+          history.push('/shopping-cart')} type="button" className="page-header__mobile--button">
             <img src={Cart} alt="B" className="page-header__cart" />
-          </button>
+          </button> */}
+
+          {notEmpty ? (
+            <button // 购物车内有东西
+              onClick={() => history.push('/Shopping-cart')}
+              type="button"
+              className="page-header__desktop--button"
+            >
+              <img src={Cart} alt="B" className="page-header__cart" />
+              <div className="page-header__cart--notEmpty" />
+            </button>
+          ) : (
+            <button // 购物车内 没有 东西
+              onClick={() => history.push('/Shopping-cart')}
+              type="button"
+              className="page-header__desktop--button"
+            >
+              <img src={Cart} alt="B" className="page-header__cart" />
+            </button>
+          )}
         </div>
 
         {/* Destop Style */}
         <div className="page-header__desktop">
-          <button
-            onClick={()=>history.push('/')}
-            type="button"
-            className="page-header__desktop--logo-button"
-          >
+          <button onClick={() => history.push('/')} type="button" className="page-header__desktop--logo-button">
             <img src={Bmarket} alt="B" className="page-header__logo" />
           </button>
 
-          <button
-            onClick={()=>history.push('/productions/fruit')}
-            type="button"
-            className="page-header__desktop--button-words"
-          >
+          <button onClick={() => history.push('/fruit')} type="button" className="page-header__desktop--button-words">
             Fruit
           </button>
 
           <button
-            onClick={()=>history.push('/productions/vegetable')}
+            onClick={() => history.push('/vegetable')}
             type="button"
             className="page-header__desktop--button-words"
           >
@@ -66,7 +70,7 @@ function Header() {
           </button>
 
           <button
-            onClick={()=>history.push('/productions')}
+            onClick={() => history.push('/productions')}
             type="button"
             className="page-header__desktop--button-words"
           >
@@ -74,7 +78,7 @@ function Header() {
           </button>
 
           <button
-            onClick={()=>history.push('/about-us')}
+            onClick={() => history.push('/about-us')}
             type="button"
             className="page-header__desktop--button-words"
           >
@@ -84,40 +88,44 @@ function Header() {
           <div className="page-header__desktop--four-icons">
             <div className="page-header__desktop--left-two-icons">
               <button
-                onClick={()=>history.push('/role-select')}
+                onClick={() => history.push('/role-select')}
                 type="button"
                 className="page-header__desktop--button-words"
               >
                 Sign in
               </button>
 
-              <button
-                onClick={()=>history.push('/profile')}
-                type="button"
-                className="page-header__desktop--button"
-              >
+              <button onClick={() => history.push('/profile')} type="button" className="page-header__desktop--button">
                 <img src={User} alt="B" className="page-header__user" />
               </button>
             </div>
 
             <div className="page-header__desktop--right-two-icons">
               <button
-                onClick={()=>history.push('/join-in')}
+                onClick={() => history.push('/join-in')}
                 type="button"
                 className="page-header__desktop--button-words"
               >
                 Join
               </button>
-
-              <button
-                // onClick={() => (document.location.href = '/shopping-cart')}
-                onClick={()=>history.push('/Shopping-cart')}
-                type="button"
-                className="page-header__desktop--button"
-              >
-                <img src={Cart} alt="B" className="page-header__cart" />
-              </button>
-
+              {notEmpty ? (
+                <button // 购物车内有东西
+                  onClick={() => history.push('/Shopping-cart')}
+                  type="button"
+                  className="page-header__desktop--button"
+                >
+                  <img src={Cart} alt="B" className="page-header__cart" />
+                  <div className="page-header__cart--notEmpty" />
+                </button>
+              ) : (
+                <button // 购物车内 没有 东西
+                  onClick={() => history.push('/Shopping-cart')}
+                  type="button"
+                  className="page-header__desktop--button"
+                >
+                  <img src={Cart} alt="B" className="page-header__cart" />
+                </button>
+              )}
             </div>
           </div>
         </div>

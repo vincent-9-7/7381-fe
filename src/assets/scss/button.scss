@@ -27,7 +27,7 @@ button {
     margin: 10px;
     font-weight: bold;
 
-    &:hover, &:focus {
+    &:hover {
       background: $green-dark;
     }
     // &:focus {
@@ -50,7 +50,7 @@ button {
     font-size: x-large;
     font-weight: bold;
 
-    &:hover, &:focus {
+    &:hover {
       background: $green-dark;
     }
   }
@@ -65,7 +65,7 @@ button {
     // margin: 10px;
     font-size:large;
 
-    &:hover, &:focus {
+    &:hover {
       background: $green-dark;
     }
   }
@@ -79,7 +79,7 @@ button {
     margin: 10px;
     font-size: x-large;
 
-    &:hover, &:focus {
+    &:hover {
       background: $green-dark;
     }
   }
@@ -94,7 +94,7 @@ button {
     margin: 10px;
     font-size: large;
 
-    &:hover, &:focus {
+    &:hover {
       background: $brown-hover;
     }
   }
@@ -109,8 +109,24 @@ button {
     margin: 10px;
     font-size: large;
 
-    &:hover, &:focus {
+    &:hover {
       background: $green-dark;
+    }
+  }
+
+  .btn--goCheckout { 
+    background: $brown;
+    color: #ffffff;
+    // width: 283px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0rem 2rem;
+    margin: 10px;
+    font-size: large;
+    font-weight: bold;
+
+    &:hover {
+      background: $brown-hover;
     }
   }
 }

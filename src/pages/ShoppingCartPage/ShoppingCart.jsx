@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { checkout, removeFromCart } from '../../store/actions/cart/cart';
-import { getTotal, getCartProducts, getCheckoutError, isCheckoutPending } from '../../store/reducers/cart/index';
+import { checkout, addFromCart, removeFromCart, deleteFromCart } from '../../store/actions/cart/cart';
+import {
+  getTotal,
+  getCartProducts,
+  getCheckoutError,
+  isCheckoutPending,
+} from '../../store/reducers/cart/index';
 import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
+import ShoppingCartItem from '../../components/ShoppingCart/ShoppingCartItem';
+import Purchase from '../../components/Purchase/Purchase';
+import CalculatTotal from '../../components/ShoppingCart/CalculatTotal';
 import './ShoppingCart.scss';
-import ShoppingCartItem from './ShoppingCartItem';
 
 class Cart extends Component {
   constructor(props) {
@@ -15,9 +22,13 @@ class Cart extends Component {
   }
 
   cartItems(products) {
-    const { removeFromCart } = this.props;
+    const { removeFromCart, addFromCart, deleteFromCart } = this.props;
+    if(products.length <= 0){
+      sessionStorage.removeItem('cart');
+      localStorage.removeItem('carts');
+    }
     return products.length <= 0 ? (
-      <p className="cart__details--text">Please add some products to cart.</p>
+      <h3>Please add some products to cart.</h3>
     ) : (
       products.map((product) => (
         <ShoppingCartItem
@@ -26,6 +37,9 @@ class Cart extends Component {
           quantity={product.quantity}
           key={product._id}
           onRemove={() => removeFromCart(product._id)}
+          onAdd={() => addFromCart(product._id)}
+          onDelete={() => deleteFromCart(product._id)}
+          // nums = {()=>numFromCart(product._id)}
         />
       ))
     );
@@ -39,25 +53,34 @@ class Cart extends Component {
       <>
         <Header />
 
-        <div className="container">
-          {/* <h2>Your shopping cart:</h2> */}
+        <div className="cart container">
+          <div className="cart__left">
+            <div className="cart__title">
+              <h2>Shopping Cart</h2>
+              <h3 className="cart__title--right">Price</h3>
+            </div>
 
-          <div style={{ margin: '150px 0' }}>{this.cartItems(products)}</div>
+            <div className="cart__products">{this.cartItems(products)}</div>
 
-          <div className="cart__checkout">
-            <h2>Total: {total} AU</h2>
+            {/* <Purchase /> */}
+            <div className="cart__checkout">
+              <p style={{ fontSize: '1.5em' }}>Subtotal:&nbsp;</p>
+              <p style={{ fontSize: '1.5em', fontWeight: 'bold' }}>AU ${total}</p>
+              {/* <button
+                className="btn--search"
+                onClick={checkout}
+                disabled={checkoutAllowed ? '' : 'disabled'}
+                type="button"
+              >
+                Checkout
+              </button> */}
+            </div>
+          </div>
 
-            <button
-              className="btn--search"
-              onClick={checkout}
-              // disabled={checkoutAllowed ? '' : 'disabled'}
-              type="button"
-            >
-              Checkout
-            </button>
+          <div className="cart__right">
+            <CalculatTotal num={2} total={total} postageFee="Free" />
           </div>
         </div>
-
         <Footer />
       </>
     );
@@ -73,4 +96,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { checkout, removeFromCart })(Cart);
+export default connect(mapStateToProps, { checkout, addFromCart, removeFromCart, deleteFromCart })(Cart);

@@ -1,6 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-import '../../pages/ProductPage/Product.scss';
+import '../../pages/ProductionPage/Production.scss';
 import './Product.scss';
 import tomatoVerticality from '../../assets/img/tomato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/8016790/
 import potatoVerticality from '../../assets/img/potato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2286776/
