@@ -48,7 +48,7 @@ function Home() {
 
             <div className="home-page__deals--cards">
               {/* 需要展示几个这里就放几个，不填的话默认展示所有 */}
-              <ProductList num={6} /> 
+              <ProductList num={6} productType={3} /> 
               {/* <ProductDetails
                 image={tomatoVerticality}
                 title="Tomato 10kg"

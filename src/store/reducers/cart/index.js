@@ -24,6 +24,13 @@ export function getTotal(state) {
   ).toFixed(2);
 }
 
+// export function getNum(state) {
+  
+//   return getAddedIds(state.cart).reduce((total, _id) =>
+//      getQuantity(state.cart, _id),0
+//   );
+// }
+
 export function getCartProducts(state) {
   return getAddedIds(state.cart).map(_id => ({
     ...getProduct(state.products, _id),

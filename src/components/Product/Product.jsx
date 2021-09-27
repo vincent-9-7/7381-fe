@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import ProductDetails from './ProductDetails';
 import box from '../../assets/img/box.svg';

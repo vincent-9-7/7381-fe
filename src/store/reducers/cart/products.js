@@ -1,20 +1,25 @@
 /* eslint-disable */
 import { combineReducers } from 'redux';
 import { RECEIVE_PRODUCTS, FILTER_PRODUCTS } from '../../actions/cart/products';
-import { ADD_TO_CART, REMOVE_FROM_CART } from '../../actions/cart/cart';
+import { ADD_TO_CART, ADD_FROM_CART, REMOVE_FROM_CART } from '../../actions/cart/cart';
 
 function products(state, action) {
   switch (action.type) {
-    case ADD_TO_CART:
-      return {
-        ...state,
-        inventory: state.inventory - 1
-      };
-      case REMOVE_FROM_CART:
-        return {
-          ...state,
-          inventory: state.inventory + 1
-        };
+    // case ADD_TO_CART:
+    //   return {
+    //     ...state,
+    //     inventory: state.inventory - 1
+    //   };
+      // case ADD_FROM_CART:
+      //   return {
+      //     ...state,
+      //     inventory: state.inventory - 1
+      //   };
+      // case REMOVE_FROM_CART:
+      //   return {
+      //     ...state,
+      //     inventory: state.inventory + 1
+      //   };
     default:
       return state;
   }
