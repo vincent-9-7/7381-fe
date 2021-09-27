@@ -39,7 +39,7 @@ class ProductList extends Component {
       }
     }
     // console.log(products);
-    const link = ['fruit', 'vegetable', 'productions'];
+    const link = ['fruit', 'vegetable', 'productions', ''];
     const { history } = this.props;
     return (
       <>
@@ -53,7 +53,7 @@ class ProductList extends Component {
               onAddToCartClicked={() => {
                 addToCart(product._id);
                 window.sessionStorage.setItem('cart', true);
-                history.push(`${link[productType-1]}`);
+                history.push(`${link[productType - 1]}`);
               }}
             />
           ))}
