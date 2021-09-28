@@ -2,17 +2,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 
-import React,{useEffect, useState} from 'react';
+import React,{useEffect, useState,} from 'react';
 import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import UploadImage from '../UploadImage/UploadImage';
 import './PostForm.scss';
 import NoticeBoard from '../NoticeBoard/NoticeBoard';
-
+import { postItemsRequest } from "../../store/actions/actionCreator";
 
 export default function PostForm() {
   const [imageAddress, setImageAddress,] = React.useState([]);
   const [count, getCount] = React.useState(3000);
-
+  const dispatch = useDispatch();
   const keyhandler = e => {
     getCount(3000-e.target.value.length);
   };
@@ -30,20 +31,29 @@ export default function PostForm() {
     setImageAddress(imageAddress);
     console.log(imageAddress,"address");
   }
-//   console.log(imageAddress,'4445');
   const { register, handleSubmit,setValue,formState: { errors } } = useForm({
     defaultValues:{
         imageAddress:" "
+        // 记得设置id
     }
-
-    
+  
+  
   });
+
+  const onSubmit = (data) => {
+    dispatch(postItemsRequest(data));
+    // if (user === 'buyer') {
+    //   dispatch(registerBuyerRequest(data));
+    // } else {
+    //   dispatch(registerSellerRequest(data));
+    // }
+  };
 
     useEffect(() => {
         setValue('imageAddress',imageAddress);
     }, [imageAddress]);
 
-  const onSubmit = data => console.log(data);
+  // const onSubmit = data => console.log(data);
 
 
   return (
@@ -60,7 +70,7 @@ export default function PostForm() {
             <div className="container--mid--flex">
               <div className="container--mid--flex-left">
                 <input className="container--mid--flex--input" 
-                type="text" placeholder="Title" {...register("Title", {required: true, maxLength: 80})} />
+                type="text" placeholder="Title" {...register("title", {required: true, maxLength: 80})} />
                 <p className="container--p2">Please include details such as <span 
                 className="container--p2-bolder">quality, size, specs, etc.</span></p>
               </div>
@@ -87,12 +97,12 @@ export default function PostForm() {
                 <span className="container--p3">Category</span>
                 <span className="container--p4"> (Required)</span>
               </div>
-              <select className="item item--select"{...register("Condition", { required: true })}>
+              <select className="item item--select"{...register("condition", { required: true })}>
                 <option value="B-grade">B-grade</option>
                 <option value="Processed">Processed</option>
               </select>
               <div className="item item--space"/>
-              <select className="item item--select" {...register("Category", { required: true })}>
+              <select className="item item--select" {...register("category", { required: true })}>
                 <option value="Fruit">Fruit</option>
                 <option value="Vegetable">Vegetable</option>
               </select>
@@ -106,11 +116,11 @@ export default function PostForm() {
                   <span className="container--p4"> (Required)</span>
                 </div>
                 <input className="item item--input__text" 
-                type="number" placeholder="$" {...register("Price", {required: true, maxLength: 10})} />
+                type="number" placeholder="$" {...register("price", {required: true, maxLength: 10})} />
                 <div className="item item--space"/>
 
                 <input className="item item--input__text"
-                type="number" placeholder="Quantity" {...register("Quantity",{required: true, maxLength: 10 })} />
+                type="number" placeholder="Quantity" {...register("quantity",{required: true, maxLength: 10 })} />
                 <div className="item--label">
                   <span className="container--p3">Size</span>
                   <span className="container--p4"> (Required)</span>
@@ -121,12 +131,12 @@ export default function PostForm() {
                   <span className="container--p4"> (Required)</span>
                 </div>
                 <input className="item item--input__text"
-                type="number" placeholder="Size" {...register("Size", {required: true})} />
+                type="number" placeholder="Size" {...register("size", {required: true})} />
                 <div className="item item--space"/>
                 {/* <input className="item item--input__text"
                 type="text" placeholder="Last name" {...register("Last name", {required: true, maxLength: 15})} />
                 <div className="item item--space"/> */}
-                <select className="item item--select" {...register("Return", { required: true })}>
+                <select className="item item--select" {...register("return", { required: true })}>
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
                 </select>
@@ -149,7 +159,7 @@ export default function PostForm() {
                 <textarea className="textarea" type="text" 
                 onKeyUp={e => keyhandler(e)}
                 placeholder="Describe your product in this area."
-                    {...register("Description", {required: true, maxLength: 3000})} />
+                    {...register("description", {required: true, maxLength: 3000})} />
                 <div>
                   Words left: {count} 
                 </div>
@@ -165,22 +175,22 @@ export default function PostForm() {
             <div className="container--mid--item_postage">
             
               <input className="item item--input__addrees1"
-              type="text" placeholder="Address1" {...register("Address1", {required: true, maxLength: 30})} />
+              type="text" placeholder="Address1" {...register("address1", {required: true, maxLength: 30})} />
               {/* <div className="item item--space"/> */}
               <input className="item item--input__addrees2"
-              type="text" placeholder="Address2" {...register("Address2", {required: true, maxLength: 30})} />
+              type="text" placeholder="Address2" {...register("address2", {required: true, maxLength: 30})} />
               <div className="item item--space"/>
               <input className="item item--input__suburb"
-              type="text" placeholder="Suburb" {...register("Suburb", {required: true, maxLength: 30})} />
+              type="text" placeholder="Suburb" {...register("suburb", {required: true, maxLength: 30})} />
               {/* <div className="item item--space"/> */}
               <input className="item item--input__text"
-              type="text" placeholder="City" {...register("City", {required: true, maxLength: 30})} />
+              type="text" placeholder="City" {...register("city", {required: true, maxLength: 30})} />
               <div className="item item--space"/>
               <input className="item item--input__text"
-              type="text" placeholder="State" {...register("State", {required: true, maxLength: 20})} />
+              type="text" placeholder="State" {...register("state", {required: true, maxLength: 20})} />
               <div className="item item--space"/>
               <input className="item item--input__text"
-              type="text" placeholder="Postcode" {...register("Postcode", {required: true, maxLength: 4})} />
+              type="text" placeholder="Postcode" {...register("postcode", {required: true, maxLength: 4})} />
             {/* </div> */}
             </div>
                 {/* <input className="item item--input-number"
@@ -209,13 +219,13 @@ export default function PostForm() {
                 type="text" placeholder="Recipient" {...register("recipient", {required: true, maxLength: 30})} />
               <p className="post-form__bottom--bank--title">Bank name</p>
               <input className="post-form__bottom--bank--input"
-                type="text" placeholder="Bank name" {...register("bank name", {required: true, maxLength: 30})} />
+                type="text" placeholder="Bank name" {...register("bankName", {required: true, maxLength: 30})} />
               <p className="post-form__bottom--bank--title">BSB</p>
               <input className="post-form__bottom--bank--input"
                 type="text" placeholder="BSB" {...register("BSB", {required: true, maxLength: 30})} />
               <p className="post-form__bottom--bank--title">Account</p>
               <input className="post-form__bottom--bank--input"
-                type="text" placeholder="Account" {...register("Account", {required: true, maxLength: 30})} />
+                type="text" placeholder="Account" {...register("account", {required: true, maxLength: 30})} />
               
               {/* <p className="post-form__bottom--header">Payment options </p>
               <hr className="post-form__bottom--divider" /> */}

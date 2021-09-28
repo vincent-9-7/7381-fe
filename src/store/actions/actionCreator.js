@@ -83,3 +83,16 @@ export const signSellerFailed = (err) => ({
   payload: err,
 });
 
+
+export const postItemsRequest = (req) => ({
+  type: actionTypes.POST_ITEMS_REQUEST,
+  payload: req,
+});
+export const postItemsSuccess = (dataList) => ({
+  type: actionTypes.POST_ITEMS_SUCCESS,
+  payload: dataList,
+});
+export const postItemsFailed = (err) => ({
+  type: actionTypes.POST_ITEMS_FAILED,
+  payload: err,
+});

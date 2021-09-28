@@ -17,7 +17,7 @@ import OverviewPage from './pages/OverviewPage/OverviewPage';
 
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ComingSoon from './pages/ComingSoonPage/ComingSoonPage';
-import UploadImages from './pages/PostPage/PostPage';
+import PostPage from './pages/PostPage/PostPage';
 import TestImport from './workflow/import_example/Test';
 import Flex from './workflow/flexbox/Flex';
 import Button from './workflow/button/Button';
@@ -54,7 +54,7 @@ function App() {
 
         <Route path="/profile" exact component={ComingSoon} />
         <Route path="/shopping-cart" exact component={ComingSoon} />
-        <Route path="/upload" exact component={UploadImages} />
+        <Route path="/post" exact component={PostPage} />
         {/* <ProtectedRoute path="/order" exact component={Order} /> */}
         {/* <Redirect exact from="/admin" to="/admin/dashboard" /> */}
 

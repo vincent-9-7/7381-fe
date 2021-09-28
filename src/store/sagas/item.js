@@ -19,7 +19,26 @@ function* getItems(action) {
   }
 }
 
+function* postItems(action) {
+  try {
+   console.log(action)
+    // const {} 
+    const {condition} = action.payload;
+    console.log(condition);
+    const category = condition==="B-grade" ? 'item':'production';
+    console.log(category);
+    const getItemsApi = `${url}/${category}`;
+    
+    const data = yield call(axios.post, getItemsApi,action.payload,header());
+    // console.log(data.data);
 
+    yield put({ type: 'POST_ITEMS_SUCCESS', items: data.data});
+    // localStorage.setItem('Items', JSON.stringify(action.payload));
+  } catch (e) {
+    console.log(e);
+    yield put({ type: 'POST_ITEMS_FAILED', payload: e });
+  }
+}
 // function* updateOrder(action) {
 //   const { id, update, type, cancelByAdmin } = action.payload
 //   const model = type.toUpperCase() === "RC" ? 'regular' : 'endOfLease'
@@ -106,6 +125,7 @@ function* getItems(action) {
 
 function* ItemSaga() {
   yield takeEvery('GET_ITEMS_REQUEST', getItems); 
+  yield takeEvery('POST_ITEMS_REQUEST', postItems); 
 
 }
 
