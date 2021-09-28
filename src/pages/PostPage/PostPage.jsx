@@ -5,7 +5,7 @@ import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 
 
-function Error() {
+function PostPage() {
 
   return (
     <div >
@@ -16,5 +16,5 @@ function Error() {
   );
 }
 
-export default Error;
+export default PostPage;
 

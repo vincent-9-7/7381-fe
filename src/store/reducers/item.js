@@ -22,6 +22,23 @@ function itemReducer(state = initialItemState, action) {
         loading: false,
         error:action.message
       };
+      case actionType.PSOT_ITEMS_REQUEST:
+        return {
+          ...state,
+          loading: true,
+        };
+      case actionType.PSOT_ITEMS_SUCCESS:
+        return {
+          ...state,
+          loading: false,
+          itemDetails: action.items
+        };
+      case actionType.PSOT_ITEMS_FAILED:
+        return {
+          ...state,
+          loading: false,
+          error:action.message
+        };
 
     default:
       return state;
