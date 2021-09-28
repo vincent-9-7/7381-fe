@@ -10,6 +10,7 @@ import RoleSeclectPage from './pages/SigninPage/RoleSelectPage';
 import SigninPage from './pages/SigninPage/SigninPage';
 import JoinInPage from './pages/RegisterPage/JoinInPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
+import OverviewPage from './pages/OverviewPage/OverviewPage';
 
 
 import UploadImages from './pages/PostPage/PostPage';
@@ -17,13 +18,14 @@ import TestImport from './workflow/import_example/Test';
 import Flex from './workflow/flexbox/Flex';
 import Button from './workflow/button/Button';
 import Saga from './workflow/saga_tutorial/Saga';
+import ItemDetailPage from './pages/ItemDetailPage/ItemDetailPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
-      {/* http://localhost:8000/location?is=25
-      http://localhost:8000/productions/sort */} 
+        {/* http://localhost:8000/location?is=25
+      http://localhost:8000/productions/sort */}
         <Route path="/" exact component={HomePage} />
         <Route path="/search" exact component={Product} />
         <Route path="/productions" exact component={Product} />
@@ -49,6 +51,14 @@ function App() {
         <Route path="/flex" exact component={Flex} />
         <Route path="/button" exact component={Button} />
         <Route path="/profile-saga-test/:id" exact component={Saga} />
+        <Route path="/role-select" exact component={RoleSeclectPage} />
+        <Route path="/signin" exact component={SigninPage} />
+        <Route path="/join-in" exact component={JoinInPage} />
+        <Route path="/register" exact component={RegisterPage} />
+
+        <Route path="/overview" exact component={OverviewPage} />
+        {/* For test */}
+        <Route path="/item" exact component={ItemDetailPage} />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>

@@ -1,0 +1,14 @@
+.overview-page--main-functions {
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: center;
+  // display: grid;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-gap: 10px;
+  // grid-auto-rows: minmax(80px, auto);
+}
+
+.overview-list {
+  width: 33%;
+}

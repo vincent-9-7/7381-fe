@@ -1,0 +1,77 @@
+@import '../../assets//scss//color.scss';
+
+.item-detail-page {
+  &__card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__middle {
+    flex-grow: 1;
+    display: flex;
+    margin-bottom: 50px;
+  }
+
+  &__bottom {
+    // border-style: solid;
+    // border-width: 3px;
+    background-color: #EFF6D9;
+  }
+
+  &__left {
+    // margin: 20px;
+    margin-top: 20px;
+    margin-right: 40px;
+    // margin-bottom: 20px;
+  }
+
+  &__right {
+    flex-grow: 1;
+    // margin-bottom: 20px;
+    margin-left: 40px;
+    // border-style: solid;
+    // border-width: 3px;
+  }
+
+  &__item-title {
+    text-align: center;
+    margin: 15px;
+
+    h3 {
+      display: flex;
+      // justify-content: center;
+      // align-items: center;
+      font-weight: bold;
+      font-size: x-large;
+    }
+  }
+
+  &__item-border {
+    border: solid 1px #95AB14;
+
+  }
+
+  &__item-buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+}
+
+.btn--add { 
+  background: $green-primary;
+  color: #ffffff;
+  width: 170px;
+  height: 35px;
+  border-radius: 25px;
+  padding: 0.1rem 2rem;
+  margin: 10px;
+  font-size:large;
+
+  &:hover, &:focus {
+    background: $green-dark;
+  }
+}
+

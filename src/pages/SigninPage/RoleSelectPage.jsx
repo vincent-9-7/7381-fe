@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useCookies } from 'react-cookie';
 import Footer from '../../components/PageFooter/PageFooter';
 import Header from '../../components/PageHeader/PageHeader';
 import '../RegisterPage/RegisterPage.scss';
 import Seller from "../../assets/img/Seller.png";
+import { ExpireOneHour } from '../../components/ExpiresTime/ExpiresTime';
 
 function RoleSeclectPage() {
+  const [cookies, setCookie] = useCookies(['signin-cookie-name']);
   const handleOnClick = () => {
-    // localStorage.setItem('register', "seller");
-    sessionStorage.setItem('signin', "seller");
+    setCookie('signin', "seller", { path: '/', expires: ExpireOneHour() });
+    // sessionStorage.setItem('signin', "seller");
     document.location.href = "/signin";
   };
   const handleOnClick2 = () => {
-    // localStorage.setItem('register', "buyer");
-    sessionStorage.setItem('signin', "buyer");
+    setCookie('signin', "buyer", { path: '/', expires: ExpireOneHour() });
+    // sessionStorage.setItem('signin', "buyer");
     document.location.href = "/signin";
   };
 
@@ -27,19 +30,20 @@ function RoleSeclectPage() {
               <button
                 onClick={handleOnClick}
                 type="button"
-                style={{ marginRight: "50px" }}>
+                style={{ marginRight: "50px" }}
+              >
                 <img src={Seller} alt="seller" />
               </button>
-              <h3>Join as a Seller</h3>
+              <h3 style={{ marginRight: "50px" }}>Join as a Seller</h3>
             </div>
-
             <div style={{ display: "flex", textAlign: "center", flexDirection: "column" }}>
               <button
                 onClick={handleOnClick2}
-                type="button" style={{ marginLeft: "50px" }}
+                type="button"
+                style={{ marginLeft: "50px" }}
               ><img src={Seller} alt="buyer" />
               </button>
-              <h3>Join as a Buyer</h3>
+              <h3 style={{ marginLeft: "50px" }}>Join as a Buyer</h3>
             </div>
           </div>
         </div>
