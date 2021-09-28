@@ -1,26 +1,34 @@
 /* eslint-disable */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useForm, Controller } from 'react-hook-form'
+import { useForm, Controller, get } from 'react-hook-form'
+import { useCookies } from 'react-cookie';
 import "./SigninPage.scss"
 import SignInAvator from "../../assets/img/User.svg"
 import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
-import { signinBuyerRequest, signinSellerRequest } from '../../store/actions';
+import { signinBuyerRequest, signinSellerRequest, signSellerFailed } from '../../store/actions';
+
 
 
 function Signin(props) {
   const { data } = props;
-  const user = sessionStorage.getItem('signin')
+  // const user = sessionStorage.getItem('signin')
   const { control, handleSubmit, register } = useForm()
   const dispatch = useDispatch();
+  const [cookies] = useCookies(['signin-cookie-name'])
+  const user = cookies.signin
+  console.log(user);
+
 
   const onSubmit = (data) => {
     if (user === 'buyer') {
-      console.log(data);
+      // console.log(data);
       dispatch(signinBuyerRequest(data));
-    } else {
+    } else if (user === 'seller') {
       dispatch(signinSellerRequest(data));
+    } else {
+      alert("Your message is not correct, please check your email or password! ")
     }
   }
 

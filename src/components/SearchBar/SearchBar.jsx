@@ -13,7 +13,7 @@ const customStyles = {
     minHeight: '45px',
     width: '150px',
     outline: 'none',
-    fontSize:'large',
+    fontSize: 'large',
     borderRadius: '0px 10px 10px 0px',
     // "&:hover": {
     //   outline: 'none',
@@ -33,7 +33,7 @@ const customStyles = {
     ...base,
     backgroundColor: isDisabled ? null : isSelected ? 'rgba(184, 216, 89, 0.5)' : isFocused ? 'rgba(207, 229, 140, 0.3)' : null,
     ':active': {
-      backgroundColor:!isDisabled && (isSelected ? '#d0cfce' : 'rgba(184, 216, 89, 0.5)'),
+      backgroundColor: !isDisabled && (isSelected ? '#d0cfce' : 'rgba(184, 216, 89, 0.5)'),
     },
 
   }),
@@ -68,8 +68,8 @@ function SearchBar() {
               onChange={setData}
               options={options}
               styles={customStyles}
-              // isMulti
-              // isClearable
+            // isMulti
+            // isClearable
             />
             <button type="button" onClick={searchFunc} className="btn--search">
               Search
