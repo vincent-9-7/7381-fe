@@ -11,13 +11,10 @@ class CheckoutForm extends Component {
   onTrigger = (event) => {
     // class子传父 - 6/6
     const { parentCallback } = this.props;
-    // const list = {'firstname':null,'lastname':null};
     const list = {
       price: 0,
       username: '',
       orderList: [],
-      // orderList: [{ '612e509c98150d2141003b22': ['Processed', 1] }, { '611bc08714c75d132eb805b6': ['B-grade', 1] }],
-
       firstName: '',
       lastName: '',
       address1: '',
