@@ -5,65 +5,84 @@ import {
   REMOVE_FROM_CART,
   DELETE_FROM_CART,
   // GET_CART_QUANLITY,
-  CHECKOUT_REQUEST,
-  CHECKOUT_SUCCESS,
-  CHECKOUT_FAILURE
+  // CHECKOUT_REQUEST,
+  // CHECKOUT_SUCCESS,
+  // CHECKOUT_FAILURE,
 } from '../../actions/cart/cart';
 
 const initialState = {
-  checkoutStatus: {
-    checkoutPending: false,
-    error: null
-  },
-  quantityById: {}
+  // checkoutStatus: {
+  //   checkoutPending: false,
+  //   error: null,
+  // },
+  quantityById: {},
 };
 
-function checkoutStatus(state = initialState.checkoutStatus, action ) {
-  switch (action.type) {
-    case CHECKOUT_REQUEST:
-      return {
-        checkoutPending: true,
-        error: null
-      };
-    case CHECKOUT_SUCCESS:
-      return initialState.checkoutStatus;
-    case CHECKOUT_FAILURE:
-      return {
-        checkoutPending: false,
-        error: action.error
-      };
-    default:
-      return state;
-  }
-}
+// function checkoutStatus(state = initialState.checkoutStatus, action) {
+//   switch (action.type) {
+//     case CHECKOUT_REQUEST:
+//       return {
+//         checkoutPending: true,
+//         error: null,
+//       };
+//     case CHECKOUT_SUCCESS:
+//       return initialState.checkoutStatus;
+//     case CHECKOUT_FAILURE:
+//       return {
+//         checkoutPending: false,
+//         error: action.error,
+//       };
+//     default:
+//       return state;
+//   }
+// }
 
 export function getQuantity(state, productId) {
   return state.quantityById[productId] || 0;
 }
 
+// const productList = {};
 function quantityById(state = initialState.quantityById, action) {
   const { productId } = action;
   switch (action.type) {
-    case CHECKOUT_SUCCESS:
-      return initialState.quantityById;
+    // case CHECKOUT_SUCCESS:
+    //   return initialState.quantityById;
     case ADD_TO_CART:
+      // if (productList[productId]) {
+      //   productList[productId].count += 1;
+      // } else {
+      //   productList[productId] = {
+      //     id: productId,
+      //     name: productList[productId].title,
+      //     count: 1,
+      //     price: productList[productId].price,
+      //   };
+      // }
+      // window.sessionStorage.setItem('productList', JSON.stringify(productList));
+
       return {
         ...state,
-        [productId]: (state[productId] || 0) + 1
+        [productId]: (state[productId] || 0) + 1,
       };
     case ADD_FROM_CART:
       const qty1 = (state[productId] || 0) + 1;
-      const copy1 = {...state};
-      if(qty1 > 0) {
+      const copy1 = { ...state };
+      if (qty1 > 0) {
         copy1[productId] = qty1;
       } else {
         delete copy1[productId];
       }
+      // if (productList[productId]) {
+      //   productList[productId].count += 1;
+      // } else {
+      //   productList[productId] = { id: productId, count: 1 };
+      // }
+      // window.sessionStorage.setItem('productList', JSON.stringify(productList));
       return copy1;
     case REMOVE_FROM_CART:
       const qty2 = (state[productId] || 0) - 1;
-      const copy2 = {...state};
-      if(qty2 > 0) {
+      const copy2 = { ...state };
+      if (qty2 > 0) {
         copy2[productId] = qty2;
       } else {
         delete copy2[productId];
@@ -72,8 +91,8 @@ function quantityById(state = initialState.quantityById, action) {
     case DELETE_FROM_CART:
       const qty3 = 0;
       // const qty3 = (state[productId] || 0) - 1;
-      const copy3 = {...state};
-      if(qty3 > 0) {
+      const copy3 = { ...state };
+      if (qty3 > 0) {
         copy3[productId] = qty3;
       } else {
         delete copy3[productId];
@@ -85,12 +104,11 @@ function quantityById(state = initialState.quantityById, action) {
 }
 
 export default combineReducers({
-  checkoutStatus,
-  quantityById
+  // checkoutStatus,
+  quantityById,
 });
 
-
 export function getAddedIds(state) {
-  console.log(state.quantityById);
+  // console.log(state.quantityById);
   return Object.keys(state.quantityById);
 }

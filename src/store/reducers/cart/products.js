@@ -96,6 +96,6 @@ export function getProduct(state, _id) {
 export function getVisibleProducts(state) {
   // return state.filterTerm ?
   //   filterProducts(state):
-  console.log(state.visibleIds)
+  // console.log(state.visibleIds)
   return state.visibleIds.map(_id => getProduct(state, _id));
 }
