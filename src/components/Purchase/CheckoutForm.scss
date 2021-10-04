@@ -1,15 +1,54 @@
 @import '../../assets/scss/color.scss';
 
-.purchase {
+.checkout-form {
   // background-color: rgba($color: $green-light, $alpha: 0.45);
-  padding: 15px 0px;
-  
+
+  &__title {
+    border-bottom: 3px solid $green-dark;
+  }
+
+  &__border {
+    padding: 0px 15px;
+    margin: 31px 0;
+    border: 2px solid $green-primary;
+  }
   &__content {
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: aqua;
   }
+
+ &__review {
+   display: flex;
+   margin: 14px 0 30px 0;
+  //  flex-direction: column;
+ }
+
+ &__review--left {
+  //  display: flex;
+  // background-color: cornsilk;
+  // padding: 0 15px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+ &__review--firstline{
+   display: flex;
+ }
+
+ &__review--image {
+  width:200px;
+  height: 200px;
+  // position: relative;
+  // top:-20%;
+  // left: 16%;
+ }
+
+ &__review--right {
+  //  background-color: darksalmon;
+ }
 
   &__input {
     border-radius: 10px;
@@ -38,4 +77,5 @@
       }
     }
   }
+
 }

@@ -26,7 +26,7 @@ export default class Product extends Component {
     // console.log(num);
     let oldPrice = false;
     if(num !== undefined){
-      oldPrice = "AU $78"; // 首页old price
+      oldPrice = `AU $${product.price*1.4}`; // 首页old price
     }
     return (
       <div

@@ -58,6 +58,14 @@ function Header() {
             <img src={Bmarket} alt="B" className="page-header__logo" />
           </button>
 
+          <button
+            onClick={() => history.push('/about-us')}
+            type="button"
+            className="page-header__desktop--button-words"
+          >
+            About us
+          </button>
+
           <button onClick={() => history.push('/fruit')} type="button" className="page-header__desktop--button-words">
             Fruit
           </button>
@@ -77,14 +85,7 @@ function Header() {
           >
             Production
           </button>
-
-          <button
-            onClick={() => history.push('/about-us')}
-            type="button"
-            className="page-header__desktop--button-words"
-          >
-            About us
-          </button>
+         
 
           <div className="page-header__desktop--four-icons">
             <div className="page-header__desktop--left-two-icons">

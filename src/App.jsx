@@ -8,6 +8,7 @@ import VegetablePage from './pages/VegetablePage/Vegetable';
 import ProductPage from './pages/ProductionPage/Production';
 import ShoppingCart from './pages/ShoppingCartPage/ShoppingCart';
 import Checkout from './pages/CheckoutPage/Checkout';
+import CheckoutSuccess from './pages/CheckoutSuccessPage/CheckoutSuccess';
 
 import RoleSeclectPage from './pages/SigninPage/RoleSelectPage';
 import SigninPage from './pages/SigninPage/SigninPage';
@@ -45,7 +46,7 @@ function App() {
 
         <Route path="/shopping-cart" exact component={ShoppingCart} />
         <Route path="/checkout" exact component={Checkout} />
-
+        <Route path="/success" exact component={CheckoutSuccess} />
 
         <Route path="/role-select" exact component={RoleSeclectPage} />
         <Route path="/signin" exact component={SigninPage} />
