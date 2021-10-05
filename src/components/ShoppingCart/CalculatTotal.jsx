@@ -18,7 +18,7 @@ class CalculatTotal extends Component {
     const { step, num, total, postageFee, product, order, showPay } = this.props;
     const { getPayment } = this.props; // class 获取 redux 参数步骤 - 2/5
     const { history } = this.props;
-    const promise = loadStripe(process.env.REACT_APP_STEIPE_KEY);
+    const promise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
     // console.log(product);
     // console.log(order);
 

@@ -78,12 +78,20 @@ function Header() {
             Vegetable
           </button>
 
-          <button
+          {/* <button
             onClick={() => history.push('/productions')}
             type="button"
             className="page-header__desktop--button-words"
           >
             Production
+          </button> */}
+
+          <button
+            onClick={() => history.push('/service')}
+            type="button"
+            className="page-header__desktop--button-words"
+          >
+            Customer service
           </button>
          
 
