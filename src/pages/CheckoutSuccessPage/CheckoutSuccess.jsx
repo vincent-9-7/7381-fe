@@ -7,9 +7,6 @@ export default function CheckoutSuccess({ orderData }) {
   console.log(orderData);
 
   const refersh = () => {
-    sessionStorage.removeItem('cart');
-    sessionStorage.removeItem('total');
-    sessionStorage.removeItem('checkout_products');
     document.location.href = '/';
   };
 

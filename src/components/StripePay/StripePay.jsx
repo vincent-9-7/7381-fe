@@ -89,13 +89,23 @@ export default function StripePay({ price, paystatus, data }) {
     // console.log(JSON.stringify(data));
     // data.payment = true;
     const orderData = data;
-    if(orderData) {
+    if (orderData) {
       orderData.payment = true;
     }
     // console.log(data.payment);
     dispatch(postOrderRequest(JSON.stringify(orderData)));
+    sessionStorage.removeItem('cart');
+    sessionStorage.removeItem('total');
+    sessionStorage.removeItem('checkout_products');
     document.location.href = '/success';
   }
+
+  const cardInfo = {
+    success: 4242424242424242,
+    incorrect_cvc: 4000000000000127,
+    'Authentication required': 4000002760003184,
+  };
+  console.log(`Testing card: ${JSON.stringify(cardInfo)}`);
 
   return (
     <div>
