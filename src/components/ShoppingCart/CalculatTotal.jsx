@@ -28,7 +28,8 @@ class CalculatTotal extends Component {
         <div className="cart__right--border">
           <div className="cart__right--line">
             {/* <h3>Items ({num})</h3> */}
-            <h3>{`Subtotal (${num} items)`}</h3>
+            {num === null && <h3>Subtotal</h3>}
+            {num !== null && <h3>{`Subtotal (${num} items)`}</h3>}
             <h3>{`$${total}`}</h3>
           </div>
 

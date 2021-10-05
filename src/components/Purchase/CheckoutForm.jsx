@@ -102,7 +102,7 @@ class CheckoutForm extends Component {
                 <div key={item._id} className="checkout-form__review">
                   <div className="checkout-form__review--left container">
                     <div className="checkout-form__review--firstline">
-                      <p style={{ fontSize: '0.8rem' }}>Seller: {item.title}</p>
+                      <p style={{ fontSize: '0.8rem' }}>Seller: {item.recipient}</p>
                       <a href="#message" style={{ color: 'blue', marginLeft: '15px' }}>
                         <p style={{ color: 'blue', fontSize: '0.8rem' }}>Message to seller</p>
                       </a>
@@ -111,12 +111,12 @@ class CheckoutForm extends Component {
                   </div>
 
                   <div className="checkout-form__review--right container">
-                    <h4>{item.title} 2kg</h4>
-                    <p>Condition: B-grade {item.category} </p>
+                    <h4>{item.title} {item.size}kg</h4>
+                    <p>Condition: B-grade, {item.category} </p>
                     <p>Location: South Brisbane </p>
                     <div style={{display:'flex',flexDirection:'row'}}>
                       <p>Quantity: </p>
-                      <h3 style={{color:'#95AB14', fontWeight:'bold'}}>&nbsp;{item.quantity} </h3>
+                      <h3 style={{color:'#95AB14', fontWeight:'bold'}}>&nbsp;{item.shoppingcartQuantity} </h3>
                     </div>
                     <p>Price: ${item.price}</p>
                     <p>Postage: Standard parcel Delivery (Free)</p>

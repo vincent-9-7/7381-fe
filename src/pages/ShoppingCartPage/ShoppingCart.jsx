@@ -24,7 +24,7 @@ class Cart extends Component {
     const { removeFromCart, addFromCart, deleteFromCart } = this.props;
     if(products.length <= 0){
       sessionStorage.removeItem('cart');
-      localStorage.removeItem('carts');
+      // localStorage.removeItem('carts');
     }
     return products.length <= 0 ? (
       <h3>Please add some products to cart.</h3>
@@ -33,7 +33,10 @@ class Cart extends Component {
         <ShoppingCartItem
           title={product.title}
           price={product.price}
-          quantity={product.quantity}
+          shoppingcartQuantity={product.shoppingcartQuantity}
+          leftQuantity={product.quantity}
+          soldQuantity={product.postQuantity - product.quantity}
+          size={product.size}
           key={product._id}
           onRemove={() => removeFromCart(product._id)}
           onAdd={() => addFromCart(product._id)}

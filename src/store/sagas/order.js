@@ -31,7 +31,7 @@ function* postOrder(action) {
     yield put({ type: 'POST_ORDER_FAILED', errorInSaga: result.errors });
   } else {
     yield put({ type: 'POST_ORDER_SUCCESS', returnMessage: data });
-    localStorage.setItem('orderHistory', JSON.stringify(action.payload));
+    // sessionStorage.setItem('orderHistory', JSON.stringify(action.payload));
   }
 }
 

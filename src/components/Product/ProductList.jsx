@@ -25,14 +25,14 @@ class ProductList extends Component {
 
     if (productType === 1) {
       for (let i = 0; i < products.length; i += 1) {
-        if (products[i].category === 'vegetable') {
+        if (products[i].category === 'Vegetable') {
           products.splice(i, 1); // 从i索引的位置，删除一个元素
           i -= 1;
         }
       }
     } else if (productType === 2) {
       for (let i = 0; i < products.length; i += 1) {
-        if (products[i].category === 'fruit') {
+        if (products[i].category === 'Fruit') {
           products.splice(i, 1); // 从i索引的位置，删除一个元素
           i -= 1;
         }

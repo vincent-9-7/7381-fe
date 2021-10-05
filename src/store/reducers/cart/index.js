@@ -34,7 +34,7 @@ export function getTotal(state) {
 export function getCartProducts(state) {
   return getAddedIds(state.cart).map(_id => ({
     ...getProduct(state.products, _id),
-    quantity: getQuantity(state.cart, _id)
+    shoppingcartQuantity: getQuantity(state.cart, _id)
   }));
 }
 
