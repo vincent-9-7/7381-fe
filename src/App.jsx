@@ -9,6 +9,8 @@ import ProductPage from './pages/ProductionPage/Production';
 import ShoppingCart from './pages/ShoppingCartPage/ShoppingCart';
 import Checkout from './pages/CheckoutPage/Checkout';
 import CheckoutSuccess from './pages/CheckoutSuccessPage/CheckoutSuccess';
+import CustomerService from './pages/CustomerServicePage/CustomerService';
+import AboutUs from './pages/AboutUsPage/AboutUs';
 
 import RoleSeclectPage from './pages/SigninPage/RoleSelectPage';
 import SigninPage from './pages/SigninPage/SigninPage';
@@ -26,6 +28,12 @@ import Saga from './workflow/saga_tutorial/Saga';
 import ItemDetailPage from './pages/ItemDetailPage/ItemDetailPage';
 
 function App() {
+  // 刷新时删除这些session
+  window.onunload = function remove () {
+    sessionStorage.removeItem('cart');
+    sessionStorage.removeItem('total');
+    sessionStorage.removeItem('checkout_products');
+  };
   return (
     <BrowserRouter>
       <Switch>
@@ -42,11 +50,12 @@ function App() {
         <Route path="/vegetable" exact component={VegetablePage} />
         <Route path="/vegetable/:id" exact component={ComingSoon} />
 
-        <Route path="/about-us" exact component={ComingSoon} />
+        {/* <Route path="/about-us" exact component={AboutUs} /> */}
 
         <Route path="/shopping-cart" exact component={ShoppingCart} />
         <Route path="/checkout" exact component={Checkout} />
         <Route path="/success" exact component={CheckoutSuccess} />
+        <Route path="/service" exact component={CustomerService} />
 
         <Route path="/role-select" exact component={RoleSeclectPage} />
         <Route path="/signin" exact component={SigninPage} />
