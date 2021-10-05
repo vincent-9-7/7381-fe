@@ -11,8 +11,18 @@ export default class ShoppingCartItem extends Component {
   }
 
   render() {
-    const { price, shoppingcartQuantity, leftQuantity, soldQuantity, title, onRemove, onAdd, onDelete, size } =
-      this.props;
+    const {
+      price,
+      condition,
+      shoppingcartQuantity,
+      leftQuantity,
+      soldQuantity,
+      title,
+      onRemove,
+      onAdd,
+      onDelete,
+      size,
+    } = this.props;
 
     return (
       <ShoppingCartItemDetails
@@ -20,6 +30,7 @@ export default class ShoppingCartItem extends Component {
         shoppingcartQuantity={shoppingcartQuantity}
         leftQuantity={leftQuantity}
         soldQuantity={soldQuantity}
+        condition={condition}
         title={title}
         size={size}
         removeButton={

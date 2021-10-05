@@ -116,7 +116,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <Footer />
+        <Footer color="white" />
       </div>
     );
   }

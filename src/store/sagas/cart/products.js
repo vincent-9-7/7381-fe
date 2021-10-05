@@ -17,6 +17,15 @@ export function* getAllProducts() {
 
   const totalData = fruitData.data.concat(VegetableData.data);
   console.log(totalData); // Bgrade+production全部产品
+  
+  for (let i = 0; i < totalData.length; i += 1) {
+    if (totalData[i].quantity === 0) {
+      totalData.splice(i, 1); // 从i索引的位置，删除一个元素
+      i -= 1;
+    }
+  }
+  console.log(totalData); // Bgrade+production全部产品
+
   // const products = yield call(api.getProducts);
   // console.log(products);
   yield put(actions.receiveProducts(totalData));

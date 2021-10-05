@@ -14,7 +14,7 @@ class FruitPage extends Component {
     return (
       <>
         <Header />
-        {/* 1:Fruit 2:Vegetable 3:ALL */}
+        {/* 1:Fruit 2:Vegetable 3:ALL 4.Search items */}
         <ProductList productType={1} history={history} />
         <Footer />
       </>
