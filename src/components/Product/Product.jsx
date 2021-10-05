@@ -26,7 +26,7 @@ export default class Product extends Component {
     // console.log(num);
     let oldPrice = false;
     if(num !== undefined){
-      oldPrice = `AU $${product.price*1.4}`; // 首页old price
+      oldPrice = `AU $${(product.price*1.4).toFixed(2)}`; // 首页old price,保留两位小数
     }
     return (
       <div
@@ -36,7 +36,7 @@ export default class Product extends Component {
           brand={product.brand}
           button={this.addToCartButton(product)}
           image={box}
-          title={`${product.title} ${product.quantity}kg`}
+          title={`${product.title} ${product.size}kg`}
           delivery="free delivery"
           description={product.description}
           oldPrice={oldPrice}

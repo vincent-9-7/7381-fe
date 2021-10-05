@@ -29,7 +29,7 @@ class Checkout extends Component {
     const orderItems = [];
     let itemNum = 0;
     checkoutItems.forEach((product) => {
-      itemNum += product.quantity;
+      itemNum += product.shoppingcartQuantity;
     });
 
     // 判断是否填满require信息，不填满不显示右侧支付按钮
@@ -41,7 +41,7 @@ class Checkout extends Component {
       orderData.price = totalPrice;
       checkoutItems.forEach((product) => {
         const obj = {};
-        obj[product._id] = [product.condition, product.quantity];
+        obj[product._id] = [product.condition, product.shoppingcartQuantity];
         orderItems.push(obj);
       });
       orderData.orderList = orderItems; // 将选中item添加进列表并赋值
