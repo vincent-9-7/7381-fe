@@ -36,6 +36,7 @@ class Cart extends Component {
           shoppingcartQuantity={product.shoppingcartQuantity}
           leftQuantity={product.quantity}
           soldQuantity={product.postQuantity - product.quantity}
+          condition={product.condition}
           size={product.size}
           key={product._id}
           onRemove={() => removeFromCart(product._id)}

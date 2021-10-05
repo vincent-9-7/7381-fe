@@ -24,6 +24,7 @@ export default class ShoppingCartItemDetails extends Component {
       removeButton,
       addButton,
       deleteButton,
+      condition,
       inventory,
     } = this.props;
     // console.log(brand);
@@ -40,7 +41,7 @@ export default class ShoppingCartItemDetails extends Component {
             <h4 style={{ padding: '0', margin: '1rem 0 0 0' }}>
               {title} {size}kg
             </h4>
-            <p style={{ fontSize: '1em', fontWeight: '400', padding: '0', margin: '5px 0 0 0' }}>B-grade</p>
+            <p style={{ fontSize: '1em', fontWeight: '400', padding: '0', margin: '5px 0 0 0' }}>{condition}</p>
             <p style={{ color: 'gray', fontSize: '1em', fontWeight: '400', marginTop: '5px' }}>
               Standard Parcel Delivery
             </p>

@@ -112,7 +112,7 @@ class CheckoutForm extends Component {
 
                   <div className="checkout-form__review--right container">
                     <h4>{item.title} {item.size}kg</h4>
-                    <p>Condition: B-grade, {item.category} </p>
+                    <p>Condition: {item.condition}, {item.category} </p>
                     <p>Location: South Brisbane </p>
                     <div style={{display:'flex',flexDirection:'row'}}>
                       <p>Quantity: </p>
