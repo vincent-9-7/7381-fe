@@ -3,6 +3,7 @@
 
 import React, { useState } from 'react';
 import Select from 'react-select';
+// import { useHistory } from 'react-router-dom';
 import './SearchBar.scss';
 
 
@@ -47,15 +48,11 @@ const options = [
   { value: '100', label: '100 km' },
 ];
 
+
 function SearchBar() {
   const [data, setData] = useState(null);
-  console.log(data);
-  const searchFunc = () => {
-    console.log('search');
-    // document.location.href = '/productions';
-    document.location.href = '/search?name=Apple';
+  // console.log(data);
 
-  };
   return (
     <div>
       <div className="search-bar">
@@ -68,10 +65,10 @@ function SearchBar() {
               onChange={setData}
               options={options}
               styles={customStyles}
-            // isMulti
-            // isClearable
+              // isMulti
+              // isClearable
             />
-            <button type="button" onClick={searchFunc} className="btn--search">
+            <button type="submit" className="btn--search">
               Search
             </button>
           </div>
@@ -83,15 +80,14 @@ function SearchBar() {
 
 // function SearchBar() {
 //   const [data, setData] = useState(null);
-//   const options = [
-//     { value: '5', label: '5 KM' },
-//     { value: '10', label: '10 KM' },
-//     { value: '20', label: '20 KM' },
-//     { value: '50', label: '50 KM' },
-//     { value: '100', label: '100 km' },
-//   ];
 //   console.log(data);
+//   // const history = useHistory();
 
+//   // const searchFunc = () => {
+//   //   console.log('search');
+//   //   // document.location.href = '/search?name=Apple';
+//   //   history.push('/search?name=Apple');
+//   // };
 //   return (
 //     <div>
 //       <div className="search-bar">
@@ -104,10 +100,10 @@ function SearchBar() {
 //               onChange={setData}
 //               options={options}
 //               styles={customStyles}
-//               // isMulti
-//               // isClearable
+//             // isMulti
+//             // isClearable
 //             />
-//             <button type="submit" className="btn--search">
+//             <button type="button" onClick={searchFunc} className="btn--search">
 //               Search
 //             </button>
 //           </div>
@@ -116,5 +112,6 @@ function SearchBar() {
 //     </div>
 //   );
 // }
+
 
 export default SearchBar;
