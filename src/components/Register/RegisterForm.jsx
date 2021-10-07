@@ -11,9 +11,10 @@ import Load from '../../workflow/saga_tutorial/Load';
 
 function RegisterForm(props) {
   const [cookies] = useCookies(['joinin-cookie-name'])
-  const user = cookies.register
+  // const user = cookies.register
+
+  const user = sessionStorage.getItem('register')
   console.log(user);
-  // const user = sessionStorage.getItem('register')
   const { control, handleSubmit, register } = useForm()
   const dispatch = useDispatch();
   const onSubmit = (data) => {
