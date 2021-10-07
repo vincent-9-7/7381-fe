@@ -8,13 +8,13 @@ export function getCart(state) {
   return state.cart;
 }
 
-export function getCheckoutError(state) {
-  return state.cart.checkoutStatus.error;
-}
+// export function getCheckoutError(state) {
+//   return state.cart.checkoutStatus.error;
+// }
 
-export function isCheckoutPending(state) {
-  return state.cart.checkoutStatus.checkoutPending;
-}
+// export function isCheckoutPending(state) {
+//   return state.cart.checkoutStatus.checkoutPending;
+// }
 
 export function getTotal(state) {
   
@@ -34,7 +34,7 @@ export function getTotal(state) {
 export function getCartProducts(state) {
   return getAddedIds(state.cart).map(_id => ({
     ...getProduct(state.products, _id),
-    quantity: getQuantity(state.cart, _id)
+    shoppingcartQuantity: getQuantity(state.cart, _id)
   }));
 }
 

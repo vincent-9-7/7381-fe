@@ -4,13 +4,12 @@ import { checkout, addFromCart, removeFromCart, deleteFromCart } from '../../sto
 import {
   getTotal,
   getCartProducts,
-  getCheckoutError,
-  isCheckoutPending,
+  // getCheckoutError,
+  // isCheckoutPending,
 } from '../../store/reducers/cart/index';
 import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 import ShoppingCartItem from '../../components/ShoppingCart/ShoppingCartItem';
-import Purchase from '../../components/Purchase/Purchase';
 import CalculatTotal from '../../components/ShoppingCart/CalculatTotal';
 import './ShoppingCart.scss';
 
@@ -25,7 +24,7 @@ class Cart extends Component {
     const { removeFromCart, addFromCart, deleteFromCart } = this.props;
     if(products.length <= 0){
       sessionStorage.removeItem('cart');
-      localStorage.removeItem('carts');
+      // localStorage.removeItem('carts');
     }
     return products.length <= 0 ? (
       <h3>Please add some products to cart.</h3>
@@ -34,7 +33,11 @@ class Cart extends Component {
         <ShoppingCartItem
           title={product.title}
           price={product.price}
-          quantity={product.quantity}
+          shoppingcartQuantity={product.shoppingcartQuantity}
+          leftQuantity={product.quantity}
+          soldQuantity={product.postQuantity - product.quantity}
+          condition={product.condition}
+          size={product.size}
           key={product._id}
           onRemove={() => removeFromCart(product._id)}
           onAdd={() => addFromCart(product._id)}
@@ -46,9 +49,11 @@ class Cart extends Component {
   }
 
   render() {
-    const { products, total, error, checkoutPending, checkout } = this.props;
-    const checkoutAllowed = products.length > 0 && !checkoutPending;
+    // const { products, total, error, checkoutPending, checkout } = this.props;
+    const { products, total} = this.props;
+    // const checkoutAllowed = products.length > 0 && !checkoutPending;
     const { history } = this.props;
+    console.log(products);
     return (
       <>
         <Header />
@@ -65,7 +70,7 @@ class Cart extends Component {
             {/* <Purchase /> */}
             <div className="cart__checkout">
               <p style={{ fontSize: '1.5em' }}>Subtotal:&nbsp;</p>
-              <p style={{ fontSize: '1.5em', fontWeight: 'bold' }}>AU ${total}</p>
+              <p style={{ fontSize: '1.5em', fontWeight: 'bold' }}>${total}</p>
               {/* <button
                 className="btn--search"
                 onClick={checkout}
@@ -78,7 +83,8 @@ class Cart extends Component {
           </div>
 
           <div className="cart__right">
-            <CalculatTotal num={2} total={total} postageFee="Free" history={history} />
+            {/* Step:1 第一次结账预览 2:第二次结账 */}
+            <CalculatTotal product={products} step={1} num={null} total={total} postageFee="Free" history={history} />
           </div>
         </div>
         <Footer />
@@ -91,8 +97,8 @@ function mapStateToProps(state) {
   return {
     products: getCartProducts(state),
     total: getTotal(state),
-    error: getCheckoutError(state),
-    checkoutPending: isCheckoutPending(state),
+    // error: getCheckoutError(state),
+    // checkoutPending: isCheckoutPending(state),
   };
 }
 

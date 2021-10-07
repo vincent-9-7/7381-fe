@@ -8,6 +8,9 @@ import VegetablePage from './pages/VegetablePage/Vegetable';
 import ProductPage from './pages/ProductionPage/Production';
 import ShoppingCart from './pages/ShoppingCartPage/ShoppingCart';
 import Checkout from './pages/CheckoutPage/Checkout';
+import CheckoutSuccess from './pages/CheckoutSuccessPage/CheckoutSuccess';
+import CustomerService from './pages/CustomerServicePage/CustomerService';
+import AboutUs from './pages/AboutUsPage/AboutUs';
 
 import RoleSeclectPage from './pages/SigninPage/RoleSelectPage';
 import SigninPage from './pages/SigninPage/SigninPage';
@@ -17,7 +20,7 @@ import OverviewPage from './pages/OverviewPage/OverviewPage';
 
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ComingSoon from './pages/ComingSoonPage/ComingSoonPage';
-import UploadImages from './pages/PostPage/PostPage';
+import PostPage from './pages/PostPage/PostPage';
 import TestImport from './workflow/import_example/Test';
 import Flex from './workflow/flexbox/Flex';
 import Button from './workflow/button/Button';
@@ -25,6 +28,12 @@ import Saga from './workflow/saga_tutorial/Saga';
 import ItemDetailPage from './pages/ItemDetailPage/ItemDetailPage';
 
 function App() {
+  // 刷新时删除这些session
+  window.onunload = function remove () {
+    sessionStorage.removeItem('cart');
+    sessionStorage.removeItem('total');
+    sessionStorage.removeItem('checkout_products');
+  };
   return (
     <BrowserRouter>
       <Switch>
@@ -41,11 +50,12 @@ function App() {
         <Route path="/vegetable" exact component={VegetablePage} />
         <Route path="/vegetable/:id" exact component={ComingSoon} />
 
-        <Route path="/about-us" exact component={ComingSoon} />
+        {/* <Route path="/about-us" exact component={AboutUs} /> */}
 
         <Route path="/shopping-cart" exact component={ShoppingCart} />
         <Route path="/checkout" exact component={Checkout} />
-
+        <Route path="/success" exact component={CheckoutSuccess} />
+        <Route path="/service" exact component={CustomerService} />
 
         <Route path="/role-select" exact component={RoleSeclectPage} />
         <Route path="/signin" exact component={SigninPage} />
@@ -54,7 +64,7 @@ function App() {
 
         <Route path="/profile" exact component={ComingSoon} />
         <Route path="/shopping-cart" exact component={ComingSoon} />
-        <Route path="/upload" exact component={UploadImages} />
+        <Route path="/post" exact component={PostPage} />
         {/* <ProtectedRoute path="/order" exact component={Order} /> */}
         {/* <Redirect exact from="/admin" to="/admin/dashboard" /> */}
 

@@ -124,3 +124,40 @@ export const getAllVegetableFailed = (err) => ({
   type: actionTypes.GET_ALLVEGETABLE_FAILED,
   payload: err,
 });
+
+export const postItemsRequest = (req) => ({
+  type: actionTypes.POST_ITEMS_REQUEST,
+  payload: req,
+});
+export const postItemsSuccess = (dataList) => ({
+  type: actionTypes.POST_ITEMS_SUCCESS,
+  payload: dataList,
+});
+export const postItemsFailed = (err) => ({
+  type: actionTypes.POST_ITEMS_FAILED,
+  payload: err,
+});
+
+// CHECKOUT AND POST order to database
+export const checkoutOrderRequest = (req) => ({
+  type: actionTypes.PAY_ORDER_REQUEST,
+  payload: req,
+});
+export const checkoutOrderSuccess = (obj) => ({
+  type: actionTypes.PAY_ORDER_SUCCESS,
+  payload: obj,
+});
+export const postOrderRequest = (obj) => ({
+  type: actionTypes.POST_ORDER_REQUEST,
+  payload: obj,
+});
+export const postOrderSuccess = (obj) => ({
+  type: actionTypes.POST_ORDER_SUCCESS,
+  payload: obj,
+});
+export function postOrderFaild(err) {
+  return {
+    type: actionTypes.POST_ORDER_FAILED,
+    payload: err,
+  };
+}

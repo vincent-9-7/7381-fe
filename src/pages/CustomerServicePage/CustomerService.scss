@@ -1,0 +1,49 @@
+@import '../../assets/scss/color.scss';
+
+.customer {
+  margin-top: 20px;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  &__cards-background {
+    background-color: rgba($color: $green-light, $alpha: 0.36);
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__contact {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  &__contact--image {
+    width: 400px;
+    height: 400px;
+  }
+
+  &__contact-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__contact--icon {
+    display: flex;
+  }
+
+  &__contact--email,
+  &__contact--phone {
+    width: 20px;
+    height: 20px;
+  }
+}

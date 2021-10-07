@@ -58,6 +58,14 @@ function Header() {
             <img src={Bmarket} alt="B" className="page-header__logo" />
           </button>
 
+          {/* <button
+            onClick={() => history.push('/about-us')}
+            type="button"
+            className="page-header__desktop--button-words"
+          >
+            About us
+          </button> */}
+
           <button onClick={() => history.push('/fruit')} type="button" className="page-header__desktop--button-words">
             Fruit
           </button>
@@ -70,44 +78,26 @@ function Header() {
             Vegetable
           </button>
 
-          <button
+          {/* <button
             onClick={() => history.push('/productions')}
             type="button"
             className="page-header__desktop--button-words"
           >
             Production
-          </button>
+          </button> */}
 
-          <button
-            onClick={() => history.push('/about-us')}
-            type="button"
-            className="page-header__desktop--button-words"
-          >
-            About us
+          <button onClick={() => history.push('/service')} type="button" className="page-header__desktop--button-words">
+            Customer service
           </button>
 
           <div className="page-header__desktop--four-icons">
-            <div className="page-header__desktop--left-two-icons">
-              <button
-                onClick={() => history.push('/role-select')}
-                type="button"
-                className="page-header__desktop--button-words"
-              >
-                Sign in
-              </button>
-
-              <button onClick={() => history.push('/profile')} type="button" className="page-header__desktop--button">
-                <img src={User} alt="B" className="page-header__user" />
-              </button>
-            </div>
-
             <div className="page-header__desktop--right-two-icons">
               <button
                 onClick={() => history.push('/join-in')}
                 type="button"
                 className="page-header__desktop--button-words"
               >
-                Join
+                Join in
               </button>
               {notEmpty ? (
                 <button // 购物车内有东西
@@ -127,6 +117,20 @@ function Header() {
                   <img src={Cart} alt="B" className="page-header__cart" />
                 </button>
               )}
+            </div>
+
+            <div className="page-header__desktop--left-two-icons">
+              <button
+                onClick={() => history.push('/role-select')}
+                type="button"
+                className="page-header__desktop--button-words"
+              >
+                Sign in
+              </button>
+
+              <button onClick={() => history.push('/profile')} type="button" className="page-header__desktop--button">
+                <img src={User} alt="user" className="page-header__user" />
+              </button>
             </div>
           </div>
         </div>

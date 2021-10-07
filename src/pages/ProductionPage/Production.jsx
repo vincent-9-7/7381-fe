@@ -10,12 +10,16 @@ class ProductPage extends Component {
   }
 
   render() {
-    const { history } = this.props;
+    const { history,match } = this.props;
+    // if(match.path === "/search") {
+    //   console.log('search');
+    // }
     return (
       <>
         <Header cart={false} />
-        {/* 1:Fruit 2:Vegetable 3:ALL */}
-        <ProductList productType={3} history={history} />
+        {/* 1:Fruit 2:Vegetable 3:ALL 4.Search items */}
+        {match.path !== "/search" && <ProductList productType={3} history={history} />}
+        {match.path === "/search" && <ProductList productType={4} history={history} />}
         <Footer />
       </>
     );

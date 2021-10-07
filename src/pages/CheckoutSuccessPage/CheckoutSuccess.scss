@@ -1,0 +1,13 @@
+@import '../../assets/scss/color.scss';
+
+.success {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  min-height: 80vh;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  &__words {
+    font-size: 2rem;
+  }
+}
