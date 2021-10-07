@@ -83,6 +83,47 @@ export const signSellerFailed = (err) => ({
   payload: err,
 });
 
+// Get one item
+export const getItemRequest = (req) => ({
+  type: actionTypes.GET_ITEM_REQUEST,
+  payload: req,
+});
+export const getItemSuccess = (dataList) => ({
+  type: actionTypes.GET_ITEM_SUCCESS,
+  payload: dataList,
+});
+export const getItemFailed = (err) => ({
+  type: actionTypes.GET_ITEM_FAILED,
+  payload: err,
+});
+
+// Get all fruit
+export const getAllFruitRequest = (req) => ({
+  type: actionTypes.GET_ALLFRUIT_REQUEST,
+  payload: req,
+});
+export const getAllFruitSuccess = (dataList) => ({
+  type: actionTypes.GET_ALLFRUIT_SUCCESS,
+  payload: dataList,
+});
+export const getAllFruitFailed = (err) => ({
+  type: actionTypes.GET_ALLFRUIT_FAILED,
+  payload: err,
+});
+
+// Get all vegetable
+export const getAllVegetableRequest = (req) => ({
+  type: actionTypes.GET_ALLVEGETABLE_REQUEST,
+  payload: req,
+});
+export const getAllVegetableSuccess = (dataList) => ({
+  type: actionTypes.GET_ALLVEGETABLE_SUCCESS,
+  payload: dataList,
+});
+export const getAllVegetableFailed = (err) => ({
+  type: actionTypes.GET_ALLVEGETABLE_FAILED,
+  payload: err,
+});
 
 export const postItemsRequest = (req) => ({
   type: actionTypes.POST_ITEMS_REQUEST,
@@ -108,7 +149,7 @@ export const checkoutOrderSuccess = (obj) => ({
 });
 export const postOrderRequest = (obj) => ({
   type: actionTypes.POST_ORDER_REQUEST,
-  payload: obj, 
+  payload: obj,
 });
 export const postOrderSuccess = (obj) => ({
   type: actionTypes.POST_ORDER_SUCCESS,

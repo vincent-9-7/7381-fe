@@ -23,7 +23,6 @@ function OverviewFilter() {
         displayValue="key"
         singleSelect
         placeholder='Condition'
-
       />
       <hr />
       <Multiselect

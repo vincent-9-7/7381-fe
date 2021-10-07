@@ -13,15 +13,14 @@ import { signinBuyerRequest, signinSellerRequest, signSellerFailed } from '../..
 
 function Signin(props) {
   const { data } = props;
-  // const user = sessionStorage.getItem('signin')
+  const user = sessionStorage.getItem('signin')
   const { control, handleSubmit, register } = useForm()
   const dispatch = useDispatch();
-  const [cookies] = useCookies(['signin-cookie-name'])
-  const user = cookies.signin
   console.log(user);
 
 
   const onSubmit = (data) => {
+    sessionStorage.setItem('signed', 'yes')
     if (user === 'buyer') {
       // console.log(data);
       dispatch(signinBuyerRequest(data));

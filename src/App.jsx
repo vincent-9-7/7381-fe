@@ -79,7 +79,7 @@ function App() {
 
         <Route path="/overview" exact component={OverviewPage} />
         {/* For test */}
-        <Route path="/item" exact component={ItemDetailPage} />
+        <Route path="/get/:id" exact component={ItemDetailPage} />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>

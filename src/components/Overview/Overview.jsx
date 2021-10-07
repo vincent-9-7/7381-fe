@@ -2,16 +2,17 @@ import React from 'react';
 import './Overview.scss';
 
 function OverviewList(props) {
-  const { image, title, delivery, description, oldPrice, price } = props;
+  const { image, title, delivery, description, oldPrice, price, id } = props;
+  console.log(props);
   return (
     <div>
       <div className="home-page__deals--card">
         {/* Image */}
-        <img src={image} alt={title} className="home-page__deals--image" />
+        <a href={`./get/${id}`}><img src={image} alt={title} className="home-page__deals--image" /></a>
 
         <div className="home-page__deals--describes">
           {/* Title */}
-          <h3>{title}</h3>
+          <h3 style={{ fontSize: 'large' }}>{title}</h3>
           {/* Price */}
           <div className="home-page__deals--describe-price">
             {

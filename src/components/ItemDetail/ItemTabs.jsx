@@ -2,10 +2,14 @@ import React from 'react';
 import CoolTabs from 'react-cool-tabs';
 import './ItemDetail.scss';
 
-function ItemTabs() {
+function ItemTabs(props) {
+  const { description } = props;
+
+
   return (<>
     {/** Tabs */}
     <div className="item-detail-page__bottom">
+      {/** 这里的description怎么处理？ */}
       <div className="container">
         <CoolTabs
           leftTabTitle={<h3 style={{ fontWeight: 'bold' }}>Product Details</h3>}
@@ -21,6 +25,8 @@ function ItemTabs() {
           contentContainerStyle={{ marginTop: "60px" }}
           leftContent={
             <div>
+              {description}
+              <p />
               <strong>Banana Fun Facts!</strong>
               <p />
               <p>

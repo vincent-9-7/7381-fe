@@ -4,18 +4,21 @@ import Footer from '../../components/PageFooter/PageFooter';
 import Header from '../../components/PageHeader/PageHeader';
 import '../RegisterPage/RegisterPage.scss';
 import Seller from "../../assets/img/Seller.png";
+import UserAvator from "../../assets/img/UserAvator.svg";
+import ShopAvator from "../../assets/img/ShopAvator.svg";
 import { ExpireOneHour } from '../../components/ExpiresTime/ExpiresTime';
+import PageTitle from '../../components/PageTitle/PageTitle';
 
 function RoleSeclectPage() {
   const [cookies, setCookie] = useCookies(['signin-cookie-name']);
   const handleOnClick = () => {
     setCookie('signin', "seller", { path: '/', expires: ExpireOneHour() });
-    // sessionStorage.setItem('signin', "seller");
+    sessionStorage.setItem('signin', "seller");
     document.location.href = "/signin";
   };
   const handleOnClick2 = () => {
     setCookie('signin', "buyer", { path: '/', expires: ExpireOneHour() });
-    // sessionStorage.setItem('signin', "buyer");
+    sessionStorage.setItem('signin', "buyer");
     document.location.href = "/signin";
   };
 
@@ -23,8 +26,10 @@ function RoleSeclectPage() {
     <>
       <Header />
       <div className="container">
+        <PageTitle text="Sign in as a Seller or Buyer? " />
         <div className="role-selection">
-          <h1>Sign in as a Seller or Buyer? </h1>
+          {/* <PageTitle text="Sign in as a Seller or Buyer? " /> */}
+          {/* <h1>Sign in as a Seller or Buyer? </h1> */}
           <div className="avators">
             <div style={{ display: "flex", textAlign: "center", flexDirection: "column" }}>
               <button
@@ -32,18 +37,18 @@ function RoleSeclectPage() {
                 type="button"
                 style={{ marginRight: "50px" }}
               >
-                <img src={Seller} alt="seller" />
+                <img src={UserAvator} alt="seller" />
               </button>
-              <h3 style={{ marginRight: "50px" }}>Join as a Seller</h3>
+              {/* <h3 style={{ marginRight: "50px" }}>Join as a Seller</h3> */}
             </div>
             <div style={{ display: "flex", textAlign: "center", flexDirection: "column" }}>
               <button
                 onClick={handleOnClick2}
                 type="button"
                 style={{ marginLeft: "50px" }}
-              ><img src={Seller} alt="buyer" />
+              ><img src={ShopAvator} alt="buyer" />
               </button>
-              <h3 style={{ marginLeft: "50px" }}>Join as a Buyer</h3>
+              {/* <h3 style={{ marginLeft: "50px" }}>Join as a Buyer</h3> */}
             </div>
           </div>
         </div>

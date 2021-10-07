@@ -1,5 +1,4 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { useCookies } from 'react-cookie';
 import axios from 'axios';
 import url from "../../api/api";
 import header from '../../api/header';
@@ -24,12 +23,11 @@ function* userDetail(action) {
 
 function* buyerRegister(action) {
 
-  // const [cookies] = useCookies(['joinin-cookie-name']);
+
 
   try {
     // const user = sessionStorage.getItem('register');
     // In valid hook call
-    // const user = cookies.register;
     // console.log(user);
     const buyerInfo = yield call(axios.post, `${url}/buyer/registration`, action.payload, header());
     // items对应的是 reducer/user.js里的第35行的items
@@ -41,12 +39,12 @@ function* buyerRegister(action) {
     document.location.href = './';
   } catch (e) {
     console.log(e);
+    alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'BUYER_REGISTER_FAILED', payload: e });
   }
 }
 
 function* sellerRegister(action) {
-  // const [cookies] = useCookies(['joinin-cookie-name']);
   try {
     // const user = sessionStorage.getItem('register');
 
@@ -55,45 +53,48 @@ function* sellerRegister(action) {
     console.log(sellerInfo);
     console.log(sellerInfo.data);
     yield put({ type: 'SELLER_REGISTER_SUCCESS', payload: sellerInfo.data });
-    // localStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
+    localStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
     document.location.href = './';
   } catch (e) {
+    alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'SELLER_REGISTER_FAILED', payload: e });
   }
 }
 
 function* buyerSignin(action) {
-  // const [cookies] = useCookies(['signin-cookie-name']);
   try {
     // const user = sessionStorage.getItem('signin');
-
-    // const user = cookies.register;
     const buyerInfo = yield call(axios.post, `${url}/buyer/login`, action.payload, header());
     console.log(buyerInfo);
     console.log(buyerInfo.data);
+    console.log(action.payload);
 
     yield put({ type: 'BUYER_SIGNIN_SUCCESS', payload: buyerInfo.data });
+    // 暂时啥都没有
     sessionStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
+    sessionStorage.setItem('buyerID', JSON.stringify(buyerInfo.data.ObjectId));
+    sessionStorage.setItem('buyerUsername', JSON.stringify(buyerInfo.data.username));
     document.location.href = './';
   } catch (e) {
+    alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'BUYER_SIGNIN_FAILED', payload: e });
   }
 }
 
 function* sellerSignin(action) {
-  // const [cookies] = useCookies(['signin-cookie-name']);
   try {
     // const user = sessionStorage.getItem('signin');
-
-    // const user = cookies.register;
     const sellerInfo = yield call(axios.post, `${url}/seller/login`, action.payload, header());
     console.log(sellerInfo);
     console.log(sellerInfo.data);
 
     yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: sellerInfo.data });
     sessionStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
+    sessionStorage.setItem('sellerID', JSON.stringify(sellerInfo.data.ObjectId));
+    sessionStorage.setItem('sellerUsername', JSON.stringify(sellerInfo.data.username));
     document.location.href = './';
   } catch (e) {
+    alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'SELLER_SIGNIN_FAILED', payload: e });
   }
 }
