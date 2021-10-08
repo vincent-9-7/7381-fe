@@ -20,12 +20,14 @@ function Signin(props) {
 
 
   const onSubmit = (data) => {
-    sessionStorage.setItem('signed', 'yes')
+
     if (user === 'buyer') {
       // console.log(data);
       dispatch(signinBuyerRequest(data));
+      // sessionStorage.setItem('signed', 'yes')
     } else if (user === 'seller') {
       dispatch(signinSellerRequest(data));
+      // sessionStorage.setItem('signed', 'yes')
     } else {
       alert("Your message is not correct, please check your email or password! ")
     }

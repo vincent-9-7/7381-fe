@@ -126,7 +126,7 @@ function RegisterForm(props) {
 
 
 
-          <button onSubmit={handleSubmit(onSubmit)} className="btn--register" style={{ margin: "0 auto", marginTop: "30px", marginBottom: "10px" }}>SIGN IN</button>
+          <button onSubmit={handleSubmit(onSubmit)} className="btn--register" style={{ margin: "0 auto", marginTop: "30px", marginBottom: "10px" }}>JOIN IN</button>
           <span>Already a B market one member?<a href="/signin" className="create-account"> Sign in </a></span>
         </form>
       </div>

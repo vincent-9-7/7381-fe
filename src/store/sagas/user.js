@@ -71,6 +71,7 @@ function* buyerSignin(action) {
 
     yield put({ type: 'BUYER_SIGNIN_SUCCESS', payload: buyerInfo.data });
     // 暂时啥都没有
+    sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
     sessionStorage.setItem('buyerID', JSON.stringify(buyerInfo.data.ObjectId));
     sessionStorage.setItem('buyerUsername', JSON.stringify(buyerInfo.data.username));
@@ -89,6 +90,7 @@ function* sellerSignin(action) {
     console.log(sellerInfo.data);
 
     yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: sellerInfo.data });
+    sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
     sessionStorage.setItem('sellerID', JSON.stringify(sellerInfo.data.ObjectId));
     sessionStorage.setItem('sellerUsername', JSON.stringify(sellerInfo.data.username));
