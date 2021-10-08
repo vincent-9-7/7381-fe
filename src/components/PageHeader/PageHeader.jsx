@@ -39,8 +39,10 @@ function Header() {
     sessionStorage.removeItem('sellerUsername');
     sessionStorage.removeItem('signed');
     sessionStorage.removeItem('total');
+    sessionStorage.removeItem('cart');
     sessionStorage.removeItem('checkout_products');
-    history.push('./');
+    // history.push('./');
+    document.location.href = "/";
   };
 
   return (
