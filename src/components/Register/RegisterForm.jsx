@@ -22,13 +22,14 @@ function RegisterForm(props) {
     console.log(data);
     if (password != reenterpwd) {
       alert("Password does not match! ")
-    }
-    if (user === 'buyer') {
-      dispatch(registerBuyerRequest(data));
-    } else if (user === 'seller') {
-      dispatch(registerSellerRequest(data));
     } else {
-      alert("You dont have a role yet. Please go back to select your role. ")
+      if (user === 'buyer') {
+        dispatch(registerBuyerRequest(data));
+      } else if (user === 'seller') {
+        dispatch(registerSellerRequest(data));
+      } else {
+        alert("You dont have a role yet. Please go back to select your role. ")
+      }
     }
   };
 
