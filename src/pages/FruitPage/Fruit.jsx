@@ -117,7 +117,7 @@ function FruitPage() {
   const newItems = result.slice((state - 1) * 9, state * 9);
   console.log(newItems);
 
-  const filteredNewItems = newItems.filter((index) => index.quantity === 0);
+  const filteredNewItems = newItems.filter((index) => index.quantity !== 0);
   console.log(filteredNewItems);
 
 

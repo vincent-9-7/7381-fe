@@ -38,6 +38,8 @@ function Header() {
     sessionStorage.removeItem('sellerID');
     sessionStorage.removeItem('sellerUsername');
     sessionStorage.removeItem('signed');
+    sessionStorage.removeItem('total');
+    sessionStorage.removeItem('checkout_products');
     history.push('./');
   };
 
