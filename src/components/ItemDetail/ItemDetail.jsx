@@ -3,7 +3,7 @@ import React from "react";
 import './ItemDetail.scss';
 
 function ItemDetail(props) {
-  const { title, condition, suburb, city, quantity, price, imageAddress, } = props;
+  const { title, condition, suburb, city, quantity, price, imageAddress, _id } = props;
   // const on
   console.log(props);
 

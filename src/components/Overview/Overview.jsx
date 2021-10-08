@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import './Overview.scss';
+import { addToCart } from "../../store/actions/cart/cart";
 
 function OverviewList(props) {
-  const { image, title, delivery, description, oldPrice, price, id } = props;
+  const { image, title, delivery, description, oldPrice, price, id, quantity, pageType } = props;
   console.log(props);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleOnClick = () => {
+    dispatch(addToCart(id));
+    window.sessionStorage.setItem("cart", true);
+    if (pageType === "fruit") {
+      history.push('./fruit');
+    } else {
+      history.push('./vegetable');
+    }
+  };
+
+
   return (
     <div>
       <div className="home-page__deals--card">
@@ -29,7 +46,7 @@ function OverviewList(props) {
             <button
               className="btn--add-to-cart"
               type="button"
-              onClick={() => (document.location.href = '/productions/101311')}
+              onClick={handleOnClick}
             >
               Add to cart
             </button>

@@ -171,7 +171,9 @@ function FruitPage() {
                     oldPrice={false}
                     price={`AU $${item.price}`}
                     id={`${item._id}`}
-                    condition={`${item.condition}`} />
+                    condition={`${item.condition}`}
+                    quantity={item.quantity}
+                    pageType="fruit" />
                 </div>
               ))}
             </div>

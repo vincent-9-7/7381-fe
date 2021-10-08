@@ -115,20 +115,7 @@ function Header() {
           {(sessionStorage.getItem('signed') === 'yes')
             && (
               <div className="page-header__desktop--four-icons">
-                <div className="page-header__desktop--left-two-icons">
-                  <button
-                    onClick={removeSignin}
-                    type="button"
-                    className="page-header__desktop--button-words"
-                  >
-                    Sign out
-                  </button>
 
-                  <button
-                    onClick={() => history.push('/profile')} type="button" className="page-header__desktop--button">
-                    <img src={User} alt="B" className="page-header__user" />
-                  </button>
-                </div>
 
                 <div className="page-header__desktop--right-two-icons">
                   {notEmpty ? (
@@ -149,6 +136,20 @@ function Header() {
                       <img src={Cart} alt="B" className="page-header__cart" />
                     </button>
                   )}
+                </div>
+                <div className="page-header__desktop--left-two-icons">
+                  <button
+                    onClick={removeSignin}
+                    type="button"
+                    className="page-header__desktop--button-words"
+                  >
+                    Sign out
+                  </button>
+
+                  <button
+                    onClick={() => history.push('/profile')} type="button" className="page-header__desktop--button">
+                    <img src={User} alt="B" className="page-header__user" />
+                  </button>
                 </div>
               </div>)}
           {/** Not login Status */}
