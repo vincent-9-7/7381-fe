@@ -115,7 +115,8 @@ function Overview(props) {
                     delivery="free delivery"
                     description={item.description}
                     oldPrice={false}
-                    price={`AU $${item.price}`} />
+                    price={`AU $${item.price}`}
+                    quantity={item.quantity} />
                 </div>
               ))}
             </div>

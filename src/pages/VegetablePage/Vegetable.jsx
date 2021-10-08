@@ -150,7 +150,9 @@ function VegetablePage() {
                   description={item.description}
                   oldPrice={false}
                   price={`AU $${item.price}`}
-                  id={`${item._id}`} />
+                  id={`${item._id}`}
+                  quantity={item.quantity}
+                  pageType="vegetable" />
               </div>
             ))}
           </div>
