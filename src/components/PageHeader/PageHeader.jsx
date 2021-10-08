@@ -30,6 +30,7 @@ function Header() {
 
   const removeSignin = () => {
     sessionStorage.removeItem('signin');
+    sessionStorage.removeItem('register');
     sessionStorage.removeItem('buyerinfo');
     sessionStorage.removeItem('buyerID');
     sessionStorage.removeItem('buyerUsername');

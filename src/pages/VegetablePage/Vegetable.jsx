@@ -98,6 +98,8 @@ function VegetablePage() {
 
   const newItems = result.slice((state - 1) * 9, state * 9);
   // console.log(newItems);
+  const filteredNewItems = newItems.filter((index) => index.quantity !== 0);
+  console.log(filteredNewItems);
 
   const totalItem = vegetables.length;
 
@@ -141,11 +143,11 @@ function VegetablePage() {
         {/* List */}
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div className='overview-lists' style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {newItems.map((item) => (
+            {filteredNewItems.map((item) => (
               <div key={item._id} className="overview-list">
                 <OverviewList
                   image={item.imageAddress[0]}
-                  title={`${item.title} ${item.quantity}kg`}
+                  title={`${item.title} ${item.size}kg`}
                   delivery="free delivery"
                   description={item.description}
                   oldPrice={false}
