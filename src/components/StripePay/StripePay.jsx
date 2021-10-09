@@ -97,7 +97,9 @@ export default function StripePay({ price, paystatus, data }) {
     sessionStorage.removeItem('cart');
     sessionStorage.removeItem('total');
     sessionStorage.removeItem('checkout_products');
-    document.location.href = '/success';
+    setTimeout(() => {
+      document.location.href = '/success';
+    }, 1500);
   }
 
   const cardInfo = {
