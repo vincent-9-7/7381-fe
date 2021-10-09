@@ -9,14 +9,14 @@ export function* getAllProducts() {
   // const getItemsApi = `${url}/items`;
   const getFruitsApi = `${url}/allFruits`;
   const fruitData = yield call(axios.get, getFruitsApi,header());
-  console.log(fruitData.data);
+  // console.log(fruitData.data);
 
   const getVegetablesApi = `${url}/allVegetables`;
   const VegetableData = yield call(axios.get, getVegetablesApi,header());
-  console.log(VegetableData.data);
+  // console.log(VegetableData.data);
 
   const totalData = fruitData.data.concat(VegetableData.data);
-  console.log(totalData); // Bgrade+production全部产品
+  // console.log(totalData); // Bgrade+production全部产品
   
   for (let i = 0; i < totalData.length; i += 1) {
     if (totalData[i].quantity === 0) {
@@ -24,7 +24,7 @@ export function* getAllProducts() {
       i -= 1;
     }
   }
-  console.log(totalData); // Bgrade+production全部产品
+  console.log(totalData); // Bgrade+production不包括0数量的全部产品
 
   // const products = yield call(api.getProducts);
   // console.log(products);
