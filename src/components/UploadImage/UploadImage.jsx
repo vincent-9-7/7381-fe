@@ -7,6 +7,7 @@
 import './UploadImage.scss';
 import axios from 'axios';
 import React, { useState,useEffect } from 'react';
+import url from '../../api/api';
 import NoticeBoard from '../NoticeBoard/NoticeBoard';
 
 
@@ -23,7 +24,7 @@ function UploadImage(props){
 
   useEffect(()=>{ 
     if(image != null) {
-    axios.post('http://localhost:8000/img', image)
+    axios.post(url, image)
     .then(res => {
       imageAddress.push(res.data.imageAddress);
       props.onChange(imageAddress);
