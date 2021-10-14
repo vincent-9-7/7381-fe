@@ -4,7 +4,7 @@ import url from "../../api/api";
 import header from '../../api/header';
 
 
-function* getItems(action) {
+function* getItems() {
   try {
     const getItemsApi = `${url}/items`;
 
@@ -35,7 +35,7 @@ function* getItem(action) {
   }
 }
 
-function* getAllFruit(action) {
+function* getAllFruit() {
   try {
     const getItemsApi = `${url}/allFruits`;
 
@@ -51,7 +51,7 @@ function* getAllFruit(action) {
   }
 }
 
-function* getAllVegetable(action) {
+function* getAllVegetable() {
   try {
     const getItemsApi = `${url}/allVegetables`;
     const data = yield call(axios.get, getItemsApi, header());

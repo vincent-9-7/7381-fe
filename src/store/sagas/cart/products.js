@@ -3,7 +3,7 @@ import axios from 'axios';
 import url from "../../../api/api";
 import header from '../../../api/header';
 import * as actions from '../../actions/cart/products';
-import { api } from './api';
+// import { api } from './api';
 
 export function* getAllProducts() {
   // const getItemsApi = `${url}/items`;

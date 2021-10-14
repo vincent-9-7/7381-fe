@@ -9,7 +9,7 @@ export default class Product extends Component {
     this.addToCartButton = this.addToCartButton.bind(this);
   }
 
-  addToCartButton(product) {
+  addToCartButton() {
     const {onAddToCartClicked} = this.props;
     return (
       <button

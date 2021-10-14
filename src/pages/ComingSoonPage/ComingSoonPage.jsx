@@ -1,7 +1,7 @@
 import React from 'react';
 import './ComingSoonPage.scss';
 import Coming from '../../assets/img/ComingSoon.jpg';
-import Header from '../../components/PageHeader/PageHeader';
+// import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 
 function ComingSoon(match) {

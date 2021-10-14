@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getItemsRequest, getUserRequest } from '../../store/actions/index';
+import {  getUserRequest } from '../../store/actions/index';
 import Load from './Load';
 
 // toLowerCase()
