@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import Footer from '../../components/PageFooter/PageFooter';
 import Header from '../../components/PageHeader/PageHeader';
@@ -11,15 +12,18 @@ import PageTitle from '../../components/PageTitle/PageTitle';
 
 function RoleSeclectPage() {
   const [cookies, setCookie] = useCookies(['signin-cookie-name']);
+  const history = useHistory();
   const handleOnClick = () => {
     setCookie('signin', "seller", { path: '/', expires: ExpireOneHour() });
     sessionStorage.setItem('signin', "seller");
-    document.location.href = "/signin";
+    // document.location.href = "/signin";
+    history.push('/signin');
   };
   const handleOnClick2 = () => {
     setCookie('signin', "buyer", { path: '/', expires: ExpireOneHour() });
     sessionStorage.setItem('signin', "buyer");
-    document.location.href = "/signin";
+    // document.location.href = "/signin";
+    history.push('/signin');
   };
 
   return (
