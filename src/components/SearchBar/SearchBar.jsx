@@ -12,9 +12,9 @@ const customStyles = {
     ...base,
     height: '45px',
     minHeight: '45px',
-    width: '150px',
+    width: '120px',
     outline: 'none',
-    fontSize: 'large',
+    fontSize: 'medium',
     borderRadius: '0px 10px 10px 0px',
     // "&:hover": {
     //   outline: 'none',
