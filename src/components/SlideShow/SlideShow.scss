@@ -16,9 +16,9 @@
     align-items: center;
     justify-content: center;
     width: 100px;
-    height: 25px;
+    height: 30px;
     background-color: $yellow;
-    border-radius: 25px;
+    border-radius: 0.6rem;
   }
 
   &__title--words {
@@ -49,8 +49,8 @@
 
 
   &__slide--point {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
     background-color: lightgray;
     border-radius: 50%;
