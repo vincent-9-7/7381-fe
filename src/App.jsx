@@ -10,7 +10,7 @@ import ShoppingCart from './pages/ShoppingCartPage/ShoppingCart';
 import Checkout from './pages/CheckoutPage/Checkout';
 import CheckoutSuccess from './pages/CheckoutSuccessPage/CheckoutSuccess';
 import CustomerService from './pages/CustomerServicePage/CustomerService';
-import AboutUs from './pages/AboutUsPage/AboutUs';
+// import AboutUs from './pages/AboutUsPage/AboutUs';
 
 import RoleSeclectPage from './pages/SigninPage/RoleSelectPage';
 import SigninPage from './pages/SigninPage/SigninPage';

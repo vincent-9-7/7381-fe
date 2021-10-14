@@ -14,7 +14,7 @@ class ProductList extends Component {
   }
 
   render() {
-    const { loading, products, addToCart, num, productType } = this.props; // 用的是cart
+    const { products, addToCart, num, productType } = this.props; // 用的是cart
     // console.log(products);
     // console.log(productType);
     // console.log(num)

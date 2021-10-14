@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './CheckoutForm.scss';
-import FakeImage from '../FakeImage/FakeImage';
+// import FakeImage from '../FakeImage/FakeImage';
 
 class CheckoutForm extends Component {
   constructor(props) {

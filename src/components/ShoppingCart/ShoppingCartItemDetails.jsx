@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // import bananaVerticality from '../../assets/img/banana_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2116020/
 // import orangeVerticality from '../../assets/img/orange_ver.jpg'; // https://www.pexels.com/zh-cn/photo/2294477/
 // import appleVerticality from '../../assets/img/apple_ver.jpg'; // https://www.pexels.com/zh-cn/photo/1453713/
-import FakeImage from '../FakeImage/FakeImage';
+// import FakeImage from '../FakeImage/FakeImage';
 
 export default class ShoppingCartItemDetails extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ export default class ShoppingCartItemDetails extends Component {
       addButton,
       deleteButton,
       condition,
-      inventory,
+      // inventory,
     } = this.props;
     // console.log(brand);
 

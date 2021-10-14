@@ -4,7 +4,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import React from 'react';
-import { Slide, Fade } from 'react-slideshow-image';
+import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import './SlideShow.scss';
 
