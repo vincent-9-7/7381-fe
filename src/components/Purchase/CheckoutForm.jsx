@@ -107,7 +107,8 @@ class CheckoutForm extends Component {
                         <p style={{ color: 'blue', fontSize: '0.8rem' }}>Message to seller</p>
                       </a>
                     </div>
-                    <FakeImage imageTitle={item.title} page="checkout" />
+                    {/* <FakeImage imageTitle={item.title} page="checkout" /> */}
+                    <img src={item.imageAddress[0]} alt="cart" className="checkout-form__review--image"  />
                   </div>
 
                   <div className="checkout-form__review--right container">

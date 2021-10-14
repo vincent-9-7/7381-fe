@@ -30,7 +30,7 @@ class CalculatTotal extends Component {
             {/* <h3>Items ({num})</h3> */}
             {num === null && <h3>Subtotal</h3>}
             {num !== null && <h3>{`Subtotal (${num} items)`}</h3>}
-            <h3>{`$${total}`}</h3>
+            <h3>{`AU $${total}`}</h3>
           </div>
 
           <div className="cart__right--line">
@@ -40,7 +40,7 @@ class CalculatTotal extends Component {
 
           <div className="cart__right--grey">
             <h3>Total</h3>
-            <h3 style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{`$${total}`}</h3>
+            <h3 style={{ fontSize: '1.5em', fontWeight: 'bold' }}>{`AU $${total}`}</h3>
           </div>
 
           <div className="cart__right--button">

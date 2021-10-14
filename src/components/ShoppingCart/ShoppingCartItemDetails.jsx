@@ -21,6 +21,7 @@ export default class ShoppingCartItemDetails extends Component {
       soldQuantity,
       size,
       title,
+      image,
       removeButton,
       addButton,
       deleteButton,
@@ -36,7 +37,8 @@ export default class ShoppingCartItemDetails extends Component {
 
           {/* <img src={image} alt={' '} className="cart__details--image" /> */}
           {/* 1. productions: 图片尺寸大 2. checkout：图片尺寸正方形 */}
-          <FakeImage imageTitle={title} page="checkout" />
+          {/* <FakeImage imageTitle={title} page="checkout" /> */}
+          <img src={image} alt="cart" className="checkout-form__review--image"  />
           <div className="cart__details--text">
             <h4 style={{ padding: '0', margin: '1rem 0 0 0' }}>
               {title} {size}kg
@@ -58,7 +60,7 @@ export default class ShoppingCartItemDetails extends Component {
         </div>
 
         <div className="cart__details--right">
-          <h4>&#36;{price}</h4>
+          <h4>AU &#36;{price}</h4>
           <p style={{ color: 'gray', fontSize: '1em', fontWeight: '400', padding: '0', margin: '10px 0 0 0' }}>
             Free postage
           </p>

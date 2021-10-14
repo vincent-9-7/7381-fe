@@ -74,14 +74,14 @@ class Home extends Component {
 
             <div className="home-page__ad--details">
               <div className="home-page__ad--left">
-                <h1 style={{ color: '#E0A604' }}>B-grade product?</h1>
+                <h1 style={{ color: '#E0A604',fontSize:'2.1rem' }}>B-grade product?</h1>
                 <Star rating={4} totalRating={5} />
                 <p>
                   Gmsdma dkasmkf gnjkdnfkdnsklaskldmlas. Sajndkasdm adskdkasdks sjndjs ds gf. Gjjd a Asn jksndksnid vd
                   dkjf sjdnsldlakjiodjfkdm saknd Ansdaskjnd fjdngknnankal.
                 </p>
 
-                <h1 style={{ color: '#E0A604' }}>Save food, protect our earth.</h1>
+                <h1 style={{ color: '#E0A604',fontSize:'2.1rem' }}>Save food, protect our earth.</h1>
                 <Star rating={5} totalRating={5} />
                 <p>
                   Gmsdma dkasmkf gnjkdnfkdnsklaskldmlas. Sajndkasdm adskdkasdks sjndjs ds gf. Gjjd a Asn jksndksnid vd
