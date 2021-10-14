@@ -41,7 +41,8 @@ function ItemDetailPage(match) {
     quantity: 'd',
     imageAddress: 'd',
     description: 'd',
-    _id: 'ddad'
+    _id: 'ddad',
+    postQuantity: '2',
   }
 
   if (item[0] !== undefined) {
@@ -65,6 +66,8 @@ function ItemDetailPage(match) {
           price={initialState.price}
           imageAddress={initialState.imageAddress}
           id={initialState._id}
+          postQuantity={initialState.postQuantity}
+          object={item}
         />
       </div>
         <ItemTabs

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCookies } from 'react-cookie';
+import { useHistory, Link } from 'react-router-dom';
 import Seller from "../../assets/img/Seller.png";
 import UserAvator from "../../assets/img/UserAvator.svg";
 import ShopAvator from "../../assets/img/ShopAvator.svg";
@@ -10,21 +11,24 @@ import './JoinIn.scss';
 function JoinIn() {
   const [cookies, setCookie] = useCookies(['joinin-cookie-name']);
   const currentTime = new Date();
+  const history = useHistory();
 
   const handleOnClick = () => {
     // localStorage.setItem('register', "seller");
     sessionStorage.setItem('register', "seller");
     setCookie('register', "seller", { path: '/', expires: ExpireOneHour() });
-    document.location.href = "/register";
-    console.log(cookies.register);
+    // document.location.href = "/register";
+    history.push('/register');
+    // console.log(cookies.register);
   };
 
   const handleOnClick2 = () => {
     // localStorage.setItem('register', "buyer");
     sessionStorage.setItem('register', "buyer");
     setCookie('register', "buyer", { path: '/', expires: ExpireOneHour() });
-    document.location.href = "/register";
-    console.log(cookies.register);
+    // document.location.href = "/register";
+    history.push('/register');
+    // console.log(cookies.register);
   };
 
 
