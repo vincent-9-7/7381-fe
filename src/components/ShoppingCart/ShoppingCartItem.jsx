@@ -18,6 +18,7 @@ export default class ShoppingCartItem extends Component {
       leftQuantity,
       soldQuantity,
       title,
+      image,
       onRemove,
       onAdd,
       onDelete,
@@ -32,6 +33,7 @@ export default class ShoppingCartItem extends Component {
         soldQuantity={soldQuantity}
         condition={condition}
         title={title}
+        image={image}
         size={size}
         removeButton={
           <button onClick={onRemove} type="button" className="cart__btn">

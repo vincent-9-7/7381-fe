@@ -39,6 +39,7 @@ class Cart extends Component {
           condition={product.condition}
           size={product.size}
           key={product._id}
+          image={product.imageAddress[0]}
           onRemove={() => removeFromCart(product._id)}
           onAdd={() => addFromCart(product._id)}
           onDelete={() => deleteFromCart(product._id)}
@@ -70,7 +71,7 @@ class Cart extends Component {
             {/* <Purchase /> */}
             <div className="cart__checkout">
               <p style={{ fontSize: '1.5em' }}>Subtotal:&nbsp;</p>
-              <p style={{ fontSize: '1.5em', fontWeight: 'bold' }}>${total}</p>
+              <p style={{ fontSize: '1.5em', fontWeight: 'bold' }}>AU ${total}</p>
               {/* <button
                 className="btn--search"
                 onClick={checkout}
