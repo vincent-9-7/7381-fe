@@ -37,7 +37,7 @@ class Checkout extends Component {
 
     // 当子组件不为空，赋值价格和username和购买产品，其他订单信息在子组件完成赋值
     if (orderData) {
-      orderData.username = 'PassUserName';
+      // orderData.username = 'PassUserName';
       orderData.price = totalPrice;
       checkoutItems.forEach((product) => {
         const obj = {};

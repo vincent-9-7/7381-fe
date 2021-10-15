@@ -11,9 +11,11 @@ class CheckoutForm extends Component {
   onTrigger = (event) => {
     // class子传父 - 6/6
     const { parentCallback } = this.props;
+    const usernames = sessionStorage.getItem('Username')?sessionStorage.getItem('Username'):"NONAME";
+    // console.log(usernames);
     const list = {
       price: 0,
-      username: '',
+      username: usernames,
       orderList: [],
       firstName: '',
       lastName: '',

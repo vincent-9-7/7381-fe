@@ -1,5 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 import url from "../../api/api";
 import header from '../../api/header';
 
@@ -73,9 +74,14 @@ function* buyerSignin(action) {
     // 暂时啥都没有
     sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
-    sessionStorage.setItem('buyerID', JSON.stringify(buyerInfo.data.ObjectId));
-    sessionStorage.setItem('buyerUsername', JSON.stringify(buyerInfo.data.username));
+    sessionStorage.setItem('userID', JSON.stringify(buyerInfo.data.ObjectId));
+    sessionStorage.setItem('Username', JSON.stringify(buyerInfo.data.username));
+    // setTimeout(() => {
+    //   document.location.href = './';
+    // }, 1000);
     document.location.href = './';
+    // const history = useHistory();
+    // history.push('/');
   } catch (e) {
     alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'BUYER_SIGNIN_FAILED', payload: e });
@@ -92,9 +98,14 @@ function* sellerSignin(action) {
     yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: sellerInfo.data });
     sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
-    sessionStorage.setItem('sellerID', JSON.stringify(sellerInfo.data.ObjectId));
-    sessionStorage.setItem('sellerUsername', JSON.stringify(sellerInfo.data.username));
+    sessionStorage.setItem('userID', JSON.stringify(sellerInfo.data.ObjectId));
+    sessionStorage.setItem('Username', JSON.stringify(sellerInfo.data.username));
+    // setTimeout(() => {
+    //   document.location.href = './';
+    // }, 1000);
     document.location.href = './';
+    // const history = useHistory();
+    // history.push('/');
   } catch (e) {
     alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'SELLER_SIGNIN_FAILED', payload: e });
