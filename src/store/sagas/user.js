@@ -1,7 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
 import url from "../../api/api";
 import header from '../../api/header';
 
