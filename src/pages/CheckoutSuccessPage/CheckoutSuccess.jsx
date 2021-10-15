@@ -12,7 +12,7 @@ export default function CheckoutSuccess({ orderData }) {
 
   return (
     <div>
-      <Header />
+      <Header color="white" />
       <div className="success container">
         <h3 className="success__words">
           Your order has been recieved.

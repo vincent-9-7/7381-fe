@@ -61,7 +61,7 @@ class Checkout extends Component {
 
     return (
       <div>
-        <Header />
+        <Header color="white" />
         <PageTitle text="Checkout" background="green-bg" />
 
         <div className="checkout container">
