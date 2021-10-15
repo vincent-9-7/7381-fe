@@ -102,7 +102,7 @@ function VegetablePage() {
   const filteredNewItems = newItems.filter((index) => index.quantity !== 0);
   // console.log(filteredNewItems);
 
-  const totalItem = vegetables.length;
+  const totalItem = result.length;
   const startProduct = (state * 9) - (9 - 1);
   const endProduct = Math.min(startProduct + 9 - 1, totalItem);
 
@@ -148,12 +148,12 @@ function VegetablePage() {
         <div style={{ display: 'flex', flexDirection: 'column', minWidth: '100%' }}>
           {/* Count part */}
           <div style={{
-              display: "flex", flexDirection: "row",justifyContent:"flex-end"
-            }}>
+            display: "flex", flexDirection: "row", justifyContent: "flex-end"
+          }}>
             {startProduct}-{endProduct} of
             <div style={{ fontWeight: "bold" }}>&nbsp;{totalItem} products</div>
           </div>
-          <div className='overview-lists' style={{ display: 'flex', flexWrap: 'wrap',justifyContent:'center' }}>
+          <div className='overview-lists' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
             {filteredNewItems.map((item) => (
               <div key={item._id} className="overview-list">
                 <OverviewList
