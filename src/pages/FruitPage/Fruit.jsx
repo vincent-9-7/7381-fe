@@ -125,7 +125,7 @@ function FruitPage() {
   // const sorted = filteredNewItems.sort
 
 
-  const totalItem = fruits.length;
+  const totalItem = result.length;
   // Totalitem = total, numberOfPerPage = 9, page = state;
   const startProduct = (state * 9) - (9 - 1);
   const endProduct = Math.min(startProduct + 9 - 1, totalItem);
@@ -175,10 +175,10 @@ function FruitPage() {
           <div style={{ display: 'flex', flexDirection: 'column', minWidth: '100%' }}>
             {/* Count part */}
             <div style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'flex-end',
-              }}>
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'flex-end',
+            }}>
               {startProduct}-{endProduct} of
               <div style={{ fontWeight: "bold" }}>&nbsp;{totalItem} products</div>
             </div>

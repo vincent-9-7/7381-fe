@@ -1,8 +1,10 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import url from "../../api/api";
 import header from '../../api/header';
+
 
 
 function* userDetail(action) {
@@ -69,6 +71,7 @@ function* buyerSignin(action) {
     console.log(buyerInfo);
     console.log(buyerInfo.data);
     console.log(action.payload);
+    const history = useHistory();
 
     yield put({ type: 'BUYER_SIGNIN_SUCCESS', payload: buyerInfo.data });
     // 暂时啥都没有
@@ -76,12 +79,8 @@ function* buyerSignin(action) {
     sessionStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
     sessionStorage.setItem('userID', JSON.stringify(buyerInfo.data.ObjectId));
     sessionStorage.setItem('Username', JSON.stringify(buyerInfo.data.username));
-    // setTimeout(() => {
-    //   document.location.href = './';
-    // }, 1000);
-    document.location.href = './';
-    // const history = useHistory();
-    // history.push('/');
+    // document.location.href = './';
+    history.push("./");
   } catch (e) {
     alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'BUYER_SIGNIN_FAILED', payload: e });
@@ -94,18 +93,15 @@ function* sellerSignin(action) {
     const sellerInfo = yield call(axios.post, `${url}/seller/login`, action.payload, header());
     console.log(sellerInfo);
     console.log(sellerInfo.data);
+    const history = useHistory();
 
     yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: sellerInfo.data });
     sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
     sessionStorage.setItem('userID', JSON.stringify(sellerInfo.data.ObjectId));
     sessionStorage.setItem('Username', JSON.stringify(sellerInfo.data.username));
-    // setTimeout(() => {
-    //   document.location.href = './';
-    // }, 1000);
-    document.location.href = './';
-    // const history = useHistory();
-    // history.push('/');
+    // document.location.href = './';
+    history.push("./");
   } catch (e) {
     alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'SELLER_SIGNIN_FAILED', payload: e });
