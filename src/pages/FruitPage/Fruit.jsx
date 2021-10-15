@@ -27,8 +27,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Pagination from 'rc-pagination';
 import { Multiselect } from 'multiselect-react-dropdown';
-import "rc-pagination/assets/index.css";
-import "../../components/Overview/Pagination.scss";
+import 'rc-pagination/assets/index.css';
+import '../../components/Overview/Pagination.scss';
 import { getAllFruitRequest } from '../../store/actions';
 import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
@@ -45,26 +45,29 @@ function FruitPage() {
   const fruits = useSelector((state) => state.itemslist.itemDetails);
 
   const objectArray = [
-    { key: "Processed products", value: "Group 1" },
-    { key: "B-grade products", value: "Group 1" }];
+    { key: 'Processed products', value: 'Group 1' },
+    { key: 'B-grade products', value: 'Group 1' },
+  ];
 
   const objectArray1 = [
-    { key: "Free Delivery", value: "Group 1" },
-    { key: "On Sale", value: "Group 1" }];
+    { key: 'Free Delivery', value: 'Group 1' },
+    { key: 'On Sale', value: 'Group 1' },
+  ];
 
   const objectArray2 = [
-    { key: "Australia", value: "Group 1" },
-    { key: "Queensland", value: "Group 1" }];
+    { key: 'Australia', value: 'Group 1' },
+    { key: 'Queensland', value: 'Group 1' },
+  ];
 
   const [state, setState] = React.useState(1);
-  const [option, setOption] = React.useState([{ key: "All", value: "Group 1" }]);
+  const [option, setOption] = React.useState([{ key: 'All', value: 'Group 1' }]);
 
-  const onChange = page => {
+  const onChange = (page) => {
     console.log(page);
     setState(page);
   };
 
-  const onSelect = option => {
+  const onSelect = (option) => {
     console.log(option);
     setOption(option);
   };
@@ -84,26 +87,25 @@ function FruitPage() {
   // console.log(conditionFilter);
 
   // 改变数组里的条件
-  const changedFilter = conditionFilter.filter(value => value.postcode === 1231);
+  const changedFilter = conditionFilter.filter((value) => value.postcode === 1231);
   // console.log(changedFilter);
 
   // filter 需要问一下其他人
   let result = {};
   if (filter === 'Processed products') {
-    result = conditionFilter.filter(value => value.condition === 'Processed');
+    result = conditionFilter.filter((value) => value.condition === 'Processed');
   } else if (filter === 'B-grade products') {
-    result = conditionFilter.filter(value => value.condition === 'B-grade');
+    result = conditionFilter.filter((value) => value.condition === 'B-grade');
   } else if (filter === 'Free Delivery') {
-    result = conditionFilter.filter(value => value.category === 'Fruit');
+    result = conditionFilter.filter((value) => value.category === 'Fruit');
   } else if (filter === 'On Sale') {
-    result = conditionFilter.filter(value => value.state === 'QLD');
+    result = conditionFilter.filter((value) => value.state === 'QLD');
   } else if (filter === 'Australia') {
-    result = conditionFilter.filter(value => value.category === 'Fruit');
+    result = conditionFilter.filter((value) => value.category === 'Fruit');
   } else if (filter === 'Queensland') {
-    result = conditionFilter.filter(value => value.state === 'QLD');
-  }
-  else {
-    result = conditionFilter.filter(value => value.category === 'Fruit');
+    result = conditionFilter.filter((value) => value.state === 'QLD');
+  } else {
+    result = conditionFilter.filter((value) => value.category === 'Fruit');
   }
 
   // console.log(result);
@@ -111,7 +113,6 @@ function FruitPage() {
   // console.log(fruits[0].delivery);
   // console.log(conditionFilter);
   // console.log(changed);
-
 
   // console.log(state);
 
@@ -124,10 +125,9 @@ function FruitPage() {
   // Sort:
   // const sorted = filteredNewItems.sort
 
-
   const totalItem = result.length;
   // Totalitem = total, numberOfPerPage = 9, page = state;
-  const startProduct = (state * 9) - (9 - 1);
+  const startProduct = state * 9 - (9 - 1);
   const endProduct = Math.min(startProduct + 9 - 1, totalItem);
   // console.log(`${startProduct}-${endProduct} of ${totalItem} products`);
 
@@ -145,7 +145,7 @@ function FruitPage() {
                 options={objectArray}
                 displayValue="key"
                 singleSelect
-                placeholder='Condition'
+                placeholder="Condition"
                 onSelect={onSelect}
               />
               <hr />
@@ -153,8 +153,8 @@ function FruitPage() {
                 options={objectArray1}
                 displayValue="key"
                 singleSelect
-                placeholder='Special offers'
-                showCheckbox='false'
+                placeholder="Special offers"
+                showCheckbox="false"
                 onSelect={onSelect}
               />
               <hr />
@@ -162,7 +162,7 @@ function FruitPage() {
                 options={objectArray2}
                 displayValue="key"
                 singleSelect
-                placeholder='Location'
+                placeholder="Location"
                 onSelect={onSelect}
               />
               <hr />
@@ -174,15 +174,17 @@ function FruitPage() {
           {/* List */}
           <div style={{ display: 'flex', flexDirection: 'column', minWidth: '100%' }}>
             {/* Count part */}
-            <div style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'flex-end',
-            }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+              }}
+            >
               {startProduct}-{endProduct} of
-              <div style={{ fontWeight: "bold" }}>&nbsp;{totalItem} products</div>
+              <div style={{ fontWeight: 'bold' }}>&nbsp;{totalItem} products</div>
             </div>
-            <div className='overview-lists' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div className="overview-lists" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
               {filteredNewItems.map((item) => (
                 <div key={item._id} className="overview-list">
                   <OverviewList
@@ -195,21 +197,18 @@ function FruitPage() {
                     id={`${item._id}`}
                     condition={`${item.condition}`}
                     quantity={item.quantity}
-                    pageType="fruit" />
+                    pageType="fruit"
+                  />
                 </div>
               ))}
             </div>
           </div>
         </div>
       )}
-      <Pagination
-        onChange={onChange}
-        current={state}
-        total={totalItem}
-        pageSize={9}
-      />
+      <Pagination onChange={onChange} current={state} total={totalItem} pageSize={9} />
       <Footer />
-    </>);
-};
+    </>
+  );
+}
 
 export default FruitPage;

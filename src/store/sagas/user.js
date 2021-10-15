@@ -1,10 +1,8 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import url from "../../api/api";
+import url from '../../api/api';
 import header from '../../api/header';
-
-
 
 function* userDetail(action) {
   try {
@@ -16,7 +14,6 @@ function* userDetail(action) {
 
     yield put({ type: 'GET_USER_SUCCESS', user: data.data });
     // localStorage.setItem('Items', JSON.stringify(action.payload));
-
   } catch (e) {
     console.log(e);
     yield put({ type: 'GET_USER_FAILED', payload: e });
@@ -24,9 +21,6 @@ function* userDetail(action) {
 }
 
 function* buyerRegister(action) {
-
-
-
   try {
     // const user = sessionStorage.getItem('register');
     // In valid hook call
@@ -35,13 +29,16 @@ function* buyerRegister(action) {
     // items对应的是 reducer/user.js里的第35行的items
     console.log(buyerInfo);
     console.log(buyerInfo.data);
+    const history = useHistory();
+
     // console.log(user);
     yield put({ type: 'BUYER_REGISTER_SUCCESS', payload: buyerInfo.data });
     // localStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
-    document.location.href = './';
+    // document.location.href = './';
+    history.push('./');
   } catch (e) {
     console.log(e);
-    alert("Input is not correct. Please check your infofmation. ");
+    alert('Input is not correct. Please check your infofmation. ');
     yield put({ type: 'BUYER_REGISTER_FAILED', payload: e });
   }
 }
@@ -54,11 +51,14 @@ function* sellerRegister(action) {
     const sellerInfo = yield call(axios.post, `${url}/seller/registration`, action.payload, header());
     console.log(sellerInfo);
     console.log(sellerInfo.data);
+    const history = useHistory();
+
     yield put({ type: 'SELLER_REGISTER_SUCCESS', payload: sellerInfo.data });
     localStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
-    document.location.href = './';
+    // document.location.href = './';
+    history.push('./');
   } catch (e) {
-    alert("Input is not correct. Please check your infofmation. ");
+    alert('Input is not correct. Please check your infofmation. ');
     yield put({ type: 'SELLER_REGISTER_FAILED', payload: e });
   }
 }
@@ -79,9 +79,9 @@ function* buyerSignin(action) {
     sessionStorage.setItem('userID', JSON.stringify(buyerInfo.data.ObjectId));
     sessionStorage.setItem('Username', JSON.stringify(buyerInfo.data.username));
     // document.location.href = './';
-    history.push("./");
+    history.push('./');
   } catch (e) {
-    alert("Input is not correct. Please check your infofmation. ");
+    alert('Input is not correct. Please check your infofmation. ');
     yield put({ type: 'BUYER_SIGNIN_FAILED', payload: e });
   }
 }
@@ -100,9 +100,9 @@ function* sellerSignin(action) {
     sessionStorage.setItem('userID', JSON.stringify(sellerInfo.data.ObjectId));
     sessionStorage.setItem('Username', JSON.stringify(sellerInfo.data.username));
     // document.location.href = './';
-    history.push("./");
+    history.push('./');
   } catch (e) {
-    alert("Input is not correct. Please check your infofmation. ");
+    alert('Input is not correct. Please check your infofmation. ');
     yield put({ type: 'SELLER_SIGNIN_FAILED', payload: e });
   }
 }
@@ -113,8 +113,6 @@ function* UserSaga() {
   yield takeEvery('SELLER_REGISTER_REQUEST', sellerRegister);
   yield takeEvery('BUYER_SIGNIN_REQUEST', buyerSignin);
   yield takeEvery('SELLER_SIGNIN_REQUEST', sellerSignin);
-
 }
 
 export default UserSaga;
-
