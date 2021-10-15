@@ -175,13 +175,14 @@ function FruitPage() {
           <div style={{ display: 'flex', flexDirection: 'column', minWidth: '100%' }}>
             {/* Count part */}
             <div style={{
-              display: "flex", flexDirection: "row",
-              justifyContent: "flex-end", position: "relative", right: "300px"
-            }}>
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+              }}>
               {startProduct}-{endProduct} of
               <div style={{ fontWeight: "bold" }}>&nbsp;{totalItem} products</div>
             </div>
-            <div className='overview-lists' style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <div className='overview-lists' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
               {filteredNewItems.map((item) => (
                 <div key={item._id} className="overview-list">
                   <OverviewList
