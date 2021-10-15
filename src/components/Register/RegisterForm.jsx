@@ -40,12 +40,13 @@ function RegisterForm(props) {
       <div className="log-in" style={{ marginTop: "30px" }}>
         <form className="log-in-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="log-in-title">
-            {(user === 'buyer') && (<img src={SignInUserAvator} style={{ width: "35px" }} />)}
-            {(user === 'seller') && <img src={SignInShopAvator} style={{ width: "35px" }} />}
+            {(user === 'seller') && (<img src={SignInUserAvator} style={{ width: "35px" }} />)}
+            {(user === 'buyer') && <img src={SignInShopAvator} style={{ width: "35px" }} />}
 
 
-
-            <h1 className="title">{`Create account as a ${user}`}</h1>
+            {(user === 'buyer') && <h1 className="title">{`Create account as Shop`}</h1>}
+            {(user === 'seller') && <h1 className="title">{`Create account`}</h1>}
+            {/* <h1 className="title">{`Create account as Shop`}</h1> */}
           </div>
           {/**下面的大块 */}
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>

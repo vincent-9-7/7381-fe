@@ -105,7 +105,7 @@ function Overview(props) {
             <OverviewFilter />
           </div>
           {/* List */}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', minWidth: "80%" }}>
             <div className='overview-lists' style={{ display: 'flex', flexWrap: 'wrap' }}>
               {newItems.map((item) => (
                 <div key={item._id} className="overview-list">

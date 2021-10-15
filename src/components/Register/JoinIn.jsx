@@ -1,22 +1,19 @@
 import React from 'react';
-import { useCookies } from 'react-cookie';
-import { useHistory, Link } from 'react-router-dom';
-import Seller from "../../assets/img/Seller.png";
-import UserAvator from "../../assets/img/UserAvator.svg";
-import ShopAvator from "../../assets/img/ShopAvator.svg";
-import { ExpireOneHour } from '../ExpiresTime/ExpiresTime';
+import { useHistory } from 'react-router-dom';
+// import { ExpireOneHour } from '../ExpiresTime/ExpiresTime';
 import PageTitle from '../PageTitle/PageTitle';
+
+import user from "../../assets/img/userImage.png";
+import shop from "../../assets/img/shopImage.png";
 import './JoinIn.scss';
 
 function JoinIn() {
-  const [cookies, setCookie] = useCookies(['joinin-cookie-name']);
-  const currentTime = new Date();
   const history = useHistory();
 
   const handleOnClick = () => {
     // localStorage.setItem('register', "seller");
     sessionStorage.setItem('register', "seller");
-    setCookie('register', "seller", { path: '/', expires: ExpireOneHour() });
+    // setCookie('register', "seller", { path: '/', expires: ExpireOneHour() });
     // document.location.href = "/register";
     history.push('/register');
     // console.log(cookies.register);
@@ -25,7 +22,7 @@ function JoinIn() {
   const handleOnClick2 = () => {
     // localStorage.setItem('register', "buyer");
     sessionStorage.setItem('register', "buyer");
-    setCookie('register', "buyer", { path: '/', expires: ExpireOneHour() });
+    // setCookie('register', "buyer", { path: '/', expires: ExpireOneHour() });
     // document.location.href = "/register";
     history.push('/register');
     // console.log(cookies.register);
@@ -34,27 +31,29 @@ function JoinIn() {
 
   return (
     <div>
-      <PageTitle text="Join in as a Seller or Buyer? " />
+      <PageTitle text="Join for user or shop" background="white-bg" />
       <div className="role-selection">
-
         <div className="avators">
           <div style={{ display: "flex", textAlign: "center", flexDirection: "column" }}>
             <button
+              className="joinin-button"
               onClick={handleOnClick}
               type="button"
               style={{ marginRight: "50px" }}>
-              <img src={UserAvator} alt="seller" />
+              <img src={user} alt="seller" style={{ padding: "10px 10px 10px 10px" }} />
             </button>
-            {/* <h3 style={{ marginRight: "50px" }}>Join as a Seller</h3> */}
+            {/** Seller */}
+            <h3 style={{ marginRight: "50px", fontWeight: "bold" }}>User</h3>
           </div>
 
           <div style={{ display: "flex", textAlign: "center", flexDirection: "column" }}>
             <button
+              className="joinin-button"
               onClick={handleOnClick2}
               type="button" style={{ marginLeft: "50px" }}
-            ><img src={ShopAvator} alt="buyer" />
+            ><img src={shop} alt="buyer" style={{ padding: "10px 10px 10px 10px" }} />
             </button>
-            {/* <h3 style={{ marginLeft: "50px" }}>Join as a Buyer</h3> */}
+            <h3 style={{ marginLeft: "50px", fontWeight: "bold" }}>Shop</h3>
           </div>
         </div>
       </div>

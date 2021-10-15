@@ -4,9 +4,8 @@ import { useCookies } from 'react-cookie';
 import Footer from '../../components/PageFooter/PageFooter';
 import Header from '../../components/PageHeader/PageHeader';
 import '../RegisterPage/RegisterPage.scss';
-import Seller from "../../assets/img/Seller.png";
-import UserAvator from "../../assets/img/UserAvator.svg";
-import ShopAvator from "../../assets/img/ShopAvator.svg";
+import user from "../../assets/img/userImage.png";
+import shop from "../../assets/img/shopImage.png";
 import { ExpireOneHour } from '../../components/ExpiresTime/ExpiresTime';
 import PageTitle from '../../components/PageTitle/PageTitle';
 
@@ -30,29 +29,31 @@ function RoleSeclectPage() {
     <>
       <Header />
       <div className="container">
-        <PageTitle text="Sign in as a Seller or Buyer? " />
+        <PageTitle text="Sign for user or shop" background="white-bg" />
         <div className="role-selection">
           {/* <PageTitle text="Sign in as a Seller or Buyer? " /> */}
           {/* <h1>Sign in as a Seller or Buyer? </h1> */}
           <div className="avators">
             <div style={{ display: "flex", textAlign: "center", flexDirection: "column" }}>
               <button
+                className="joinin-button"
                 onClick={handleOnClick}
                 type="button"
                 style={{ marginRight: "50px" }}
               >
-                <img src={UserAvator} alt="seller" />
+                <img src={user} alt="seller" style={{ padding: "10px 10px 10px 10px" }} />
               </button>
-              {/* <h3 style={{ marginRight: "50px" }}>Join as a Seller</h3> */}
+              <h3 style={{ marginRight: "50px", fontWeight: "bold" }}>User</h3>
             </div>
             <div style={{ display: "flex", textAlign: "center", flexDirection: "column" }}>
               <button
+                className="joinin-button"
                 onClick={handleOnClick2}
                 type="button"
                 style={{ marginLeft: "50px" }}
-              ><img src={ShopAvator} alt="buyer" />
+              ><img src={shop} alt="buyer" style={{ padding: "10px 10px 10px 10px" }} />
               </button>
-              {/* <h3 style={{ marginLeft: "50px" }}>Join as a Buyer</h3> */}
+              <h3 style={{ marginLeft: "50px", fontWeight: "bold" }}>Shop</h3>
             </div>
           </div>
         </div>

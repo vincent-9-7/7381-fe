@@ -5,8 +5,7 @@ import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 
 
-function JoinInPage(props) {
-  const { data } = props;
+function JoinInPage() {
 
   return (
     <>
