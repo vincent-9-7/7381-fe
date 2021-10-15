@@ -59,7 +59,8 @@ function ItemDetail(props) {
     <div >
       <div className="item-detail-page__card">
         <div className="item-detail-page__middle">
-          <div className="item-detail-page__left"><img src={imageAddress} alt="abc" width="600px" /></div>
+          <div className="item-detail-page__left">
+            <img src={imageAddress} alt="abc" width="490px" /></div>
           <div className="item-detail-page__right">
             {/** Details */}
             {/** Title */}
@@ -88,7 +89,7 @@ function ItemDetail(props) {
                   </form>
 
                 </h3>
-                <div style={{ marginLeft: '0.1rem' }}>{quantity} available
+                <div style={{ fontSize: "10px" }}>{quantity} available
                   &nbsp;/&nbsp;{postQuantity - quantity} sold</div>
 
               </div>
@@ -108,7 +109,7 @@ function ItemDetail(props) {
             </div>
             <hr className="item-detail-page__item-border" />
             <div className="item-detail-page__item-buttons">
-              <button type="button" className="btn--add" onClick={handleOnClick1}>Buy it now</button>
+              <button type="button" className="button btn--add" onClick={handleOnClick1}>Buy it now</button>
               <button type="button" className="btn--add" onClick={handleOnClick2}>Add to cart</button>
             </div>
           </div>

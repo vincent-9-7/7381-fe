@@ -35,6 +35,7 @@ import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 import OverviewList from '../../components/Overview/Overview';
 import Loading from '../../components/Loading/Loading';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 
 function VegetablePage() {
@@ -92,18 +93,21 @@ function VegetablePage() {
   else {
     result = conditionFilter.filter(value => value.category === 'Vegetable');
   }
-  console.log(result);
+  // console.log(result);
 
   // console.log(state);
 
   const newItems = result.slice((state - 1) * 9, state * 9);
   // console.log(newItems);
   const filteredNewItems = newItems.filter((index) => index.quantity !== 0);
-  console.log(filteredNewItems);
+  // console.log(filteredNewItems);
 
   const totalItem = vegetables.length;
+  const startProduct = (state * 9) - (9 - 1);
+  const endProduct = Math.min(startProduct + 9 - 1, totalItem);
 
-  return (<><Header />
+  return (<><Header color="white" />
+    <SearchBar />
     {loading && <Loading />}
     {!loading && (
       <div className="overview-page--main-functions container">
@@ -141,7 +145,15 @@ function VegetablePage() {
           </>
         </div>
         {/* List */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', minWidth: '100%' }}>
+          {/* Count part */}
+          <div style={{
+            display: "flex", flexDirection: "row",
+            justifyContent: "flex-end", position: "relative", right: "300px"
+          }}>
+            {startProduct}-{endProduct} of
+            <div style={{ fontWeight: "bold" }}>&nbsp;{totalItem} products</div>
+          </div>
           <div className='overview-lists' style={{ display: 'flex', flexWrap: 'wrap' }}>
             {filteredNewItems.map((item) => (
               <div key={item._id} className="overview-list">

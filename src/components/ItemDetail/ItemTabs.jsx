@@ -9,15 +9,18 @@ function ItemTabs(props) {
   return (<>
     {/** Tabs */}
     <div className="item-detail-page__bottom">
-      {/** 这里的description怎么处理？ */}
+      {/** How to deal with description */}
       <div className="container">
         <CoolTabs
-          leftTabTitle={<h3 style={{ fontWeight: 'bold' }}>Product Details</h3>}
-          rightTabTitle={<h3 style={{ fontWeight: 'bold' }}>Return Policy</h3>}
+          leftTabTitle="Product Details"
+          rightTabTitle="Return Policy"
+          activeTabStyle={{ fontSize: "22px", fontWeight: "bold" }}
+          unActiveTabStyle={{ fontSize: "20px" }}
           leftTabStyle={{ background: '#EFF6D9' }}
           rightTabStyle={{ background: '#EFF6D9' }}
-          activeLeftTabBorderBottomStyle={{ background: '#E0A604', height: 4 }}
-          activeRightTabBorderBottomStyle={{ background: '#E0A604', height: 4 }}
+          activeLeftTabBorderBottomStyle=
+          {{ background: '#E0A604', height: 4, width: "10rem", marginLeft: "5.3rem" }}
+          activeRightTabBorderBottomStyle={{ background: '#E0A604', height: 4, width: "10rem", marginLeft: "16rem" }}
           style={{ width: '100%', }}
           tabsHeaderStyle={{ width: '60%', marginBottom: '20px' }}
           contentTransitionStyle="transform 0.6s ease-in"

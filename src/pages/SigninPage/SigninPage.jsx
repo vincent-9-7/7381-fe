@@ -41,7 +41,7 @@ function Signin(props) {
           <form className="log-in-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="log-in-title">
               <img src={SignInAvator} style={{ width: "35px" }} />
-              <h1 className="title">{`Sign in as ${user}`}</h1>
+              <h1 className="title">{`Sign in`}</h1>
             </div>
             <div>
               <label htmlFor="email" className="label">EMAIL ADDRESS:</label>
