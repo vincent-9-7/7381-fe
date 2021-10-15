@@ -13,6 +13,7 @@ import vegetables from '../../assets/img/vegetable.png';
 import a from '../../assets/img/a.svg';
 import b from '../../assets/img/b.svg';
 import c from '../../assets/img/c.svg';
+import howwework from '../../assets/img/howwework.jpg';
 
 class Home extends Component {
   // const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
@@ -107,10 +108,13 @@ class Home extends Component {
                 <h2>How we work</h2>
               </div>
 
-              <div className="home-page__how-we-work--images">
+              {/* <div className="home-page__how-we-work--images">
                 <img src={a} alt="how-we-work1" className="home-page__how-we-work--image" />
                 <img src={b} alt="how-we-work2" className="home-page__how-we-work--image" />
                 <img src={c} alt="how-we-work3" className="home-page__how-we-work--image" />
+              </div> */}
+              <div className="home-page__how-we-work--images">
+                <img src={howwework} alt="how-we-work" className="home-page__how-we-work--image" />
               </div>
             </div>
           </div>
