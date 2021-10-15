@@ -23,6 +23,17 @@ class CalculatTotal extends Component {
     // console.log(order);
 
     // console.log(getPayment); // class 获取 redux 参数步骤 - 3/5
+
+    const checkoutfunc = () => {
+      if (sessionStorage.getItem('userID') != null) {
+        window.sessionStorage.setItem('total', total);
+        window.sessionStorage.setItem('checkout_products', JSON.stringify(product));
+        history.push('/checkout');
+      }else {
+        history.push('/role-select');
+      }
+    };
+
     return (
       <>
         <div className="cart__right--border">
@@ -49,11 +60,12 @@ class CalculatTotal extends Component {
               <button
                 className="btn--goCheckout"
                 type="button"
-                onClick={() => {
-                  window.sessionStorage.setItem('total', total);
-                  window.sessionStorage.setItem('checkout_products', JSON.stringify(product));
-                  history.push('/checkout');
-                }}
+                // onClick={() => {
+                //   window.sessionStorage.setItem('total', total);
+                //   window.sessionStorage.setItem('checkout_products', JSON.stringify(product));
+                //   history.push('/checkout');
+                // }}
+                onClick={checkoutfunc}
               >
                 Checkout
               </button>
