@@ -12,12 +12,40 @@
 
 .page-title-green {
   background-color: rgba($color: $green-light, $alpha: 0.45);
+  // display: flex;
+  // justify-content: center;
   display: flex;
-  justify-content: center;
+  background: $green-light;
+  height: 100px;
+  flex-direction:column;
+  align-items:center;
 }
 
 .page-title-white {
   background-color: white;
+  // display: flex;
+  // justify-content: center;
   display: flex;
+  background: $green-light;
+  height: 100px;
+  flex-direction:column;
+  align-items:center;
+}
+
+.page-title-no {
+  display: flex;
+  height: 100px;
+  flex-direction:column;
+  align-items:center;
+}
+
+.page-title--header {
   justify-content: center;
+}
+
+.page-title--divider {
+  justify-content: center;
+  width: 100px;
+  border: 0;
+  border-top: 3px solid $brown;
 }

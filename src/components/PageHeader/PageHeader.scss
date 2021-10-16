@@ -1,5 +1,9 @@
 @import '../../assets//scss//color.scss';
 
+a {
+  color: black;
+}
+
 .page-header {
   background: $green-light;
   display: flex;
@@ -31,6 +35,7 @@
   &__desktop--button-words,
   &__desktop--logo-button {
     background-color: transparent;
+    text-decoration: none;
   }
 
   &__desktop--logo-button {

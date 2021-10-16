@@ -15,13 +15,16 @@ class ProductList extends Component {
 
   render() {
     const { products, addToCart, num, productType } = this.props; // 用的是cart
+    const firstThree = products;
+    const secondThree = products;
+    // console.log(firstThree);
     // console.log(products);
     // console.log(productType);
     // console.log(num)
-    if (num !== undefined) {
-      // 首页只展示6个的情况
-      products.length = num;
-    }
+    // if (num !== undefined) {
+    //   // 首页只展示6个的情况
+    //   products.length = num;
+    // }
 
     if (productType === 1) {
       for (let i = 0; i < products.length; i += 1) {
@@ -43,21 +46,57 @@ class ProductList extends Component {
     const { history } = this.props;
     return (
       <>
+        {productType !== 5 && productType !== 6 && (
+          <div className="product-page container">
+            {products.map((product) => (
+              <Product
+                key={product._id}
+                num={num}
+                product={product}
+                onAddToCartClicked={() => {
+                  addToCart(product._id);
+                  window.sessionStorage.setItem('cart', true);
+                  history.push(`${link[productType - 1]}`);
+                }}
+              />
+            ))}
+          </div>
+        )}
         {/* {loading == true && <Loading />} */}
-        <div className="product-page container">
-          {products.map((product) => (
-            <Product
-              key={product._id}
-              num={num}
-              product={product}
-              onAddToCartClicked={() => {
-                addToCart(product._id);
-                window.sessionStorage.setItem('cart', true);
-                history.push(`${link[productType - 1]}`);
-              }}
-            />
-          ))}
-        </div>
+
+        {productType === 5 && (
+          <div className="product-page ">
+            {firstThree.slice(0, 3).map((product) => (
+              <Product
+                key={product._id}
+                num={num}
+                product={product}
+                onAddToCartClicked={() => {
+                  addToCart(product._id);
+                  window.sessionStorage.setItem('cart', true);
+                  history.push(`${link[productType - 1]}`);
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {productType === 6 && (
+          <div className="product-page">
+            {secondThree.slice(3,6).map((product) => (
+              <Product
+                key={product._id}
+                num={num}
+                product={product}
+                onAddToCartClicked={() => {
+                  addToCart(product._id);
+                  window.sessionStorage.setItem('cart', true);
+                  history.push(`${link[productType - 1]}`);
+                }}
+              />
+            ))}
+          </div>
+        )}
       </>
     );
   }

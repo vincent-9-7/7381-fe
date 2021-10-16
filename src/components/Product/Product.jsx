@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProductDetails from './ProductDetails';
 import box from '../../assets/img/box.svg';
+import addCart from '../../assets/img/addCart.svg';
 
 export default class Product extends Component {
   constructor(props){
@@ -13,10 +14,11 @@ export default class Product extends Component {
     const {onAddToCartClicked} = this.props;
     return (
       <button
-        className="btn--add-to-cart"
+        className="btn--homepage-add-to-cart"
         onClick={onAddToCartClicked} 
         type="button">
-        Add to Cart
+        {/* Add to Cart */}
+        <img src={addCart} alt="add" className="add-to-cart" />
       </button>
     );
   }
@@ -36,6 +38,7 @@ export default class Product extends Component {
           brand={product.brand}
           button={this.addToCartButton(product)}
           image={box}
+          imageAddress={product.imageAddress[0]}
           title={`${product.title} ${product.size}kg`}
           delivery="free delivery"
           description={product.description}
