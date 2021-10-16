@@ -70,7 +70,7 @@ function* buyerSignin(action) {
     console.log(buyerInfo);
     console.log(buyerInfo.data);
     console.log(action.payload);
-    const history = useHistory();
+    // const history = useHistory();
 
     yield put({ type: 'BUYER_SIGNIN_SUCCESS', payload: buyerInfo.data });
     // 暂时啥都没有
@@ -78,8 +78,8 @@ function* buyerSignin(action) {
     sessionStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
     sessionStorage.setItem('buyerID', JSON.stringify(buyerInfo.data.ObjectId));
     sessionStorage.setItem('buyerUsername', JSON.stringify(buyerInfo.data.username));
-    // document.location.href = './';
-    history.push("./");
+    document.location.href = './';
+    // history.push("./");
   } catch (e) {
     alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'BUYER_SIGNIN_FAILED', payload: e });
@@ -92,15 +92,15 @@ function* sellerSignin(action) {
     const sellerInfo = yield call(axios.post, `${url}/seller/login`, action.payload, header());
     console.log(sellerInfo);
     console.log(sellerInfo.data);
-    const history = useHistory();
+    // const history = useHistory();
 
     yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: sellerInfo.data });
     sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
     sessionStorage.setItem('sellerID', JSON.stringify(sellerInfo.data.ObjectId));
     sessionStorage.setItem('sellerUsername', JSON.stringify(sellerInfo.data.username));
-    // document.location.href = './';
-    history.push("./");
+    document.location.href = './';
+    // history.push("./");
   } catch (e) {
     alert("Input is not correct. Please check your infofmation. ");
     yield put({ type: 'SELLER_SIGNIN_FAILED', payload: e });
