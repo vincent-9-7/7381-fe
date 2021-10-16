@@ -21,13 +21,15 @@ function UploadImage(props){
       setImage(formData);
     }
   };
+  
 
   useEffect(()=>{ 
     if(image != null) {
-    axios.post(url, image)
+    axios.post(`${url}/img`, image)
     .then(res => {
       imageAddress.push(res.data.imageAddress);
       props.onChange(imageAddress);
+      console.log(imageAddress);
     });
   }},[image]);
      
