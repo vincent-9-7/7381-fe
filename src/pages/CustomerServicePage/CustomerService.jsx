@@ -18,8 +18,11 @@ export default function CustomerService() {
     <div>
       <Header />
       <div className="customer container">
-        <div className="home-page__deals--title">
+        {/* <div className="home-page__deals--title">
           <h2>How can we help you?</h2>
+        </div> */}
+        <div style={{marginTop:'40px'}}>
+        <PageTitle text="How can we help you?" background="no-bg" />
         </div>
 
         <div className="customer__text">
@@ -50,7 +53,7 @@ export default function CustomerService() {
 
       <div className="customer__contact container">
         <div>
-          <PageTitle text="Contact us" background="white-bg" />
+          <PageTitle text="Contact us" background="no-bg" />
           <CustomerContactForm />
         </div>
         <div className="customer__contact-right">

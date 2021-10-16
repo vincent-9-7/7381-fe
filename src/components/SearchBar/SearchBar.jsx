@@ -14,7 +14,7 @@ const customStyles = {
     minHeight: '45px',
     width: '120px',
     outline: 'none',
-    fontSize: 'medium',
+    fontSize: '15px',
     borderRadius: '0px 10px 10px 0px',
     // "&:hover": {
     //   outline: 'none',

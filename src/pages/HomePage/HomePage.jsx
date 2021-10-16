@@ -14,6 +14,7 @@ import vegetables from '../../assets/img/vegetable.png';
 // import b from '../../assets/img/b.svg';
 // import c from '../../assets/img/c.svg';
 import howwework from '../../assets/img/howwework.jpg';
+import PageTitle from '../../components/PageTitle/PageTitle';
 
 class Home extends Component {
   // const [cookies, setCookie, removeCookie] = useCookies(['cookie-name']);
@@ -47,13 +48,25 @@ class Home extends Component {
         <div className="home-page__deals-background">
           <div className="container">
             <div className="home-page__deals">
-              <div className="home-page__deals--title">
-                <h2>Today&apos;s Deals</h2>
+              {/* <div className="home-page__deals--title"> */}
+              {/* <h2>Today&apos;s Deals</h2> */}
+              <div style={{ paddingTop: '30px' }}>
+                <PageTitle text="Today's Deals" background="no-bg" />
               </div>
+              {/* </div> */}
 
               <div className="home-page__deals--cards">
                 {/* 需要展示几个这里就放几个，不填的话默认展示所有 */}
-                <ProductList num={6} productType={4} history={history} />
+                {/* <ProductList num={3} productType={4} history={history} /> */}
+                <div style={{display:'flex',justifyContent:'flex-start'}}>
+                  <h4 style={{fontWeight:'bold'}}>B-grade</h4>
+                </div>
+                <ProductList num={3} productType={5} history={history} />
+
+                <div style={{display:'flex',justifyContent:'flex-start'}}>
+                  <h4 style={{fontWeight:'bold'}}>Processed</h4>
+                </div>
+                <ProductList num={3} productType={6} history={history} />
                 {/* <ProductDetails
                   image={orangeVerticality}
                   title="Orange 10kg"
@@ -67,22 +80,25 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container" id="section">
           <div className="home-page__ad">
-            <div className="home-page__ad--title">
+            {/* <div className="home-page__ad--title">
               <h2>B-grade products</h2>
+            </div> */}
+            <div>
+              <PageTitle text="B-grade products" background="no-bg" />
             </div>
 
             <div className="home-page__ad--details">
               <div className="home-page__ad--left">
-                <h1 style={{ color: '#E0A604',fontSize:'2.1rem' }}>B-grade product?</h1>
+                <h1 style={{ color: '#E0A604', fontSize: '2.1rem' }}>B-grade product?</h1>
                 <Star rating={4} totalRating={5} />
                 <p>
                   Gmsdma dkasmkf gnjkdnfkdnsklaskldmlas. Sajndkasdm adskdkasdks sjndjs ds gf. Gjjd a Asn jksndksnid vd
                   dkjf sjdnsldlakjiodjfkdm saknd Ansdaskjnd fjdngknnankal.
                 </p>
 
-                <h1 style={{ color: '#E0A604',fontSize:'2.1rem' }}>Save food, protect our earth.</h1>
+                <h1 style={{ color: '#E0A604', fontSize: '2.1rem' }}>Save food, protect our earth.</h1>
                 <Star rating={5} totalRating={5} />
                 <p>
                   Gmsdma dkasmkf gnjkdnfkdnsklaskldmlas. Sajndkasdm adskdkasdks sjndjs ds gf. Gjjd a Asn jksndksnid vd
@@ -104,8 +120,11 @@ class Home extends Component {
         <div className="home-page__how-we-work-background">
           <div className="container">
             <div className="home-page__how-we-work">
-              <div className="home-page__how-we-work--title">
+              {/* <div className="home-page__how-we-work--title">
                 <h2>How we work</h2>
+              </div> */}
+              <div style={{ paddingTop: '30px' }}>
+                <PageTitle text="How we work" background="no-bg" />
               </div>
 
               {/* <div className="home-page__how-we-work--images">

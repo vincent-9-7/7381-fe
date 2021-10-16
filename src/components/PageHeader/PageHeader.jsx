@@ -31,71 +31,79 @@ function Header({ color }) {
     sessionStorage.removeItem('cart');
     sessionStorage.removeItem('checkout_products');
     // history.push('./');
-    document.location.href = "/";
+    document.location.href = '/';
   };
 
   return (
     <>
-      {color === 'white' && <div className="page-header-white">
-        <div className="container">
-          {/* Mobile Style */}
-          <div className="page-header__mobile">
-            <button onClick={() => history.push('/')} type="button" className="page-header__mobile--logo-button">
-              <img src={B} alt="B" className="page-header__logo" />
-            </button>
+      {/* header是白色的情况 */}
+      {color === 'white' && (
+        <div className="page-header-white">
+          <div className="container">
+            {/* Mobile Style */}
+            <div className="page-header__mobile">
+              <button onClick={() => history.push('/')} type="button" className="page-header__mobile--logo-button">
+                <img src={B} alt="B" className="page-header__logo" />
+              </button>
 
-            {/* <button onClick={() => 
+              {/* <button onClick={() => 
           history.push('/shopping-cart')} type="button" className="page-header__mobile--button">
             <img src={Cart} alt="B" className="page-header__cart" />
           </button> */}
 
-            {notEmpty ? (
-              <button // 购物车内有东西
-                onClick={() => history.push('/Shopping-cart')}
-                type="button"
-                className="page-header__desktop--button"
-              >
-                <img src={Cart} alt="B" className="page-header__cart" />
-                <div className="page-header__cart--notEmpty" />
+              {notEmpty ? (
+                <button // 购物车内有东西
+                  onClick={() => history.push('/Shopping-cart')}
+                  type="button"
+                  className="page-header__desktop--button"
+                >
+                  <img src={Cart} alt="B" className="page-header__cart" />
+                  <div className="page-header__cart--notEmpty" />
+                </button>
+              ) : (
+                <button // 购物车内 没有 东西
+                  onClick={() => history.push('/Shopping-cart')}
+                  type="button"
+                  className="page-header__desktop--button"
+                >
+                  <img src={Cart} alt="B" className="page-header__cart" />
+                </button>
+              )}
+            </div>
+
+            {/* Destop Style */}
+            <div className="page-header__desktop">
+              <button onClick={() => history.push('/')} type="button" className="page-header__desktop--logo-button">
+                <img src={Bmarket} alt="B" className="page-header__logo" />
               </button>
-            ) : (
-              <button // 购物车内 没有 东西
-                onClick={() => history.push('/Shopping-cart')}
+
+              <a
+                // onClick={() => history.push('/about-us')}
                 type="button"
-                className="page-header__desktop--button"
+                className="page-header__desktop--button-words"
+                // goto='text1'
+                href="./#section"
               >
-                <img src={Cart} alt="B" className="page-header__cart" />
+                About us
+              </a>
+
+              <button
+                onClick={() => history.push('/fruit')}
+                type="button"
+                className="page-header__desktop--button-words"
+              >
+                Fruit
               </button>
-            )}
-          </div>
 
-          {/* Destop Style */}
-          <div className="page-header__desktop">
-            <button onClick={() => history.push('/')} type="button" className="page-header__desktop--logo-button">
-              <img src={Bmarket} alt="B" className="page-header__logo" />
-            </button>
+              <button
+                onClick={() => history.push('/vegetable')}
+                type="button"
+                className="page-header__desktop--button-words"
+              >
+                Vegetable
+              </button>
 
-            {/* <button
-            onClick={() => history.push('/about-us')}
-            type="button"
-            className="page-header__desktop--button-words"
-          >
-            About us
-          </button> */}
-
-            <button onClick={() => history.push('/fruit')} type="button" className="page-header__desktop--button-words">
-              Fruit
-            </button>
-
-            <button
-              onClick={() => history.push('/vegetable')}
-              type="button"
-              className="page-header__desktop--button-words"
-            >
-              Vegetable
-            </button>
-
-            {/* <button
+              {/* <button
             onClick={() => history.push('/productions')}
             type="button"
             className="page-header__desktop--button-words"
@@ -103,27 +111,31 @@ function Header({ color }) {
             Production
           </button> */}
 
-            <button onClick={() => history.push('/service')}
-              type="button" className="page-header__desktop--button-words">
-              Customer service
-            </button>
-            {/** Login Status */}
-            {(sessionStorage.getItem('signed') === 'yes')
-              && (
+              <button
+                onClick={() => history.push('/service')}
+                type="button"
+                className="page-header__desktop--button-words"
+              >
+                Customer service
+              </button>
+              {/** Login Status */}
+              {sessionStorage.getItem('signed') === 'yes' && (
                 <div className="page-header__desktop--four-icons">
-
                   <div className="page-header__desktop--left-two-icons">
                     <button
                       onClick={removeSignin}
                       type="button"
                       className="page-header__desktop--button-words"
-                      style={{ fontSize: "15px" }}
+                      style={{ fontSize: '15px' }}
                     >
                       Sign out
                     </button>
 
                     <button
-                      onClick={() => history.push('/profile')} type="button" className="page-header__desktop--button">
+                      onClick={() => history.push('/profile')}
+                      type="button"
+                      className="page-header__desktop--button"
+                    >
                       <img src={User} alt="B" className="page-header__user" />
                     </button>
                   </div>
@@ -147,118 +159,132 @@ function Header({ color }) {
                       </button>
                     )}
                   </div>
-                </div>)}
-            {/** Not login Status */}
-            {(sessionStorage.getItem('signed') !== 'yes') &&
-              (<div className="page-header__desktop--four-icons">
-                <div className="page-header__desktop--left-two-icons">
-                  <button
-                    onClick={() => history.push('/role-select')}
-                    type="button"
-                    className="page-header__desktop--button-words"
-                    style={{ fontSize: "15px" }}
-
-                  >
-                    Sign in
-                  </button>
-
-                  <button onClick={() => history.push('/profile')}
-                    type="button" className="page-header__desktop--button">
-                    <img src={User} alt="user" className="page-header__user" />
-                  </button>
                 </div>
-                <div className="page-header__desktop--right-two-icons">
-                  <button
-                    onClick={() => history.push('/join-in')}
-                    type="button"
-                    className="page-header__desktop--button-words"
-                    style={{ fontSize: "15px" }}
-                  >
-                    Join in
-                  </button>
-                  {notEmpty ? (
-                    <button // 购物车内有东西
-                      onClick={() => history.push('/Shopping-cart')}
+              )}
+              {/** Not login Status */}
+              {sessionStorage.getItem('signed') !== 'yes' && (
+                <div className="page-header__desktop--four-icons">
+                  <div className="page-header__desktop--left-two-icons">
+                    <button
+                      onClick={() => history.push('/role-select')}
+                      type="button"
+                      className="page-header__desktop--button-words"
+                      style={{ fontSize: '13px', marginBottom: '15px' }}
+                    >
+                      Sign in
+                    </button>
+
+                    <button
+                      onClick={() => history.push('/profile')}
                       type="button"
                       className="page-header__desktop--button"
                     >
-                      <img src={Cart} alt="B" className="page-header__cart" />
-                      <div className="page-header__cart--notEmpty" />
+                      <img src={User} alt="user" className="page-header__user" />
                     </button>
-                  ) : (
-                    <button // 购物车内 没有 东西
-                      onClick={() => history.push('/Shopping-cart')}
+                  </div>
+                  <div className="page-header__desktop--right-two-icons">
+                    <button
+                      onClick={() => history.push('/join-in')}
                       type="button"
-                      className="page-header__desktop--button"
+                      className="page-header__desktop--button-words"
+                      style={{ fontSize: '13px', marginBottom: '15px' }}
                     >
-                      <img src={Cart} alt="B" className="page-header__cart" />
+                      Join in
                     </button>
-                  )}
+                    {notEmpty ? (
+                      <button // 购物车内有东西
+                        onClick={() => history.push('/Shopping-cart')}
+                        type="button"
+                        className="page-header__desktop--button"
+                      >
+                        <img src={Cart} alt="B" className="page-header__cart" />
+                        <div className="page-header__cart--notEmpty" />
+                      </button>
+                    ) : (
+                      <button // 购物车内 没有 东西
+                        onClick={() => history.push('/Shopping-cart')}
+                        type="button"
+                        className="page-header__desktop--button"
+                      >
+                        <img src={Cart} alt="B" className="page-header__cart" />
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>)}
+              )}
+            </div>
           </div>
         </div>
-      </div>}
-      {color !== 'white' && <div className="page-header">
-        <div className="container">
-          {/* Mobile Style */}
-          <div className="page-header__mobile">
-            <button onClick={() => history.push('/')} type="button" className="page-header__mobile--logo-button">
-              <img src={B} alt="B" className="page-header__logo" />
-            </button>
+      )}
 
-            {/* <button onClick={() => 
+      {/* header是绿色的情况 */}
+      {color !== 'white' && (
+        <div className="page-header">
+          <div className="container">
+            {/* Mobile Style */}
+            <div className="page-header__mobile">
+              <button onClick={() => history.push('/')} type="button" className="page-header__mobile--logo-button">
+                <img src={B} alt="B" className="page-header__logo" />
+              </button>
+
+              {/* <button onClick={() => 
           history.push('/shopping-cart')} type="button" className="page-header__mobile--button">
             <img src={Cart} alt="B" className="page-header__cart" />
           </button> */}
 
-            {notEmpty ? (
-              <button // 购物车内有东西
-                onClick={() => history.push('/Shopping-cart')}
-                type="button"
-                className="page-header__desktop--button"
-              >
-                <img src={Cart} alt="B" className="page-header__cart" />
-                <div className="page-header__cart--notEmpty" />
+              {notEmpty ? (
+                <button // 购物车内有东西
+                  onClick={() => history.push('/Shopping-cart')}
+                  type="button"
+                  className="page-header__desktop--button"
+                >
+                  <img src={Cart} alt="B" className="page-header__cart" />
+                  <div className="page-header__cart--notEmpty" />
+                </button>
+              ) : (
+                <button // 购物车内 没有 东西
+                  onClick={() => history.push('/Shopping-cart')}
+                  type="button"
+                  className="page-header__desktop--button"
+                >
+                  <img src={Cart} alt="B" className="page-header__cart" />
+                </button>
+              )}
+            </div>
+
+            {/* Destop Style */}
+            <div className="page-header__desktop">
+              <button onClick={() => history.push('/')} type="button" className="page-header__desktop--logo-button">
+                <img src={Bmarket} alt="B" className="page-header__logo" />
               </button>
-            ) : (
-              <button // 购物车内 没有 东西
-                onClick={() => history.push('/Shopping-cart')}
+
+              <a
+                // onClick={() => history.push('/about-us')}
                 type="button"
-                className="page-header__desktop--button"
+                className="page-header__desktop--button-words"
+                // goto='text1'
+                href="./#section"
               >
-                <img src={Cart} alt="B" className="page-header__cart" />
+                About us
+              </a>
+
+              <button
+                onClick={() => history.push('/fruit')}
+                type="button"
+                className="page-header__desktop--button-words"
+              >
+                Fruit
               </button>
-            )}
-          </div>
 
-          {/* Destop Style */}
-          <div className="page-header__desktop">
-            <button onClick={() => history.push('/')} type="button" className="page-header__desktop--logo-button">
-              <img src={Bmarket} alt="B" className="page-header__logo" />
-            </button>
+              <button
+                onClick={() => history.push('/vegetable')}
+                type="button"
+                className="page-header__desktop--button-words"
+              >
+                Vegetable
+              </button>
 
-            {/* <button
-            onClick={() => history.push('/about-us')}
-            type="button"
-            className="page-header__desktop--button-words"
-          >
-            About us
-          </button> */}
-
-            <button onClick={() => history.push('/fruit')} type="button" className="page-header__desktop--button-words">
-              Fruit
-            </button>
-
-            <button
-              onClick={() => history.push('/vegetable')}
-              type="button"
-              className="page-header__desktop--button-words"
-            >
-              Vegetable
-            </button>
-
-            {/* <button
+              {/* <button
             onClick={() => history.push('/productions')}
             type="button"
             className="page-header__desktop--button-words"
@@ -266,27 +292,31 @@ function Header({ color }) {
             Production
           </button> */}
 
-            <button onClick={() => history.push('/service')}
-              type="button" className="page-header__desktop--button-words">
-              Customer service
-            </button>
-            {/** Login Status */}
-            {(sessionStorage.getItem('signed') === 'yes')
-              && (
+              <button
+                onClick={() => history.push('/service')}
+                type="button"
+                className="page-header__desktop--button-words"
+              >
+                Customer service
+              </button>
+              {/** Login Status */}
+              {sessionStorage.getItem('signed') === 'yes' && (
                 <div className="page-header__desktop--four-icons">
-
                   <div className="page-header__desktop--left-two-icons">
                     <button
                       onClick={removeSignin}
                       type="button"
                       className="page-header__desktop--button-words"
-                      style={{ fontSize: "15px" }}
+                      style={{ fontSize: '13px', marginBottom: '15px' }}
                     >
                       Sign out
                     </button>
 
                     <button
-                      onClick={() => history.push('/profile')} type="button" className="page-header__desktop--button">
+                      onClick={() => history.push('/profile')}
+                      type="button"
+                      className="page-header__desktop--button"
+                    >
                       <img src={User} alt="B" className="page-header__user" />
                     </button>
                   </div>
@@ -310,56 +340,63 @@ function Header({ color }) {
                       </button>
                     )}
                   </div>
-                </div>)}
-            {/** Not login Status */}
-            {(sessionStorage.getItem('signed') !== 'yes') &&
-              (<div className="page-header__desktop--four-icons">
-                <div className="page-header__desktop--left-two-icons">
-                  <button
-                    onClick={() => history.push('/role-select')}
-                    type="button"
-                    className="page-header__desktop--button-words"
-                    style={{ fontSize: "15px" }}
-                  >
-                    Sign in
-                  </button>
+                </div>
+              )}
+              {/** Not login Status */}
+              {sessionStorage.getItem('signed') !== 'yes' && (
+                <div className="page-header__desktop--four-icons">
+                  <div className="page-header__desktop--left-two-icons">
+                    <button
+                      onClick={() => history.push('/role-select')}
+                      type="button"
+                      className="page-header__desktop--button-words"
+                      style={{ fontSize: '13px', marginBottom: '15px' }}
+                    >
+                      Sign in
+                    </button>
 
-                  <button onClick={() => history.push('/profile')}
-                    type="button" className="page-header__desktop--button">
-                    <img src={User} alt="user" className="page-header__user" />
-                  </button>
-                </div>
-                <div className="page-header__desktop--right-two-icons">
-                  <button
-                    onClick={() => history.push('/join-in')}
-                    type="button"
-                    className="page-header__desktop--button-words"
-                    style={{ fontSize: "15px" }}
-                  >
-                    Join in
-                  </button>
-                  {notEmpty ? (
-                    <button // 购物车内有东西
-                      onClick={() => history.push('/Shopping-cart')}
+                    <button
+                      onClick={() => history.push('/profile')}
                       type="button"
                       className="page-header__desktop--button"
                     >
-                      <img src={Cart} alt="B" className="page-header__cart" />
-                      <div className="page-header__cart--notEmpty" />
+                      <img src={User} alt="user" className="page-header__user" />
                     </button>
-                  ) : (
-                    <button // 购物车内 没有 东西
-                      onClick={() => history.push('/Shopping-cart')}
+                  </div>
+                  <div className="page-header__desktop--right-two-icons">
+                    <button
+                      onClick={() => history.push('/join-in')}
                       type="button"
-                      className="page-header__desktop--button"
+                      className="page-header__desktop--button-words"
+                      style={{ fontSize: '13px', marginBottom: '15px' }}
                     >
-                      <img src={Cart} alt="B" className="page-header__cart" />
+                      Join in
                     </button>
-                  )}
+                    {notEmpty ? (
+                      <button // 购物车内有东西
+                        onClick={() => history.push('/Shopping-cart')}
+                        type="button"
+                        className="page-header__desktop--button"
+                      >
+                        <img src={Cart} alt="B" className="page-header__cart" />
+                        <div className="page-header__cart--notEmpty" />
+                      </button>
+                    ) : (
+                      <button // 购物车内 没有 东西
+                        onClick={() => history.push('/Shopping-cart')}
+                        type="button"
+                        className="page-header__desktop--button"
+                      >
+                        <img src={Cart} alt="B" className="page-header__cart" />
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>)}
+              )}
+            </div>
           </div>
-        </div></div>}
+        </div>
+      )}
     </>
   );
 }
