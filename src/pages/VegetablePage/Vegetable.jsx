@@ -160,22 +160,33 @@ function VegetablePage() {
               {startProduct}-{endProduct} of
               <div style={{ fontWeight: 'bold' }}>&nbsp;{totalItem} products</div>
             </div>
-            <div className="overview-lists" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-              {filteredNewItems.map((item) => (
-                <div key={item._id} className="overview-list">
-                  <OverviewList
-                    image={item.imageAddress[0]}
-                    title={`${item.title} ${item.size}kg`}
-                    delivery="free delivery"
-                    description={item.description}
-                    oldPrice={false}
-                    price={`AU $${item.price}`}
-                    id={`${item._id}`}
-                    quantity={item.quantity}
-                    pageType="vegetable"
-                  />
-                </div>
-              ))}
+            <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+              <div
+                className="overview-lists"
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                  // backgroundColor: 'red',
+                  maxWidth: '1000px',
+                }}
+              >
+                {filteredNewItems.map((item) => (
+                  <div key={item._id} className="overview-list">
+                    <OverviewList
+                      image={item.imageAddress[0]}
+                      title={`${item.title} ${item.size}kg`}
+                      delivery="free delivery"
+                      description={item.description}
+                      oldPrice={false}
+                      price={`AU $${item.price}`}
+                      id={`${item._id}`}
+                      quantity={item.quantity}
+                      pageType="vegetable"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

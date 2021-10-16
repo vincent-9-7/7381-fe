@@ -3,11 +3,11 @@
 
 .home-page {
   &__deals--cards {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 0px 0px;
+    // display: flex;
+    // justify-content: space-evenly;
+    // flex-wrap: wrap;
+    // align-items: center;
+    // margin: 0px 0px;
   }
 
   &__deals--card {
@@ -68,4 +68,5 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  max-width: 1000px;
 }

@@ -10,9 +10,9 @@ import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import vegetables from '../../assets/img/vegetable.png';
-import a from '../../assets/img/a.svg';
-import b from '../../assets/img/b.svg';
-import c from '../../assets/img/c.svg';
+// import a from '../../assets/img/a.svg';
+// import b from '../../assets/img/b.svg';
+// import c from '../../assets/img/c.svg';
 import howwework from '../../assets/img/howwework.jpg';
 
 class Home extends Component {
