@@ -73,8 +73,10 @@ class ProductList extends Component {
         )}
 
         {/* Search Components */}
-        {!searchNum && <Loading />}
+        
         {productType === 4 && (
+          <>
+          {!searchNum && <Loading />}
           <div className="product-page ">
             {searchNum &&
               searchResult.map((product) => (
@@ -90,6 +92,7 @@ class ProductList extends Component {
                 />
               ))}
           </div>
+          </>
         )}
 
         {productType === 5 && (
