@@ -6,6 +6,7 @@ import { filterProducts, getProducts } from '../../store/actions/cart/products';
 import { addToCart } from '../../store/actions/cart/cart';
 import { getVisibleProducts } from '../../store/reducers/cart/products';
 import Product from './Product';
+import Loading from '../Loading/Loading';
 
 class ProductList extends Component {
   constructor(props) {
@@ -14,18 +15,11 @@ class ProductList extends Component {
   }
 
   render() {
-    const { products, addToCart, num, productType } = this.props; // 用的是cart
+    const { products, addToCart, num, productType, search } = this.props; // 用的是cart
     const firstThree = products;
     const secondThree = products;
-    // console.log(firstThree);
-    // console.log(products);
-    // console.log(productType);
-    // console.log(num)
-    // if (num !== undefined) {
-    //   // 首页只展示6个的情况
-    //   products.length = num;
-    // }
-
+    const searchResult = products;
+    let searchNum = false;
     if (productType === 1) {
       for (let i = 0; i < products.length; i += 1) {
         if (products[i].category === 'Vegetable') {
@@ -40,13 +34,28 @@ class ProductList extends Component {
           i -= 1;
         }
       }
+    } else if (productType === 4) {
+      // 搜索
+      if (search.length !== 0) {
+        for (let i = 0; i < searchResult.length; i += 1) {
+          if (!searchResult[i].title.includes(search)) {
+            searchResult.splice(i, 1); // 从i索引的位置，删除一个元素
+            i -= 1;
+          }
+        }
+        if (searchResult.length !== 0) {
+          searchNum = true;
+        }
+      }
+      // console.log(search);
+      // console.log(searchResult);
     }
     // console.log(products);
     const link = ['fruit', 'vegetable', 'productions', ''];
     const { history } = this.props;
     return (
       <>
-        {productType !== 5 && productType !== 6 && (
+        {productType !== 4 && productType !== 5 && productType !== 6 && (
           <div className="product-page container">
             {products.map((product) => (
               <Product
@@ -62,7 +71,26 @@ class ProductList extends Component {
             ))}
           </div>
         )}
-        {/* {loading == true && <Loading />} */}
+
+        {/* Search Components */}
+        {!searchNum && <Loading />}
+        {productType === 4 && (
+          <div className="product-page ">
+            {searchNum &&
+              searchResult.map((product) => (
+                <Product
+                  key={product._id}
+                  num={num}
+                  product={product}
+                  onAddToCartClicked={() => {
+                    addToCart(product._id);
+                    window.sessionStorage.setItem('cart', true);
+                    history.push(`/search?name=${search}`);
+                  }}
+                />
+              ))}
+          </div>
+        )}
 
         {productType === 5 && (
           <div className="product-page ">
@@ -83,7 +111,7 @@ class ProductList extends Component {
 
         {productType === 6 && (
           <div className="product-page">
-            {secondThree.slice(3,6).map((product) => (
+            {secondThree.slice(3, 6).map((product) => (
               <Product
                 key={product._id}
                 num={num}
