@@ -8,11 +8,15 @@ const { Component } = React;
 
 const Profile = () => (
   <div className="Root">
+    <button className="jump">Post Ad </button>
     <Tabs selected={0}>
       <TabList>
         <Tab>
           <div className="ps">
-            <Button>Profile setting</Button>
+            <Button className="profileButton">
+              <div className="profileIcon"></div>
+              Profile setting
+            </Button>
           </div>
           <hr className="hr" />
         </Tab>
@@ -21,11 +25,16 @@ const Profile = () => (
         {/*  <hr className="hr"/>*/}
         {/*</Tab>*/}
         <Tab>
-          <Button>My shop</Button>
+          <Button className="shopButton">
+            <div className="shopIcon"></div>
+            My shop
+          </Button>
           <hr className="hr" />
         </Tab>
         <Tab>
-          <Button>Message</Button>
+          <Button className="messageButton">
+            <div className="messageIcon"></div>
+            Message</Button>
           <hr className="hr" />
         </Tab>
         {/*<Tab>*/}

@@ -15,6 +15,9 @@
   position: relative;
   top: 50px;
   left: 18%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-end;
 }
 
 .Tabs {
@@ -73,4 +76,57 @@
   display: flex;
   flex-direction: column;
 }
+.profileButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.profileIcon {
+  margin-top: -15px;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 18px;
+  left: -18px;
+  background-image: url("../../assets/img/User.svg");
+}
+.shopButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.shopIcon {
+  margin-top: -15px;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 18px;
+  left: -20px;
+  background-image: url("../../assets/img/shop.jpg");
+  background-size: cover;
+  overflow: hidden;
+}
+.messageButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.messageIcon {
+  margin-top: -15px;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 18px;
+  left: -20px;
+  background-image: url("../../assets/img/email.svg");
+  background-size: cover;
+  overflow: hidden;
+}
+
 

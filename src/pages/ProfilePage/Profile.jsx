@@ -21,7 +21,7 @@ function ProfilePage() {
       <Header />
       <div style={{ minHeight: '90vh' }}>
         {/* eslint-disable-next-line react/button-has-type */}
-        <button className="jump">Post Ad </button>
+        {/* <button className="jump">Post Ad </button> */}
         <Profile />
 
         <div id="passwordTitle">Change password</div>
