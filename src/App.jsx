@@ -18,6 +18,8 @@ import JoinInPage from './pages/RegisterPage/JoinInPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import OverviewPage from './pages/OverviewPage/OverviewPage';
 
+import ProfilePage from './pages/ProfilePage/Profile';
+
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import ComingSoon from './pages/ComingSoonPage/ComingSoonPage';
 import PostPage from './pages/PostPage/PostPage';
@@ -62,7 +64,7 @@ function App() {
         <Route path="/join-in" exact component={JoinInPage} />
         <Route path="/register" exact component={RegisterPage} />
 
-        <Route path="/profile" exact component={ComingSoon} />
+        <Route path="/profile" exact component={ProfilePage} />
         <Route path="/shopping-cart" exact component={ComingSoon} />
         <Route path="/post" exact component={PostPage} />
         {/* <ProtectedRoute path="/order" exact component={Order} /> */}
