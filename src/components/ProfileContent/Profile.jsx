@@ -8,7 +8,7 @@ const { Component } = React;
 
 const Profile = () => (
   <div className="Root">
-    <button className="jump">Post Ad </button>
+    <button className="jump" onClick={()=>document.location.href = '/post'}>Post Ad </button>
     <Tabs selected={0}>
       <TabList>
         <Tab>
