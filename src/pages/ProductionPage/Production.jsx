@@ -3,6 +3,8 @@ import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 import ProductList from '../../components/Product/ProductList';
 
+const queryString = require('query-string');
+
 class ProductPage extends Component {
   constructor(props) {
     super(props);
@@ -10,16 +12,19 @@ class ProductPage extends Component {
   }
 
   render() {
-    const { history,match } = this.props;
-    // if(match.path === "/search") {
-    //   console.log('search');
-    // }
+    const { history,match,location } = this.props;
+
+    // 判断search的是什么
+    const parsed = queryString.parse(location.search);
+    const searchItem = parsed.name;
+    // console.log(typeof searchItem);
+
     return (
       <>
         <Header cart={false} />
         {/* 1:Fruit 2:Vegetable 3:ALL 4.Search items */}
         {match.path !== "/search" && <ProductList productType={3} history={history} />}
-        {match.path === "/search" && <ProductList productType={4} history={history} />}
+        {match.path === "/search" && <ProductList productType={4} history={history} search={searchItem} />}
         <Footer />
       </>
     );
