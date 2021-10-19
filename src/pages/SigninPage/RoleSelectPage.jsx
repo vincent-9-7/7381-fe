@@ -28,8 +28,8 @@ function RoleSeclectPage() {
   return (
     <>
       <Header />
-      <div className="container">
-        <PageTitle text="Sign for user or shop" background="white-bg" />
+      <div className="container" style={{ marginTop: "5.5rem" }}>
+        <PageTitle text="Sign for user or shop" background="no-bg" />
         <div className="role-selection">
           {/* <PageTitle text="Sign in as a Seller or Buyer? " /> */}
           {/* <h1>Sign in as a Seller or Buyer? </h1> */}
@@ -39,11 +39,13 @@ function RoleSeclectPage() {
                 className="joinin-button"
                 onClick={handleOnClick}
                 type="button"
-                style={{ marginRight: "50px" }}
+                style={{ marginRight: "50px", }}
               >
-                <img src={user} alt="seller" style={{ padding: "10px 10px 10px 10px" }} />
+                <img src={user} alt="seller"
+                  style={{ padding: "30px 30px 0px 70px" }} />
+                <h1 style={{ marginRight: "30px", fontWeight: "bold", marginBottom: "20px" }}>User</h1>
               </button>
-              <h3 style={{ marginRight: "50px", fontWeight: "bold" }}>User</h3>
+
             </div>
             <div style={{ display: "flex", textAlign: "center", flexDirection: "column" }}>
               <button
@@ -51,9 +53,10 @@ function RoleSeclectPage() {
                 onClick={handleOnClick2}
                 type="button"
                 style={{ marginLeft: "50px" }}
-              ><img src={shop} alt="buyer" style={{ padding: "10px 10px 10px 10px" }} />
+              ><img src={shop} alt="buyer" style={{ padding: "30px 50px 0px 50px" }} />
+                <h1 style={{ fontWeight: "bold", marginBottom: "20px" }}>Shop</h1>
               </button>
-              <h3 style={{ marginLeft: "50px", fontWeight: "bold" }}>Shop</h3>
+
             </div>
           </div>
         </div>

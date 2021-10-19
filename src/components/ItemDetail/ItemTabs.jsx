@@ -29,7 +29,7 @@ function ItemTabs(props) {
           leftContent={
             <div>
               {description}
-              <p />
+              {/* <p />
               <strong>Banana Fun Facts!</strong>
               <p />
               <p>
@@ -37,7 +37,7 @@ function ItemTabs(props) {
                 instead of growing towards the ground, bananas turn towards the sun (against gravity).
                 Hence giving them the curved shape.Bananas are the best source of Vitamin B6
                 Bananas are composed of 75% water.
-                At over 10,000 years old, bananas are the worlds oldest fruit!</p>
+                At over 10,000 years old, bananas are the worlds oldest fruit!</p> */}
             </div>}
           rightContent={
             <div>
