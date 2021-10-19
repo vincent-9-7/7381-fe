@@ -9,7 +9,7 @@ function PostPage() {
 
   return (
     <div >
-      <Header style={{background:"white"}}/>
+      <Header color="white" />
       <PostForm />
       <Footer style={{background:"#FDF77A"}}/>
     </div>
