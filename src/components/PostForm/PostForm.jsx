@@ -84,9 +84,9 @@ export default function PostForm() {
 
     const data1 = {
       ...data,
-      latitude:latitude1,
-      longitude:longitude1,
-    }
+      latitude:longitude1,
+      longitude:latitude1,
+    };
     console.log(data1);
     dispatch(postItemsRequest(data1));
     // localStorage.clear("x");

@@ -68,8 +68,8 @@ function* buyerSignin(action) {
     // 暂时啥都没有
     sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
-    sessionStorage.setItem('buyerID', JSON.stringify(buyerInfo.data.ObjectId));
-    sessionStorage.setItem('buyerUsername', JSON.stringify(buyerInfo.data.username));
+    sessionStorage.setItem('userID', JSON.stringify(buyerInfo.data.ObjectId));
+    sessionStorage.setItem('Username', JSON.stringify(buyerInfo.data.username));
     document.location.href = './';
   } catch (e) {
     alert('Input is not correct. Please check your infofmation. ');
@@ -87,8 +87,8 @@ function* sellerSignin(action) {
     yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: sellerInfo.data });
     sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
-    sessionStorage.setItem('sellerID', JSON.stringify(sellerInfo.data.ObjectId));
-    sessionStorage.setItem('sellerUsername', JSON.stringify(sellerInfo.data.username));
+    sessionStorage.setItem('userID', JSON.stringify(sellerInfo.data.ObjectId));
+    sessionStorage.setItem('Username', JSON.stringify(sellerInfo.data.username));
     document.location.href = './';
   } catch (e) {
     alert('Input is not correct. Please check your infofmation. ');
