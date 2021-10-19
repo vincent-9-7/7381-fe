@@ -9,6 +9,7 @@ import axios from 'axios';
 import React, { useState,useEffect } from 'react';
 import url from '../../api/api';
 import NoticeBoard from '../NoticeBoard/NoticeBoard';
+import upload from '../../assets/img/upload-background.png';
 
 
 function UploadImage(props){
@@ -37,7 +38,7 @@ function UploadImage(props){
     <div className="upload-page">
       {/* <h1 className="upload-page__header">Image Upload Tutorial</h1> */}
       {/* <button className="upload-page__button" type="button" onClick={handleClick}>Upload!</button> */}
-      <div className="upload-page--left">
+      <div className="upload-page--left">    
         <img src={image?URL.createObjectURL(image.get('images')): null} className="upload-page--left__image" 
         alt=""  />
       </div>

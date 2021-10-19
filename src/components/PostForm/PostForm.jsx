@@ -1,23 +1,29 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/jsx-props-no-spreading */
 
-
 import React,{useEffect, useState,} from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import MapboxGl from 'mapbox-gl/dist/mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import UploadImage from '../UploadImage/UploadImage';
 import './PostForm.scss';
 import NoticeBoard from '../NoticeBoard/NoticeBoard';
 import { postItemsRequest } from "../../store/actions/actionCreator";
 
+
 export default function PostForm() {
   const [imageAddress, setImageAddress,] = React.useState([]);
+  const [coordinates, setCoordinates,] = React.useState([]);
   const [count, getCount] = React.useState(3000);
   const dispatch = useDispatch();
   const keyhandler = e => {
     getCount(3000-e.target.value.length);
   };
   function handleChange(imgAddress) { 
+    if(imageAddress.size !==0) {
+      imageAddress.pop();
+    }
     imageAddress.push(imgAddress);
     setImageAddress(imageAddress);
     // RenderImage();
@@ -33,27 +39,67 @@ export default function PostForm() {
   }
   const { register, handleSubmit,setValue,formState: { errors } } = useForm({
     defaultValues:{
-        imageAddress:" "
+        imageAddress:" ",
+        latitude: 1,
+        longitude:1,
         // 记得设置id
     }
-  
-  
+
   });
 
+  
+    // eslint-disable-next-line max-len
+
+
+
   const onSubmit = (data) => {
-    dispatch(postItemsRequest(data));
-    // if (user === 'buyer') {
-    //   dispatch(registerBuyerRequest(data));
-    // } else {
-    //   dispatch(registerSellerRequest(data));
-    // }
+    console.log(data);
+    MapboxGl.accessToken = 
+    'pk.eyJ1IjoibGluZ3hpMjExIiwiYSI6ImNrdWUycWg5cTFlM3UycG12anRlcnZ2b3QifQ.mp24OFFxrF3e93xjPwbhGg';
+    // let coor = 0;
+    const geocoder = new MapboxGeocoder({
+      accessToken: MapboxGl.accessToken,
+      // types: 'place,postcode,locality,neighborhood'
+      types: 'postcode'
+    });
+    geocoder.addTo('#geocoder');
+    function searchCoorsByName(locationName) {
+      geocoder.query(locationName);
+      geocoder.on('result', (e) => {
+        // coor = e.result.geometry.coordinates;
+        
+        // console.log(e.result.bbox[1],"tjis c");
+        const x = e.result.bbox[0];
+        const y = e.result.bbox[1];
+        localStorage.setItem('x',x);
+        localStorage.setItem('y',y);
+
+      });
+    }
+    const {postcode} = data;
+    searchCoorsByName(`australia,${postcode}`);
+    let {latitude1,longitude1} =data;
+    latitude1 = localStorage.getItem('x');
+    longitude1 = localStorage.getItem('y');
+
+    const data1 = {
+      ...data,
+      latitude:latitude1,
+      longitude:longitude1,
+    }
+    console.log(data1);
+    dispatch(postItemsRequest(data1));
+    // localStorage.clear("x");
+    // localStorage.clear("y");
   };
 
     useEffect(() => {
         setValue('imageAddress',imageAddress);
     }, [imageAddress]);
 
-  // const onSubmit = data => console.log(data);
+    useEffect(() => {
+      setCoordinates('coordinates',coordinates);
+  }, [coordinates]);
 
 
   return (
@@ -156,9 +202,12 @@ export default function PostForm() {
           <div>
             <div className="container--textarea--flex">
               <div className="container--textarea--flex-width">
-                <textarea className="textarea" type="text" 
+                <textarea  className="textarea" type="text" 
                 onKeyUp={e => keyhandler(e)}
+                // style=“font-family 'Roboto', sans-serif”
+                
                 placeholder="Describe your product in this area."
+                
                     {...register("description", {required: true, maxLength: 3000})} />
                 <div>
                   Words left: {count} 
@@ -312,11 +361,14 @@ export default function PostForm() {
            
 
       </div>
+      <div style={{display: "none"}} id='geocoder'/>
+      <pre id='result'/>
       {/* {watchImage && <input type="number" {...register("age", { min: 50 })} />} */}
     </form>
     /* <div>
     {imageAddress.map((imgSrc) => (<img className="img" src={imgSrc[0]} key={imgSrc[0]} alt={imgSrc[0]} 
     width="150" height="220"/>))}
      </div> */
+
   );
 }

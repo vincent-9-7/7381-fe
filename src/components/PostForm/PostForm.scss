@@ -4,7 +4,8 @@
     &__top{
         display: flex;
         background: $green-light;
-        height: 100px;
+        height: 140px;
+        padding-top: 1.6rem;
         flex-direction:column;
         align-items:center;
         &--header{
@@ -35,8 +36,9 @@
                 display: block;
                 // margin-top:3rem;
                 // margin-left: 5rem;
-                font-size: 1.7rem;
+                font-size: 1.3rem;
                 width: 40%;
+                color: grey;
             }
             &--input[type=text] {
                 width: 40%;
@@ -48,6 +50,7 @@
                 border: 1.5px solid #d3d3d3;
                 border-radius: 5px;
                 box-shadow: none;
+                
                 color: black;
                 &:focus {
                     border: 2.5px solid rgba(1, 146, 237, 0.783);
@@ -100,6 +103,7 @@
     .container {
 
         &--textarea{
+            
             &--flex{
                 display: flex;
                 justify-content:space-between;
@@ -431,6 +435,7 @@
                 }
             }
             .textarea {
+                font-family: 'Roboto', sans-serif;
                 width: 80%;
                 height: 300px;
                 padding: 12px 20px;
@@ -448,14 +453,16 @@
     &--btn--post { 
        
         background: $green-dark;
+        box-shadow: 0 3px 10px #8080808c;
         color: #ffffff;
         width: 21rem;
         height: 55px;
         border-radius: 10px;
         border-style:none;
         // padding: 1rem 2rem;
-        margin: 15px;
+        margin: 15px 0px;
         font-size: 1.5rem;
+        
     
         &:hover, &:focus {
             background: $green-primary;

@@ -1,20 +1,52 @@
 @import '../../assets//scss//color.scss';
+
 .upload-page{
   height: 20rem;
   display: flex;
+
   justify-content: space-between;
     &--left {
       // margin-left: 5%;
+      display: flex;
+      // flex-direction:column;
+      // background-image: ;
+      background: url(../../assets/img/upload-background.png) 50% 50% no-repeat;
+      background-size: 7rem 7rem;
       width: 50%;
       border: 1px $green-dark;
       border-style: dashed;
       text-align: center;
+      justify-content: center;
+      align-items: center;
       &__image{
         // width: ;
         height: 100%;
         object-fit: contain;
         justify-content: center;
         
+      }
+      &__label {
+        background: $green-dark;
+        position: relative;
+        left: 20rem;
+        color: #ffffff;
+        width: 15rem;
+        height: 50px;
+        border-radius: 10px;
+        border-style:none;
+        margin-top: 11rem;
+        margin-left: 4rem;
+        text-align: center;
+        line-height: 2.3;
+        font-size: 1.3rem;
+    
+        &:hover, &:focus {
+            background: $green-primary;
+        }
+        cursor: pointer;
+      }
+      &__input {
+        display:none;
       }
     }
     &--right{
