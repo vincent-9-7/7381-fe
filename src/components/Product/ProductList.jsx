@@ -74,7 +74,7 @@ class ProductList extends Component {
                 onAddToCartClicked={() => {
                   addToCart(product._id);
                   window.sessionStorage.setItem('cart', true);
-                  history.push(`${link[productType - 1]}`);
+                  history.push('/');
                 }}
               />
             ))}
@@ -91,7 +91,7 @@ class ProductList extends Component {
                 onAddToCartClicked={() => {
                   addToCart(product._id);
                   window.sessionStorage.setItem('cart', true);
-                  history.push(`${link[productType - 1]}`);
+                  history.push('/');
                 }}
               />
             ))}
