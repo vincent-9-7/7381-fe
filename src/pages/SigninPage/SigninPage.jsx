@@ -36,24 +36,24 @@ function Signin(props) {
   return (
     <>
       <Header />
-      <div className="container">
+      <div className="container" >
         <div className="log-in" style={{ marginTop: "30px" }}>
           <form className="log-in-form" onSubmit={handleSubmit(onSubmit)}>
             <div className="log-in-title">
-              <img src={SignInAvator} style={{ width: "35px" }} />
-              <h1 className="title">{`Sign in`}</h1>
+              <img src={SignInAvator} style={{ width: "35px", marginTop: "3.5rem" }} />
+              <div style={{ fontSize: "2rem", fontWeight: 400, padding: "0.67rem 0rem" }}>{`Sign in`}</div>
             </div>
             <div>
               <label htmlFor="email" className="label">EMAIL ADDRESS:</label>
-              <input className="text" type="email" {...register("email")} placeholder="Enter your email" name="email" required />
+              <input className="text" type="email" {...register("email")} name="email" required />
             </div>
             <div>
               <label className="label">PASSWORD: </label>
-              <input type="password" {...register("password")} placeholder="Enter your password" className="text" name="password" required />
+              <input type="password" {...register("password")} className="text" name="password" required />
             </div>
-            <span className="span"><input type="checkbox" />Remember me <a href="/sign-in" className="forgot-password"> Forgot Password? </a></span>
+            <span className="span"><input type="checkbox" />&nbsp;&nbsp;Remember me <a href="/sign-in" className="forgot-password"> Forgot Password? </a></span>
             <button onSubmit={handleSubmit(onSubmit)} type="submit" className="btn--register" style={{ margin: "0 auto", marginTop: "30px", marginBottom: "10px" }}>SIGN IN</button>
-            <span>Don`t have an account?<a href="/join-in" className="create-account"> Create Account </a></span>
+            <span>Don`t have an account? <a href="/join-in" className="create-account">Create Account </a></span>
           </form>
         </div>
       </div>

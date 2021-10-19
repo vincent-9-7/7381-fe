@@ -73,8 +73,40 @@ button {
     }
   }
 
+  .btn--overviewpage-add-to-cart { 
+    background: $green-dark;
+    color: #ffffff;
+    width: 200px;
+    height: 40px;
+    border-radius: 25px;
+    padding: 0.1rem 2rem;
+    // margin: 10px;
+    font-size:large;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    &:hover {
+      background: $green-primary;
+    }
+  }
+
   .btn--register {
-    background: $green-primary;
+    background: #95AB14;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+    width: 100%;
+    height: 50px;
+    // padding: 1rem 2rem;
+    // margin: 10px;
+    font-size: x-large;
+
+    &:hover {
+      background: $green-dark;
+    }
+  }
+
+  .btn--joinin {
+    background: #95AB14;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
     color: #ffffff;
     width: 350px;
     height: 50px;

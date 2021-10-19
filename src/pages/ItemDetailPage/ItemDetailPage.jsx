@@ -12,9 +12,9 @@ import './ItemDetailPage.scss';
 
 function ItemDetailPage(match) {
   const itemid = match.match.params.id;
-  console.log(match.match);
+  // console.log(match.match);
 
-  console.log(itemid);
+  // console.log(itemid);
 
   const data = { _id: itemid }
   const dispatch = useDispatch();
@@ -26,12 +26,12 @@ function ItemDetailPage(match) {
 
 
   const item = useSelector((state) => state.itemslist.itemDetails);
-  console.log(item);
+  // console.log(item);
 
 
 
   const { title, condition, suburb, city, quantity, price, imageAddress, description } = item;
-  console.log(item[0]);
+  // console.log(item[0]);
 
   let initialState = {
     title: 'abc',
@@ -49,7 +49,7 @@ function ItemDetailPage(match) {
     initialState = item[0];
   }
 
-  console.log(initialState);
+  // console.log(initialState);
 
   return (
     <div>

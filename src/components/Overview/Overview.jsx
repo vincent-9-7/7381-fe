@@ -23,28 +23,23 @@ function OverviewList(props) {
 
   return (
     <div>
-      <div className="home-page__deals--card">
+      <div className="overview-page__deals--card">
         {/* Image */}
-        <a href={`./get/${id}`}><img src={image} alt={title} className="home-page__deals--image" /></a>
+        <a href={`./get/${id}`}><img src={image} alt={title} className="overview-page__deals--image" /></a>
 
-        <div className="home-page__deals--describes">
+        <div className="overview-page__deals--describes">
           {/* Title */}
-          <h3 style={{ fontSize: 'large' }}>{title}</h3>
+          <div className="overview-page__deals--describes-title" >{title}</div>
           {/* Price */}
-          <div className="home-page__deals--describe-price">
-            {
-              oldPrice && <p className="home-page__deals--describe-old-price">{oldPrice}</p>
-            }
-            <p style={{ fontSize: '2rem', fontWeight: 700, color: '#E0A604' }}>{price}</p>
+          <div className="overview-page__deals--describe-price">
+            <div>{price}</div>
           </div>
-          {/* Delivery */}
-          <p style={{ color: 'grey' }}>{delivery}</p>
           {/* Description */}
-          <p>{description}</p>
+          <div style={{ fontSize: "0.7rem", marginBottom: "1rem" }}>Free Delivery on eligible first order</div>
           {/* Add to cart button */}
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <button
-              className="btn--add-to-cart"
+              className="btn--overviewpage-add-to-cart"
               type="button"
               onClick={handleOnClick}
             >

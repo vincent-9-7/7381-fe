@@ -10,7 +10,7 @@ function JoinInPage() {
   return (
     <>
       <Header />
-      <div className="container">
+      <div className="container" style={{ marginTop: "5.5rem" }}>
         <JoinIn />
       </div>
       <Footer />
