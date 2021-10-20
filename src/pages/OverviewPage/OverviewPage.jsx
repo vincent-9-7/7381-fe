@@ -90,7 +90,7 @@ function Overview(props) {
   // console.log(items.length);
   // console.log(Math.floor((Object.keys(items).length) / 9) + 1);
   // console.log((Object.keys(items).length) / 9 + 1);
-  // // item数据的长度(一共有多少条数据)
+
   const totalItem = items.length;
 
 

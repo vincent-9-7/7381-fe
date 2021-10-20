@@ -5,8 +5,8 @@ import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 
 
-function RegisterPage(props) {
-  const { data } = props;
+function RegisterPage() {
+
   return (
     <>
       <Header />

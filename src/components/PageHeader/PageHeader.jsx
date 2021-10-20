@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import './PageHeader.scss';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Bmarket from '../../assets/img/Bmarket.svg';
 import B from '../../assets/img/LogoB.svg';
 import User from '../../assets/img/User.svg';
