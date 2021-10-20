@@ -3,7 +3,6 @@
 
 import React, { useState } from 'react';
 import Select from 'react-select';
-// import { useHistory } from 'react-router-dom';
 import './SearchBar.scss';
 
 
@@ -19,7 +18,6 @@ const customStyles = {
     // "&:hover": {
     //   outline: 'none',
     // },
-
   }),
   menu: (base) => ({
     ...base,
@@ -32,29 +30,56 @@ const customStyles = {
   }),
   option: (base, { data, isDisabled, isFocused, isSelected }) => ({
     ...base,
-    backgroundColor: isDisabled ? null : isSelected ? 'rgba(184, 216, 89, 0.5)' : isFocused ? 'rgba(207, 229, 140, 0.3)' : null,
+    backgroundColor: isDisabled
+      ? null
+      : isSelected
+      ? 'rgba(184, 216, 89, 0.5)'
+      : isFocused
+      ? 'rgba(207, 229, 140, 0.3)'
+      : null,
     ':active': {
       backgroundColor: !isDisabled && (isSelected ? '#d0cfce' : 'rgba(184, 216, 89, 0.5)'),
     },
-
   }),
 };
 
 const options = [
-  { value: '5', label: '5 KM' },
+  // { value: '5', label: '5 KM' },
   { value: '10', label: '10 KM' },
-  { value: '20', label: '20 KM' },
   { value: '50', label: '50 KM' },
-  { value: '100', label: '100 km' },
+  { value: '200', label: '200 KM' },
+  { value: '1000', label: '1000 KM' },
 ];
-
 
 function SearchBar() {
   const [data, setData] = useState(null);
+  if(data != null) {
+    window.sessionStorage.setItem('filterLocation', JSON.stringify(data));
+  }
   // console.log(data);
+  const location = {};
+  function getLocation() {
+    if (navigator.geolocation) {
+      // navigator.geolocation.getCurrentPosition((e)=>window.sessionStorage.setItem("currentLocation", JSON.stringify(e)));
+      navigator.geolocation.getCurrentPosition((e)=>{
+        location.latitude = e.coords.latitude;
+        location.longitude = e.coords.longitude;
+      });      
+    } 
+    setTimeout(() => {
+      // console.log(location);
+      window.sessionStorage.setItem("currentLocation", JSON.stringify(location));
+    }, 4000);
+  }
 
+  if(data != null) {
+    getLocation();
+  }
+  
   return (
     <div>
+      {/* <button onClick={getLocation} type="button">aa</button> */}
+      
       <div className="search-bar">
         <form action="/search" method="get">
           <div className="search-bar__content container">
@@ -112,6 +137,5 @@ function SearchBar() {
 //     </div>
 //   );
 // }
-
 
 export default SearchBar;

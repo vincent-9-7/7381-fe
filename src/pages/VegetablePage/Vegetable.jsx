@@ -64,12 +64,12 @@ function VegetablePage() {
   const [option, setOption] = React.useState([{ key: 'All', value: 'Group 1' }]);
 
   const onChange = (page) => {
-    console.log(page);
+    // console.log(page);
     setState(page);
   };
 
   const onSelect = (option) => {
-    console.log(option);
+    // console.log(option);
     setOption(option);
   };
 

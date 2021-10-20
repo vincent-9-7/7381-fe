@@ -6,7 +6,7 @@ import { addToCart } from "../../store/actions/cart/cart";
 
 function OverviewList(props) {
   const { image, title, delivery, description, oldPrice, price, id, quantity, pageType } = props;
-  console.log(props);
+  // console.log(props);
   const dispatch = useDispatch();
   const history = useHistory();
 

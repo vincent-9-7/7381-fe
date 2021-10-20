@@ -4,7 +4,7 @@ import Footer from '../../components/PageFooter/PageFooter';
 import './CheckoutSuccess.scss';
 
 export default function CheckoutSuccess({ orderData }) {
-  console.log(orderData);
+  // console.log(orderData);
 
   const refersh = () => {
     document.location.href = '/';

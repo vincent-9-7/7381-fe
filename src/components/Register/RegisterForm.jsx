@@ -14,12 +14,12 @@ function RegisterForm(props) {
   // const user = cookies.register
 
   const user = sessionStorage.getItem('register')
-  console.log(user);
+  // console.log(user);
   const { control, handleSubmit, register } = useForm()
   const dispatch = useDispatch();
   const onSubmit = (data) => {
     const { password, reenterpwd } = data;
-    console.log(data);
+    // console.log(data);
     if (password != reenterpwd) {
       alert("Password does not match! ")
     } else {

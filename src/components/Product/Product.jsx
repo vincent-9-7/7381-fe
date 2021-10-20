@@ -31,8 +31,7 @@ export default class Product extends Component {
       oldPrice = `AU $${(product.price*1.4).toFixed(2)}`; // 首页old price,保留两位小数
     }
     return (
-      <div
-        style={{ marginBottom: 20 }}>
+      // <div style={{backgroundColor:'red',margin:'10px', height:'300px'}}>
         <ProductDetails
           inventory={product.inventory}
           brand={product.brand}
@@ -45,7 +44,7 @@ export default class Product extends Component {
           oldPrice={oldPrice}
           price={`AU $${product.price}`}
          />
-      </div>
+      // </div>
     );
   }
 }

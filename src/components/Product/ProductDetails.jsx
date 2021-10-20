@@ -12,12 +12,13 @@ import FakeImage from '../FakeImage/FakeImage';
 export default class ProductDetails extends Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = {};
   }
 
   render() {
     // console.log(this.props);
-    const { brand, quantity, title, button, inventory, delivery, description, oldPrice, price,imageAddress } = this.props;
+    const { brand, quantity, title, button, inventory, delivery, description, oldPrice, price, imageAddress } =
+      this.props;
     // console.log(title);
     // console.log(button);
     // let image;
@@ -37,27 +38,23 @@ export default class ProductDetails extends Component {
     //   image = appleVerticality;
     // }
     return (
-      <div>
-        <div className="home-page__deals--card">
-          {/* <img src={image} alt={title} className="home-page__deals--image" /> */}
-          {/* 1. productions: 图片尺寸大 2. checkout：图片尺寸正方形 */}
-          {/* <FakeImage imageTitle={title} page="productions" /> */}
-          <img src={imageAddress} alt="cart" className="home-page__deals--image"  />
-          <div className="home-page__deals--describes">
-            <h3 style={{fontSize:'1.2rem',paddingBottom:'0'}}>{title}</h3>
-            <p style={{ color: 'grey',fontSize:'1rem' }}>{delivery}</p>
-            <p style={{fontSize:'1rem'}}>{description}</p>
+      <div className="home-page__deals--card">
+        {/* <img src={image} alt={title} className="home-page__deals--image" /> */}
+        {/* 1. productions: 图片尺寸大 2. checkout：图片尺寸正方形 */}
+        {/* <FakeImage imageTitle={title} page="productions" /> */}
+        <img src={imageAddress} alt="cart" className="home-page__deals--image" />
+        <div className="home-page__deals--describes">
+          <h3 style={{ fontSize: '1.2rem', paddingBottom: '0' }}>{title}</h3>
+          <p style={{ color: 'grey', fontSize: '1rem' }}>{delivery}</p>
+          <p style={{ fontSize: '1rem' }}>{description}</p>
 
-            <div className="home-page__deals--describe-price">
-              {oldPrice && <p className="home-page__deals--describe-old-price">{oldPrice}</p>}
+          <div className="home-page__deals--describe-price">
+            {oldPrice && <p className="home-page__deals--describe-old-price">{oldPrice}</p>}
 
-              <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#E0A604' }}>{price}</p>
-            </div>
-
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                {button}
-            </div>
+            <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#E0A604' }}>{price}</p>
           </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center' }}>{button}</div>
         </div>
       </div>
     );

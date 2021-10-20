@@ -16,7 +16,7 @@ function Signin(props) {
   const user = sessionStorage.getItem('signin')
   const { control, handleSubmit, register } = useForm()
   const dispatch = useDispatch();
-  console.log(user);
+  // console.log(user);
 
 
   const onSubmit = (data) => {

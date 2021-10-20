@@ -2,7 +2,7 @@ import React from 'react';
 import './ServiceComponents.scss';
 
 export default function ServiceCard({ text, description1, description2, img }) {
-  console.log(text, description1, description2, img);
+  // console.log(text, description1, description2, img);
   return (
     <div className="customer__card">
       <img src={img} alt="card" className="customer__card--image" />

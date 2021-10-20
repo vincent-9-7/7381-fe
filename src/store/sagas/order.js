@@ -26,7 +26,7 @@ function* postOrder(action) {
   // console.log(action.payload);
   const result = yield call(axios.post, postApi, action.payload, header());
   const { data } = result;
-  console.log(data);
+  // console.log(data);
   if (result.errors) {
     yield put({ type: 'POST_ORDER_FAILED', errorInSaga: result.errors });
   } else {

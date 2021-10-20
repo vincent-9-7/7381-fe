@@ -29,11 +29,11 @@ function Overview(props) {
   const [state, setState] = React.useState(1);
 
   const onChange = page => {
-    console.log(page);
+    // console.log(page);
     setState(page);
   };
 
-  console.log(state);
+  // console.log(state);
   // pages.push(state)
 
   // let county  = 0;
@@ -85,7 +85,7 @@ function Overview(props) {
   // console.log(showPage);
   // console.log(typeof (showPage));
   const newItems = items.slice((state - 1) * 9, state * 9);
-  console.log(newItems);
+  // console.log(newItems);
 
   // console.log(items.length);
   // console.log(Math.floor((Object.keys(items).length) / 9) + 1);
