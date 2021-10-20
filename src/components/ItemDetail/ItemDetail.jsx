@@ -7,7 +7,7 @@ import './ItemDetail.scss';
 
 function ItemDetail(props) {
   const { title, condition, suburb, city, quantity, price, imageAddress, id, postQuantity, object } = props;
-  console.log(object);
+  // console.log(object);
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -25,14 +25,14 @@ function ItemDetail(props) {
       sessionStorage.setItem('submittedQuantity', submittedQuantity);
       for (let i = 0; i < submittedQuantity; i += 1) {
         dispatch(addToCart(id));
-        console.log(i);
+        // console.log(i);
       }
       window.sessionStorage.setItem("cart", true);
       const total = submittedQuantity * price;
       sessionStorage.setItem('total', total);
       history.push(`../checkout`);
     }
-    console.log(submittedQuantity);
+    // console.log(submittedQuantity);
   };
 
   const handleOnClick2 = () => {
@@ -46,7 +46,7 @@ function ItemDetail(props) {
     else {
       sessionStorage.setItem('submittedQuantity', submittedQuantity);
       // document.location.href = "../shopping-cart";
-      console.log(submittedQuantity);
+      // console.log(submittedQuantity);
       dispatch(addToCart(id));
       window.sessionStorage.setItem("cart", true);
       history.push(`./${id}`);

@@ -30,6 +30,8 @@ function Header({ color }) {
     sessionStorage.removeItem('total');
     sessionStorage.removeItem('cart');
     sessionStorage.removeItem('checkout_products');
+    sessionStorage.removeItem('currentLocation');
+    sessionStorage.removeItem('filterLocation');
     // history.push('./');
     document.location.href = '/';
   };
@@ -73,7 +75,15 @@ function Header({ color }) {
 
             {/* Destop Style */}
             <div className="page-header__desktop">
-              <button onClick={() => history.push('/')} type="button" className="page-header__desktop--logo-button">
+              <button
+                onClick={() => {
+                  history.push('/');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
+                type="button"
+                className="page-header__desktop--logo-button"
+              >
                 <img src={Bmarket} alt="B" className="page-header__logo" />
               </button>
 
@@ -88,7 +98,11 @@ function Header({ color }) {
               </a>
 
               <button
-                onClick={() => history.push('/fruit')}
+                onClick={() => {
+                  history.push('/fruit');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -96,7 +110,11 @@ function Header({ color }) {
               </button>
 
               <button
-                onClick={() => history.push('/vegetable')}
+                onClick={() => {
+                  history.push('/vegetable');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -112,7 +130,11 @@ function Header({ color }) {
           </button> */}
 
               <button
-                onClick={() => history.push('/service')}
+                onClick={() => {
+                  history.push('/service');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -132,7 +154,11 @@ function Header({ color }) {
                     </button>
 
                     <button
-                      onClick={() => history.push('/profile')}
+                      onClick={() => {
+                        history.push('/profile');
+                        sessionStorage.removeItem('currentLocation');
+                        sessionStorage.removeItem('filterLocation');
+                      }}
                       type="button"
                       className="page-header__desktop--button"
                     >
@@ -142,7 +168,11 @@ function Header({ color }) {
                   <div className="page-header__desktop--right-two-icons">
                     {notEmpty ? (
                       <button // 购物车内有东西
-                        onClick={() => history.push('/Shopping-cart')}
+                        onClick={() => {
+                          history.push('/Shopping-cart');
+                          sessionStorage.removeItem('currentLocation');
+                          sessionStorage.removeItem('filterLocation');
+                        }}
                         type="button"
                         className="page-header__desktop--button"
                       >
@@ -151,7 +181,11 @@ function Header({ color }) {
                       </button>
                     ) : (
                       <button // 购物车内 没有 东西
-                        onClick={() => history.push('/Shopping-cart')}
+                        onClick={() => {
+                          history.push('/Shopping-cart');
+                          sessionStorage.removeItem('currentLocation');
+                          sessionStorage.removeItem('filterLocation');
+                        }}
                         type="button"
                         className="page-header__desktop--button"
                       >
@@ -166,7 +200,11 @@ function Header({ color }) {
                 <div className="page-header__desktop--four-icons">
                   <div className="page-header__desktop--left-two-icons">
                     <button
-                      onClick={() => history.push('/role-select')}
+                      onClick={() => {
+                        history.push('/role-select');
+                        sessionStorage.removeItem('currentLocation');
+                        sessionStorage.removeItem('filterLocation');
+                      }}
                       type="button"
                       className="page-header__desktop--button-words"
                       style={{ fontSize: '13px', marginBottom: '15px' }}
@@ -175,7 +213,11 @@ function Header({ color }) {
                     </button>
 
                     <button
-                      onClick={() => history.push('/profile')}
+                      onClick={() => {
+                        history.push('/profile');
+                        sessionStorage.removeItem('currentLocation');
+                        sessionStorage.removeItem('filterLocation');
+                      }}
                       type="button"
                       className="page-header__desktop--button"
                     >
@@ -184,7 +226,11 @@ function Header({ color }) {
                   </div>
                   <div className="page-header__desktop--right-two-icons">
                     <button
-                      onClick={() => history.push('/join-in')}
+                      onClick={() => {
+                        history.push('/join-in');
+                        sessionStorage.removeItem('currentLocation');
+                        sessionStorage.removeItem('filterLocation');
+                      }}
                       type="button"
                       className="page-header__desktop--button-words"
                       style={{ fontSize: '13px', marginBottom: '15px' }}
@@ -193,7 +239,11 @@ function Header({ color }) {
                     </button>
                     {notEmpty ? (
                       <button // 购物车内有东西
-                        onClick={() => history.push('/Shopping-cart')}
+                        onClick={() => {
+                          history.push('/Shopping-cart');
+                          sessionStorage.removeItem('currentLocation');
+                          sessionStorage.removeItem('filterLocation');
+                        }}
                         type="button"
                         className="page-header__desktop--button"
                       >
@@ -202,7 +252,11 @@ function Header({ color }) {
                       </button>
                     ) : (
                       <button // 购物车内 没有 东西
-                        onClick={() => history.push('/Shopping-cart')}
+                        onClick={() => {
+                          history.push('/Shopping-cart');
+                          sessionStorage.removeItem('currentLocation');
+                          sessionStorage.removeItem('filterLocation');
+                        }}
                         type="button"
                         className="page-header__desktop--button"
                       >
@@ -223,7 +277,15 @@ function Header({ color }) {
           <div className="container">
             {/* Mobile Style */}
             <div className="page-header__mobile">
-              <button onClick={() => history.push('/')} type="button" className="page-header__mobile--logo-button">
+              <button
+                onClick={() => {
+                  history.push('/');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
+                type="button"
+                className="page-header__mobile--logo-button"
+              >
                 <img src={B} alt="B" className="page-header__logo" />
               </button>
 
@@ -234,7 +296,11 @@ function Header({ color }) {
 
               {notEmpty ? (
                 <button // 购物车内有东西
-                  onClick={() => history.push('/Shopping-cart')}
+                  onClick={() => {
+                    history.push('/Shopping-cart');
+                    sessionStorage.removeItem('currentLocation');
+                    sessionStorage.removeItem('filterLocation');
+                  }}
                   type="button"
                   className="page-header__desktop--button"
                 >
@@ -243,7 +309,11 @@ function Header({ color }) {
                 </button>
               ) : (
                 <button // 购物车内 没有 东西
-                  onClick={() => history.push('/Shopping-cart')}
+                  onClick={() => {
+                    history.push('/Shopping-cart');
+                    sessionStorage.removeItem('currentLocation');
+                    sessionStorage.removeItem('filterLocation');
+                  }}
                   type="button"
                   className="page-header__desktop--button"
                 >
@@ -254,7 +324,15 @@ function Header({ color }) {
 
             {/* Destop Style */}
             <div className="page-header__desktop">
-              <button onClick={() => history.push('/')} type="button" className="page-header__desktop--logo-button">
+              <button
+                onClick={() => {
+                  history.push('/');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
+                type="button"
+                className="page-header__desktop--logo-button"
+              >
                 <img src={Bmarket} alt="B" className="page-header__logo" />
               </button>
 
@@ -269,7 +347,11 @@ function Header({ color }) {
               </a>
 
               <button
-                onClick={() => history.push('/fruit')}
+                onClick={() => {
+                  history.push('/fruit');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -277,7 +359,11 @@ function Header({ color }) {
               </button>
 
               <button
-                onClick={() => history.push('/vegetable')}
+                onClick={() => {
+                  history.push('/vegetable');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -293,7 +379,11 @@ function Header({ color }) {
           </button> */}
 
               <button
-                onClick={() => history.push('/service')}
+                onClick={() => {
+                  history.push('/service');
+                  sessionStorage.removeItem('currentLocation');
+                  sessionStorage.removeItem('filterLocation');
+                }}
                 type="button"
                 className="page-header__desktop--button-words"
               >
@@ -313,7 +403,11 @@ function Header({ color }) {
                     </button>
 
                     <button
-                      onClick={() => history.push('/profile')}
+                      onClick={() => {
+                        history.push('/profile');
+                        sessionStorage.removeItem('currentLocation');
+                        sessionStorage.removeItem('filterLocation');
+                      }}
                       type="button"
                       className="page-header__desktop--button"
                     >
@@ -323,7 +417,11 @@ function Header({ color }) {
                   <div className="page-header__desktop--right-two-icons">
                     {notEmpty ? (
                       <button // 购物车内有东西
-                        onClick={() => history.push('/Shopping-cart')}
+                        onClick={() => {
+                          history.push('/Shopping-cart');
+                          sessionStorage.removeItem('currentLocation');
+                          sessionStorage.removeItem('filterLocation');
+                        }}
                         type="button"
                         className="page-header__desktop--button"
                       >
@@ -332,7 +430,11 @@ function Header({ color }) {
                       </button>
                     ) : (
                       <button // 购物车内 没有 东西
-                        onClick={() => history.push('/Shopping-cart')}
+                        onClick={() => {
+                          history.push('/Shopping-cart');
+                          sessionStorage.removeItem('currentLocation');
+                          sessionStorage.removeItem('filterLocation');
+                        }}
                         type="button"
                         className="page-header__desktop--button"
                       >
@@ -347,7 +449,11 @@ function Header({ color }) {
                 <div className="page-header__desktop--four-icons">
                   <div className="page-header__desktop--left-two-icons">
                     <button
-                      onClick={() => history.push('/role-select')}
+                      onClick={() => {
+                        history.push('/role-select');
+                        sessionStorage.removeItem('currentLocation');
+                        sessionStorage.removeItem('filterLocation');
+                      }}
                       type="button"
                       className="page-header__desktop--button-words"
                       style={{ fontSize: '13px', marginBottom: '15px' }}
@@ -356,7 +462,11 @@ function Header({ color }) {
                     </button>
 
                     <button
-                      onClick={() => history.push('/profile')}
+                      onClick={() => {
+                        history.push('/profile');
+                        sessionStorage.removeItem('currentLocation');
+                        sessionStorage.removeItem('filterLocation');
+                      }}
                       type="button"
                       className="page-header__desktop--button"
                     >
@@ -365,7 +475,11 @@ function Header({ color }) {
                   </div>
                   <div className="page-header__desktop--right-two-icons">
                     <button
-                      onClick={() => history.push('/join-in')}
+                      onClick={() => {
+                        history.push('/join-in');
+                        sessionStorage.removeItem('currentLocation');
+                        sessionStorage.removeItem('filterLocation');
+                      }}
                       type="button"
                       className="page-header__desktop--button-words"
                       style={{ fontSize: '13px', marginBottom: '15px' }}
@@ -374,7 +488,11 @@ function Header({ color }) {
                     </button>
                     {notEmpty ? (
                       <button // 购物车内有东西
-                        onClick={() => history.push('/Shopping-cart')}
+                        onClick={() => {
+                          history.push('/Shopping-cart');
+                          sessionStorage.removeItem('currentLocation');
+                          sessionStorage.removeItem('filterLocation');
+                        }}
                         type="button"
                         className="page-header__desktop--button"
                       >
@@ -383,7 +501,11 @@ function Header({ color }) {
                       </button>
                     ) : (
                       <button // 购物车内 没有 东西
-                        onClick={() => history.push('/Shopping-cart')}
+                        onClick={() => {
+                          history.push('/Shopping-cart');
+                          sessionStorage.removeItem('currentLocation');
+                          sessionStorage.removeItem('filterLocation');
+                        }}
                         type="button"
                         className="page-header__desktop--button"
                       >

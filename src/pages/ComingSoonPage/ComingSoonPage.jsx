@@ -6,7 +6,7 @@ import Footer from '../../components/PageFooter/PageFooter';
 
 function ComingSoon(match) {
   const{match:{params:{id}}} = match;
-  console.log(id);
+  // console.log(id);
   return (
     <>
       <img src={Coming} alt="Coming" style={{height:"100vh", width:"100%"}} />

@@ -21,7 +21,7 @@ export default class ProductItem extends Component {
 
   render() {
     const { product } = this.props;
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div
         style={{ marginBottom: 20 }}>
