@@ -107,7 +107,7 @@ class ProductList extends Component {
         {productType === 4 && (
           <>
             {!searchNum && <Loading />}
-            <div className="product-page ">
+            <div className="product-page " style={{marginBottom:'20vh'}}>
               {searchNum &&
                 searchResult.map((product) => (
                   <Product
