@@ -1,206 +1,275 @@
-/* eslint-disable */
-import './Profile.scss';
 import React from 'react';
-// import ReactDOM from 'react-dom'
-const { Component } = React;
-// const { render } = ReactDOM
-// import DemoPage from '../../pages/DemoPage/DemoPage';
+import Tabs, { TabPane } from 'rc-tabs';
+import '../../../node_modules/rc-tabs/assets/index.css';
+import './Profile.scss';
+import profile from '../../assets/img/profile.svg';
+import tomatoVerticality from '../../assets/img/tomato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/8016790/
+import message from '../../assets/img/message.svg';
 
-const Profile = () => (
-  <div className="Root">
-    <button className="jump" onClick={()=>document.location.href = '/post'}>Post Ad </button>
-    <Tabs selected={0}>
-      <TabList>
-        <Tab>
-          <div className="ps">
-            <Button className="profileButton">
-              <div className="profileIcon"></div>
-              Profile setting
-            </Button>
-          </div>
-          <hr className="hr" />
-        </Tab>
-    
-        <Tab>
-          <Button className="shopButton">
-            <div className="shopIcon"></div>
-            My shop
-          </Button>
-          <hr className="hr" />
-        </Tab>
-
-        <Tab>
-          <Button className="messageButton">
-            <div className="messageIcon"></div>
-            Message</Button>
-          <hr className="hr" />
-        </Tab>
-    
-      </TabList>
-      
-      <TabPanel>
-        <div className="profile">
-          <div className="profile_title">My profile</div>
-          <div className="profile_hr1">
-            <hr className="hr_feature" />
-          </div>
-          <div className="profile_imgAndInput">
-            <div className="profile_imgAndInput-img"></div>
-            <div className="profile_imgAndInput-inputs">
-              <p className="inputName">Username</p>
-              <input className="inputFeature" />
-              <p className="inputName">Phone number</p>
-              <input className="inputFeature" />
-              <p className="inputName">Address</p>
-              <input className="inputFeature" />
-              <button className="profile_save-button" type="button">
-                Save
-              </button>
-            </div>
-            <div className="profile_hr">
-              <hr className="hr2_feature" />
-            </div>
-          </div>
-        </div>
-      </TabPanel>
-
-      <TabPanel>
-        <div className="shop">
-          <div className="shop_title">My shop</div>
-          <div className="shop_hr1">
-            <hr className="hr_feature" />
-          </div>
-          <div className="checkbox">
-            <input type="checkbox" className="check" /> Select all items delete all{' '}
-          </div>
-          <div className="shop_card">
-            <div className="shop_header">
-              <input type="checkbox" className="shop_header_checkheader" />
-              <div className="shop_header_detail"> Last posted Sep 4,2021 | Order:3 | Seller:Juliana</div>
-            </div>
-            <div className="shop_img"></div>
-            <div className="shop_intro">
-              <p id="p1">Canvendish Bananas 2KG</p>
-              <p id="p2">B-grade Vegetables</p>
-              <p>Brisbane</p>
-            </div>
-            <div className="shop_price">$46.32</div>
-            <div className="shop_num">
-              Qty <input className="shop_num_input" defaultValue="1" />
-            </div>
-            <div className="edit_img" />
-            <button className="edit_button">Edit</button>
-            <div className="delete_img" />
-            <button className="delete_button">/ Delete</button>
-          </div>
-        </div>
-      </TabPanel>
-      
-      <TabPanel>
-        <div className="message">
-          <div className="message_title">Message</div>
-          <div className="message_box"> </div>
-        </div>
-      </TabPanel>
-    </Tabs>
-  </div>
-);
-
-/*
- * Tabs is the stateful component.
- * You can pass an index in the `selected` prop
- * to specify which tab is active by default.
- *
- * This component handles the entire tabs system.
- * It transforms its own children (if they are Tab or TabPanel) to pass the
- * required props in order to run automatically the system.
- */
-
-class Tabs extends Component {
-  state = { selected: this.props.selected };
-
-  setSelected(selected) {
-    if (selected !== 0) {
-      document.getElementById('nothing').style.display = 'none';
-      document.getElementById('nothing2').style.display = 'none';
-      document.getElementById('passwordTitle').style.display = 'none';
-      document.getElementById('emailTitle').style.display = 'none';
-      document.getElementById('password_profile_save-button').style.visibility = 'hidden';
-      document.getElementById('email-button').style.display = 'none';
-    } else {
-      document.getElementById('passwordTitle').style.display = '';
-      document.getElementById('nothing').style.display = '';
-      document.getElementById('nothing2').style.display = '';
-      document.getElementById('password_profile_save-button').style.visibility = 'visible';
-      document.getElementById('email-button').style.display = '';
-      document.getElementById('emailTitle').style.display = '';
-    }
-    if (selected !== this.state.selected) {
-      this.setState({ selected });
-    }
+function ProfileContent() {
+  function callback(e) {
+    // console.log(e);
   }
 
-  handleClick(tab) {
-    return () => this.setSelected(tab);
-  }
+  return (
+    <div className="container">
+      <div style={{ display: 'flex', justifyContent: 'end', marginTop: '30px' }}>
+        <button className="btn--post" onClick={() => (document.location.href = '/post')} type="button">
+          Post Ad{' '}
+        </button>
+      </div>
 
-  renderTabList(child) {
-    let tab = 0;
+      <Tabs tabPosition="left" tabBarGutter={0} defaultActiveKey="1" onChange={callback}>
+        <TabPane tab="Profile setting" key="1">
+          <h2>My Profile</h2>
+          <div className="profile__box">
+            <div className="profile__box--left-image">
+              <img src={profile} alt="card" className="customer__card--image" />
+              <p>Shop Photo</p>
+            </div>
 
-    return React.cloneElement(child, {
-      children: React.Children.map(child.props.children, (childTab) => {
-        if (childTab.type.name === 'Tab') {
-          const _isActive = tab === this.state.selected;
-          const _onClick = this.handleClick(tab);
-          tab++;
-          return React.cloneElement(childTab, { _isActive, _onClick });
-        }
+            <div style={{ paddingTop: '10px', marginLeft: '100px' }}>
+              <h4 style={{ marginLeft: '15px' }}>Username</h4>
+              <div className="checkout-form__content ">
+                <input type="text" name="Username" className="checkout-form__input" />
+              </div>
+              <h4 style={{ marginLeft: '15px' }}>Phone Number</h4>
+              <div className="checkout-form__content ">
+                <input type="text" name="Phone" className="checkout-form__input" />
+              </div>
+              <h4 style={{ marginLeft: '15px' }}>Address</h4>
+              <div className="checkout-form__content ">
+                <input type="text" name="Address" className="checkout-form__input" />
+              </div>
+            </div>
+          </div>
 
-        return childTab;
-      }),
-    });
-  }
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+            <button className="btn--save" type="button">
+              Save
+            </button>
+          </div>
 
-  renderChildren(children) {
-    let panel = 0;
+          <div id="passwordTitle">Change password</div>
+          <div className="password" id="nothing">
+            <p className="password_inputName">Email Address</p>
+            <input className="password_inputFeature" />
+            <p className="password_inputName">Change password</p>
+            <input className="password_inputFeature" />
+            <p className="password_inputName">New password</p>
+            <input className="password_inputFeature" />
+            <p className="password_inputName">Re-enter your new password</p>
+            <input className="password_inputFeature" />
 
-    return React.Children.map(children, (child) => {
-      if (child.type.name === 'TabList') {
-        return this.renderTabList(child);
-      }
+            <button id="password_profile_save-button" className="btn--save" type="button">
+              Save
+            </button>
+          </div>
 
-      if (child.type.name === 'TabPanel') {
-        const _isActive = panel === this.state.selected;
+          <div id="emailTitle">Change Email Address</div>
+          <div className="email" id="nothing2">
+            <p className="email_inputName">Email Address</p>
+            <input className="email_inputFeature" />
+            <p className="email_inputName">Change password</p>
+            <input className="email_inputFeature" />
+            <p className="email_inputName">New password</p>
+            <input className="email_inputFeature" />
 
-        panel++;
+            <button id="email-button" className="btn--save" type="button">
+              Save
+            </button>
+          </div>
+        </TabPane>
 
-        return React.cloneElement(child, { _isActive });
-      }
+        <TabPane tab="My shop" key="2">
+          <h2>My Shop</h2>
+          <div className="profile__box-shop">
+            <div className="profile__box--shop-select">
+              <input type="checkbox" className="check" /> Select all items | Delete all{' '}
+            </div>
 
-      return child;
-    });
-  }
+            <div className="profile__box--shop">
+              <div className="shop_header">
+                <input type="checkbox" className="shop_header_checkheader" />
+                <div className="shop_header_detail"> Last posted Sep 4,2021 | Order:3 | Seller:Juliana</div>
+              </div>
 
-  render() {
-    return <div className="Tabs">{this.renderChildren(this.props.children)}</div>;
-  }
+              <div className="profile__details">
+                <div className="cart__details--left">
+                  <img
+                    src={tomatoVerticality}
+                    alt="card"
+                    style={{ marginLeft: '15px' }}
+                    className="checkout-form__review--image"
+                  />
+                  <div className="cart__details--text">
+                    <h4 style={{ padding: '0', margin: '0 0 0 0' }}>Canvendish Bananas 2KG</h4>
+                    <p style={{ color: 'gray', fontSize: '1em', fontWeight: '400', padding: '0', margin: '5px 0 0 0' }}>
+                      B-grade Vegetables
+                    </p>
+                    <p style={{ fontSize: '1em', fontWeight: '400', padding: '0', margin: '5px 0 0 0' }}>Brisbane</p>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '90px' }}>&#36;46.32</h3>
+                  </div>
+                </div>
+
+                <div className="cart__details--right">
+                  <div style={{ display: 'flex' }}>
+                    <h4 style={{ padding: '10px 0', margin: '0 0 0 0' }}>Qty </h4>
+                    <input
+                      style={{
+                        width: '40px',
+                        padding: '10px',
+                        borderRadius: '5px',
+                        marginLeft: '10px',
+                        marginRight: '15px',
+                      }}
+                      defaultValue="21"
+                    />
+                  </div>
+                  <p
+                    style={{
+                      color: 'gray',
+                      fontSize: '1em',
+                      fontWeight: '400',
+                      padding: '0',
+                      margin: '130px 15px 0 0',
+                    }}
+                  >
+                    Edit | Delete
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="profile__box--shop">
+              <div className="shop_header">
+                <input type="checkbox" className="shop_header_checkheader" />
+                <div className="shop_header_detail"> Last posted Sep 4,2021 | Order:3 | Seller:Juliana</div>
+              </div>
+
+              <div className="profile__details">
+                <div className="cart__details--left">
+                  <img
+                    src={tomatoVerticality}
+                    alt="card"
+                    style={{ marginLeft: '15px' }}
+                    className="checkout-form__review--image"
+                  />
+                  <div className="cart__details--text">
+                    <h4 style={{ padding: '0', margin: '0 0 0 0' }}>Canvendish Bananas 2KG</h4>
+                    <p style={{ color: 'gray', fontSize: '1em', fontWeight: '400', padding: '0', margin: '5px 0 0 0' }}>
+                      B-grade Vegetables
+                    </p>
+                    <p style={{ fontSize: '1em', fontWeight: '400', padding: '0', margin: '5px 0 0 0' }}>Brisbane</p>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '90px' }}>&#36;46.32</h3>
+                  </div>
+                </div>
+
+                <div className="cart__details--right">
+                  <div style={{ display: 'flex' }}>
+                    <h4 style={{ padding: '10px 0', margin: '0 0 0 0' }}>Qty </h4>
+                    <input
+                      style={{
+                        width: '40px',
+                        padding: '10px',
+                        borderRadius: '5px',
+                        marginLeft: '10px',
+                        marginRight: '15px',
+                      }}
+                      defaultValue="21"
+                    />
+                  </div>
+                  <p
+                    style={{
+                      color: 'gray',
+                      fontSize: '1em',
+                      fontWeight: '400',
+                      padding: '0',
+                      margin: '130px 15px 0 0',
+                    }}
+                  >
+                    Edit | Delete
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="profile__box--shop">
+              <div className="shop_header">
+                <input type="checkbox" className="shop_header_checkheader" />
+                <div className="shop_header_detail"> Last posted Sep 4,2021 | Order:3 | Seller:Juliana</div>
+              </div>
+
+              <div className="profile__details">
+                <div className="cart__details--left">
+                  <img
+                    src={tomatoVerticality}
+                    alt="card"
+                    style={{ marginLeft: '15px' }}
+                    className="checkout-form__review--image"
+                  />
+                  <div className="cart__details--text">
+                    <h4 style={{ padding: '0', margin: '0 0 0 0' }}>Canvendish Bananas 2KG</h4>
+                    <p style={{ color: 'gray', fontSize: '1em', fontWeight: '400', padding: '0', margin: '5px 0 0 0' }}>
+                      B-grade Vegetables
+                    </p>
+                    <p style={{ fontSize: '1em', fontWeight: '400', padding: '0', margin: '5px 0 0 0' }}>Brisbane</p>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '90px' }}>&#36;46.32</h3>
+                  </div>
+                </div>
+
+                <div className="cart__details--right">
+                  <div style={{ display: 'flex' }}>
+                    <h4 style={{ padding: '10px 0', margin: '0 0 0 0' }}>Qty </h4>
+                    <input
+                      style={{
+                        width: '40px',
+                        padding: '10px',
+                        borderRadius: '5px',
+                        marginLeft: '10px',
+                        marginRight: '15px',
+                      }}
+                      defaultValue="12"
+                    />
+                  </div>
+                  <p
+                    style={{
+                      color: 'gray',
+                      fontSize: '1em',
+                      fontWeight: '400',
+                      padding: '0',
+                      margin: '130px 15px 0 0',
+                    }}
+                  >
+                    Edit | Delete
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </TabPane>
+
+        <TabPane tab="Messages" key="3">
+          <h2>Messages</h2>
+          <div className="profile__box-message">
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <p style={{ color: 'gray', fontSize: '1.2rem', padding: '20px 0', margin: '0' }}>0 unread messages</p>
+            </div>
+            <div className="profile__box-message-details">
+              <img src={message} alt="card" style={{ width: '80px', height: '80px', marginLeft: '20px' }} />
+              <div style={{ marginLeft: '30px', width: '90vh' }}>
+                <div className="profile__box-message-details-text">
+                  <p>Sophie</p>
+                  <p>Online 1month ago</p>
+                </div>
+                <p>Hello, there are some cucumber in your I love to contact with …</p>
+              </div>
+            </div>
+          </div>
+        </TabPane>
+      </Tabs>
+    </div>
+  );
 }
 
-const TabList = ({ children }) => <ul className="TabList">{children}</ul>;
-
-const Tab = ({ _onClick, _isActive, children }) => (
-  <li className={`Tab  ${_isActive ? 'is-active' : ''}`} onClick={_onClick}>
-    {children}
-  </li>
-);
-
-const TabPanel = ({ _isActive, children }) => (
-  <div className={`TabPanel  ${_isActive ? 'is-active' : ''}`}>{children}</div>
-);
-
-/* --- */
-
-const Button = ({ children }) => <button className="Button">{children}</button>;
-
-// render(<Profile />, document.querySelector("#Profile"))
-export default Profile;
+export default ProfileContent;
