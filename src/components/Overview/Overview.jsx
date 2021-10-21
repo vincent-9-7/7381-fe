@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react";
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './Overview.scss';
 import { addToCart } from "../../store/actions/cart/cart";
 
 function OverviewList(props) {
-  const { image, title, delivery, description, oldPrice, price, id, quantity, pageType } = props;
+  const { image, title, price, id, pageType } = props;
   // console.log(props);
   const dispatch = useDispatch();
   const history = useHistory();

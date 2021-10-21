@@ -1,17 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-alert */
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addToCart } from "../../store/actions/cart/cart";
 import './ItemDetail.scss';
 
 function ItemDetail(props) {
-  const { title, condition, suburb, city, quantity, price, imageAddress, id, postQuantity, object } = props;
+  const { title, condition, suburb, quantity, price, imageAddress, id, postQuantity, object } = props;
   // console.log(object);
 
   const dispatch = useDispatch();
   const history = useHistory();
   sessionStorage.setItem('checkout_products', JSON.stringify(object));
+
 
 
   const handleOnClick1 = () => {
@@ -38,7 +40,6 @@ function ItemDetail(props) {
   const handleOnClick2 = () => {
     const submittedQuantity = document.getElementById("quantity").value;
     if (submittedQuantity === '') {
-      // 这里把else直接放这里不加alert提醒quantity了
       alert('Please input the quantity as 1 because you want to add it to cart. ');
     } else if (submittedQuantity > quantity) {
       alert('Please select correct number, the number you submit is bigger than we have. ');
@@ -60,12 +61,12 @@ function ItemDetail(props) {
       <div className="item-detail-page__card">
         <div className="item-detail-page__middle">
           <div className="item-detail-page__left">
-            <img src={imageAddress} alt="abc" width="490px" /></div>
+            <img src={imageAddress} alt="abc" width="420px" /></div>
           <div className="item-detail-page__right">
             {/** Details */}
             {/** Title */}
             <div className="item-detail-page__item-title">
-              <h3>{title}</h3>
+              <div style={{ fontSize: 30, fontWeight: "bold", textAlign: "left" }}>{title}</div>
             </div>
             <hr className="item-detail-page__item-border" />
             <div style={{ margin: "15px" }}>
@@ -109,7 +110,7 @@ function ItemDetail(props) {
             </div>
             <hr className="item-detail-page__item-border" />
             <div className="item-detail-page__item-buttons">
-              <button type="button" className="button btn--add" onClick={handleOnClick1}>Buy it now</button>
+              <button type="button" className="btn--add" onClick={handleOnClick1}>Buy it now</button>
               <button type="button" className="btn--add" onClick={handleOnClick2}>Add to cart</button>
             </div>
           </div>
