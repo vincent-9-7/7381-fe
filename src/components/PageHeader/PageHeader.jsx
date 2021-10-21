@@ -8,7 +8,7 @@ import User from '../../assets/img/User.svg';
 import Cart from '../../assets/img/Cart.svg';
 
 const frontUrl = "http://localhost:3000/#section";
-// const frontUrl = "https://bmarket.ml/#section"
+// const frontUrl = "https://bmarket.ml/#section";
 
 function Header({ color }) {
   // 跳转push方式：
