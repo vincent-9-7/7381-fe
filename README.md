@@ -2,7 +2,7 @@
 https://bmarket.ml/
 
 # How to run these files?
-Step1: npm install
+Step1: npm install  <br />
 Step2: npm start (We didn't upload our .env file, so the payment can't work successfully)
 
 # Folder Structure:
