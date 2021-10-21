@@ -1,4 +1,4 @@
-# Grade-B url:
+# Grade-B website:
 https://bmarket.ml/
 
 # How to run these files?
