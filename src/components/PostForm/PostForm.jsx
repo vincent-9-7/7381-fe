@@ -4,6 +4,7 @@
 import React, { useEffect, useState, } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import MapboxGl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import UploadImage from '../UploadImage/UploadImage';
@@ -13,8 +14,9 @@ import { postItemsRequest } from "../../store/actions/actionCreator";
 
 
 export default function PostForm() {
+  const history = useHistory();
   const [imageAddress, setImageAddress,] = React.useState([]);
-  const [coordinates, setCoordinates,] = React.useState([]);
+  // const [latitude, setLatitude,] = React.useState(null);
   const [count, getCount] = React.useState(3000);
   const dispatch = useDispatch();
   const keyhandler = e => {
@@ -37,12 +39,12 @@ export default function PostForm() {
     setImageAddress(imageAddress);
     console.log(imageAddress, "address");
   }
-  const { register, handleSubmit, setValue, formState: { errors } } = useForm({
-    defaultValues: {
-      imageAddress: " ",
-      latitude: 1,
-      longitude: 1,
-      // 记得设置id
+  const { register, handleSubmit,setValue,formState: { errors } } = useForm({
+    defaultValues:{
+        imageAddress:" ",
+        latitude: null,
+        longitude:null,
+        // 记得设置id
     }
 
   });
@@ -67,28 +69,43 @@ export default function PostForm() {
       geocoder.query(locationName);
       geocoder.on('result', (e) => {
         // coor = e.result.geometry.coordinates;
-
+        // console.log(e.result);
         // console.log(e.result.bbox[1],"tjis c");
         const x = e.result.bbox[0];
         const y = e.result.bbox[1];
-        localStorage.setItem('x', x);
-        localStorage.setItem('y', y);
-
-      });
+        localStorage.setItem('x',x);
+        localStorage.setItem('y',y);
+        // console.log("1");
+      }); 
     }
     const { postcode } = data;
     searchCoorsByName(`australia,${postcode}`);
-    let { latitude1, longitude1 } = data;
-    latitude1 = localStorage.getItem('x');
-    longitude1 = localStorage.getItem('y');
-
-    const data1 = {
-      ...data,
-      latitude: longitude1,
-      longitude: latitude1,
-    };
-    console.log(data1);
-    dispatch(postItemsRequest(data1));
+    setTimeout(()=>{
+      let {latitude1,longitude1} =data;
+      latitude1 = localStorage.getItem('x');
+      longitude1 = localStorage.getItem('y');
+      const data1 = {
+        ...data,
+        latitude:latitude1,
+        longitude:longitude1,
+      }
+      console.log(data1);
+      dispatch(postItemsRequest(data1));
+      const type = data.category === "Fruit"? "fruit" : "vegetable";
+      // history.push(`/${type}`);
+      document.location.href= `./${type}`;
+    },1000);
+    // let {latitude1,longitude1} =data;
+    // latitude1 = localStorage.getItem('x');
+    // longitude1 = localStorage.getItem('y');
+  
+    // const data1 = {
+    //   ...data,
+    //   latitude:latitude1,
+    //   longitude:longitude1,
+    // }
+    // console.log(data1);
+    // dispatch(postItemsRequest(data1));
     // localStorage.clear("x");
     // localStorage.clear("y");
   };
@@ -96,10 +113,6 @@ export default function PostForm() {
   useEffect(() => {
     setValue('imageAddress', imageAddress);
   }, [imageAddress]);
-
-  useEffect(() => {
-    setCoordinates('coordinates', coordinates);
-  }, [coordinates]);
 
 
   return (
@@ -158,7 +171,7 @@ export default function PostForm() {
               </div>
               <div className="item item--space" />
               <div className="item--label">
-                <span className="container--p3">Category</span>
+                <span className="container--p3">Quantity</span>
                 <span className="container--p4"> (Required)</span>
               </div>
               <input className="item item--input__text"
