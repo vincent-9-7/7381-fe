@@ -2,8 +2,8 @@
 https://bmarket.ml/
 
 # How to run these files?
-## Step1: npm install
-## Step2: npm start (We didn't upload our .env file, so the payment can't work successfully)
+Step1: npm install
+Step2: npm start (We didn't upload our .env file, so the payment can't work successfully)
 
 # Folder Structure:
 1. src/api: Website's api url
