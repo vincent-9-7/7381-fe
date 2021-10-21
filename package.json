@@ -16,6 +16,7 @@
     "node-sass": "^6.0.1",
     "query-string": "^7.0.1",
     "rc-pagination": "^3.1.9",
+    "rc-tabs": "^11.10.1",
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
     "react-cool-tabs": "^1.1.6",

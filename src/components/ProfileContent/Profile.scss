@@ -1,132 +1,100 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
-@import '../../assets//scss//color.scss';
+@import '../../assets/scss/color.scss';
 
-// html {
-//   font-size: 20px;
-// }
-// body {
-//   font-family: "Open Sans", sans-serif;
-//   line-height: 1;
-//   position: relative;
-// }
+.profile {
+  &__title {
+  }
 
-.Root {
-  height: 50vh;
-  position: relative;
-  top: 50px;
-  left: 18%;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: flex-end;
-}
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px solid $green-dark;
+  }
 
-.Tabs {
-  height: 100%;
-  width: 100%;
-  display: flex;
-}
+  &__box--left-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-.TabList {
-  position: relative;
-  top: 8%;
-  width: 11rem;
-  background: white;
-  list-style: None;
-}
+  &__box--shop-select {
+    color: $green-light;
+    padding: 20px 0 0 10px;
+  }
 
-.TabPanel {
-  flex: 1;
-  display: none;
-  padding: 1.5rem 2rem;
-}
-.TabPanel.is-active {
-  display: block;
-}
-.Button {
-  display: inline-block;
-  width: 100%;
-  padding: 1rem 2rem ;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: bold;
-  //color: #fff;
-  color: black;
+  &__box-shop {
+    border-top: 3px solid $green-dark;
+  }
 
-}
-.Button:focus,
-.Button:hover {
-  outline: 0;
-  //background: #37474F;
-  //background: $green-dark;
-}
-.Tab.is-active .Button {
-  background: #FDF77A;
-  border-radius: 20px;
-  width: 100%;
-}
-.hr {
-  border:0;
-  background-color:$green-dark;
-  height:1px;
-}
-.ps {
-  display: flex;
-  flex-direction: column;
-}
-.profileButton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-.profileIcon {
-  margin-top: -15px;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: 18px;
-  left: -18px;
-  background-image: url("../../assets/img/User.svg");
-}
-.shopButton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-.shopIcon {
-  margin-top: -15px;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: 18px;
-  left: -20px;
-  background-image: url("../../assets/img/shop.jpg");
-  background-size: cover;
-  overflow: hidden;
-}
-.messageButton {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
-}
-.messageIcon {
-  margin-top: -15px;
-  width: 20px;
-  height: 20px;
-  position: relative;
-  top: 18px;
-  left: -20px;
-  background-image: url("../../assets/img/email.svg");
-  background-size: cover;
-  overflow: hidden;
+  &__box--shop {
+    margin: 30px 0;
+    height: 300px;
+    // width: 60vh;
+    border: 1px solid $green-light;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0 0 0;
+    padding-bottom: 40px;
+    // border-bottom: 3px solid $green-dark;
+  }
+
+  &__box-message {
+    // border: 1px solid $green-light;
+    border-top: 3px solid $green-dark;
+  }
+
+  &__box-message-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__box-message-details-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__box-message-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid $green-light;
+  }
 }
 
+.rc-tabs {
+  border: none !important;
+}
+.rc-tabs-tab {
+  padding: 10px;
+  margin: 0 25px;
+  text-transform: capitalize;
+  border-bottom: 3px solid $green-dark;
+}
+.rc-tabs-tab .rc-tabs-tab-btn {
+  font-weight: normal;
+}
+.rc-tabs-tab.rc-tabs-tab-active {
+  background-color: #fdf65a;
+  // border-radius: 10px;
+  color: #95ab14;
+}
 
+.rc-tabs-nav-list {
+  margin-top: 25px;
+}
+.rc-tabs-ink-bar {
+  // background: #59c7fd !important;
+  background: transparent;
+}
+.rc-tabs-content-holder {
+  padding-top: 8px;
+  // background: #ececec;
+}
+.rc-tabs-content {
+}

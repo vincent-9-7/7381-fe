@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="312" height="312" viewBox="0 0 312 312">
+  <g id="椭圆_37" data-name="椭圆 37" fill="#fff" stroke="#95ab14" stroke-width="5">
+    <circle cx="156" cy="156" r="156" stroke="none"/>
+    <circle cx="156" cy="156" r="153.5" fill="none"/>
+  </g>
+  <text id="Add_photo" data-name="Add photo" transform="translate(97 265)" fill="#95ab14" stroke="#95ab14" stroke-width="1" font-size="26" font-family="LucidaGrande, Lucida Grande"><tspan x="0" y="0">Add</tspan><tspan y="0" font-family="GeezaPro, Geeza Pro"> </tspan><tspan y="0">photo</tspan></text>
+  <circle id="椭圆_42" data-name="椭圆 42" cx="36.495" cy="36.495" r="36.495" transform="translate(120.187 51.244)" fill="none" stroke="#95ab14" stroke-miterlimit="10" stroke-width="8"/>
+  <path id="路径_36" data-name="路径 36" d="M323.232,344.834a112.411,112.411,0,0,0-19.077,32.789c-2.213,6.119-3.939,12.859-3.821,19.677.278,15.545,14.382,22.89,24.184,26.784,15.5,6.164,31.895,7.071,47.477.71" transform="translate(-203.906 -217.655)" fill="none" stroke="#95ab14" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+  <path id="路径_37" data-name="路径 37" d="M323.763,344.834s25,24.31,23.416,43.782" transform="translate(-131.674 -217.655)" fill="none" stroke="#95ab14" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+  <circle id="椭圆_43" data-name="椭圆 43" cx="12.537" cy="12.537" r="12.537" transform="translate(183.504 180.609)" fill="#95ab14" stroke="#95ab14" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  <g id="组_62" data-name="组 62" transform="translate(189.215 186.321)">
+    <line id="直线_31" data-name="直线 31" y2="13.65" transform="translate(6.825)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+    <line id="直线_32" data-name="直线 32" x1="13.65" transform="translate(0 6.825)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+  </g>
+</svg>
