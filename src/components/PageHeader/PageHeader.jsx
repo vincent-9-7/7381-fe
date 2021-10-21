@@ -7,6 +7,9 @@ import B from '../../assets/img/LogoB.svg';
 import User from '../../assets/img/User.svg';
 import Cart from '../../assets/img/Cart.svg';
 
+const frontUrl = "http://localhost:3000/#section";
+// const frontUrl = "https://bmarket.ml/#section"
+
 function Header({ color }) {
   // 跳转push方式：
   // 1. class：
@@ -92,7 +95,8 @@ function Header({ color }) {
                 type="button"
                 className="page-header__desktop--button-words"
                 // goto='text1'
-                href="./#section"
+                // href="./#section"
+                href={frontUrl}
               >
                 About us
               </a>
@@ -341,7 +345,8 @@ function Header({ color }) {
                 type="button"
                 className="page-header__desktop--button-words"
                 // goto='text1'
-                href="./#section"
+                // href="./#section"
+                href={frontUrl}
               >
                 About us
               </a>
