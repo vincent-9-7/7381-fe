@@ -20,10 +20,7 @@ const Profile = () => (
           </div>
           <hr className="hr" />
         </Tab>
-        {/*<Tab>*/}
-        {/*  <Button>My shop</Button>*/}
-        {/*  <hr className="hr"/>*/}
-        {/*</Tab>*/}
+    
         <Tab>
           <Button className="shopButton">
             <div className="shopIcon"></div>
@@ -31,18 +28,16 @@ const Profile = () => (
           </Button>
           <hr className="hr" />
         </Tab>
+
         <Tab>
           <Button className="messageButton">
             <div className="messageIcon"></div>
             Message</Button>
           <hr className="hr" />
         </Tab>
-        {/*<Tab>*/}
-        {/*  <Button>Account</Button>*/}
-        {/*  <hr className="hr"/>*/}
-        {/*</Tab>*/}
+    
       </TabList>
-
+      
       <TabPanel>
         <div className="profile">
           <div className="profile_title">My profile</div>
