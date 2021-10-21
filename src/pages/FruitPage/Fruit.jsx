@@ -1,28 +1,3 @@
-// import React, {Component} from 'react';
-// import Header from '../../components/PageHeader/PageHeader';
-// import Footer from '../../components/PageFooter/PageFooter';
-// import ProductList from '../../components/Product/ProductList';
-
-// class FruitPage extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {};
-//   }
-
-//   render() {
-//     const { history } = this.props;
-//     return (
-//       <>
-//         <Header />
-//         {/* 1:Fruit 2:Vegetable 3:ALL */}
-//         <ProductList productType={1} history={history} />
-//         <Footer />
-//       </>
-//     );
-//   }
-// }
-
-// export default FruitPage;
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Pagination from 'rc-pagination';
@@ -63,12 +38,12 @@ function FruitPage() {
   const [option, setOption] = React.useState([{ key: 'All', value: 'Group 1' }]);
 
   const onChange = (page) => {
-    console.log(page);
+    // console.log(page);
     setState(page);
   };
 
   const onSelect = (option) => {
-    console.log(option);
+    // console.log(option);
     setOption(option);
   };
 
@@ -78,19 +53,17 @@ function FruitPage() {
 
   // console.log(fruits.length);
 
-  // 下面这行可以从filter取到要的哪个筛选条件：
   const filter = option[0].key;
   // console.log(filter);
 
-  // 把取到的东西从对象变成数组
+
   const conditionFilter = Object.values(fruits);
   // console.log(conditionFilter);
 
-  // 改变数组里的条件
-  const changedFilter = conditionFilter.filter((value) => value.postcode === 1231);
+
+  // const changedFilter = conditionFilter.filter((value) => value.postcode === 1231);
   // console.log(changedFilter);
 
-  // filter 需要问一下其他人
   let result = {};
   if (filter === 'Processed products') {
     result = conditionFilter.filter((value) => value.condition === 'Processed');
@@ -107,12 +80,6 @@ function FruitPage() {
   } else {
     result = conditionFilter.filter((value) => value.category === 'Fruit');
   }
-
-  // console.log(result);
-  // Overview第六行的delivery被默认设置成了free
-  // console.log(fruits[0].delivery);
-  // console.log(conditionFilter);
-  // console.log(changed);
 
   // console.log(state);
 

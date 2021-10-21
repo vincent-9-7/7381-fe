@@ -1,17 +1,19 @@
 /* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable no-alert */
 import React from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { addToCart } from "../../store/actions/cart/cart";
 import './ItemDetail.scss';
 
 function ItemDetail(props) {
-  const { title, condition, suburb, city, quantity, price, imageAddress, id, postQuantity, object } = props;
-  console.log(object);
+  const { title, condition, suburb, quantity, price, imageAddress, id, postQuantity, object } = props;
+  // console.log(object);
 
   const dispatch = useDispatch();
   const history = useHistory();
   sessionStorage.setItem('checkout_products', JSON.stringify(object));
+
 
 
   const handleOnClick1 = () => {
@@ -25,20 +27,19 @@ function ItemDetail(props) {
       sessionStorage.setItem('submittedQuantity', submittedQuantity);
       for (let i = 0; i < submittedQuantity; i += 1) {
         dispatch(addToCart(id));
-        console.log(i);
+        // console.log(i);
       }
       window.sessionStorage.setItem("cart", true);
       const total = submittedQuantity * price;
       sessionStorage.setItem('total', total);
       history.push(`../checkout`);
     }
-    console.log(submittedQuantity);
+    // console.log(submittedQuantity);
   };
 
   const handleOnClick2 = () => {
     const submittedQuantity = document.getElementById("quantity").value;
     if (submittedQuantity === '') {
-      // 这里把else直接放这里不加alert提醒quantity了
       alert('Please input the quantity as 1 because you want to add it to cart. ');
     } else if (submittedQuantity > quantity) {
       alert('Please select correct number, the number you submit is bigger than we have. ');
@@ -46,7 +47,7 @@ function ItemDetail(props) {
     else {
       sessionStorage.setItem('submittedQuantity', submittedQuantity);
       // document.location.href = "../shopping-cart";
-      console.log(submittedQuantity);
+      // console.log(submittedQuantity);
       dispatch(addToCart(id));
       window.sessionStorage.setItem("cart", true);
       history.push(`./${id}`);

@@ -91,7 +91,7 @@ const Profile = () => (
             </div>
             <div className="shop_price">$46.32</div>
             <div className="shop_num">
-              Qty <input className="shop_num_input" value="1" />
+              Qty <input className="shop_num_input" defaultValue="1" />
             </div>
             <div className="edit_img" />
             <button className="edit_button">Edit</button>

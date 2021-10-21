@@ -8,6 +8,15 @@ import { getVisibleProducts } from '../../store/reducers/cart/products';
 import Product from './Product';
 import Loading from '../Loading/Loading';
 
+const compareDistance = (userLatitude, userLongitude, itemLatitude, itemLongitude, wantLocation) => {
+  const result = Math.sqrt((userLatitude - itemLatitude) ** 2 + (userLongitude - itemLongitude) ** 2);
+  // console.log(result);
+  if (result-wantLocation > 0) {
+    // console.log("---");
+    return false;
+  }
+  return true;
+};
 class ProductList extends Component {
   constructor(props) {
     super(props);
@@ -35,10 +44,32 @@ class ProductList extends Component {
         }
       }
     } else if (productType === 4) {
-      // 搜索
+      // const getUserLocation = JSON.parse(sessionStorage.getItem('currentLocation'));
+      let getUserLocation = { latitude: 0, longitude: 0 };
+      if (JSON.parse(sessionStorage.getItem('currentLocation'))) {
+        getUserLocation = JSON.parse(sessionStorage.getItem('currentLocation'));
+      }
+
+      let getFileter = 1000000;
+      if (JSON.parse(sessionStorage.getItem('filterLocation'))) {
+        getFileter = JSON.parse(sessionStorage.getItem('filterLocation')).value;
+      }
+      // console.log(getUserLocation, getFileter);
+
       if (search.length !== 0) {
         for (let i = 0; i < searchResult.length; i += 1) {
-          if (!searchResult[i].title.includes(search)) {
+          if (
+            !compareDistance(
+              getUserLocation.latitude,
+              getUserLocation.longitude,
+              searchResult[i].latitude,
+              searchResult[i].longitude,
+              getFileter,
+            )
+          ) {
+            searchResult.splice(i, 1); // 从i索引的位置，删除一个元素
+            i -= 1;
+          } else if (!searchResult[i].title.includes(search)) {
             searchResult.splice(i, 1); // 从i索引的位置，删除一个元素
             i -= 1;
           }
@@ -73,25 +104,24 @@ class ProductList extends Component {
         )}
 
         {/* Search Components */}
-        
         {productType === 4 && (
           <>
-          {!searchNum && <Loading />}
-          <div className="product-page ">
-            {searchNum &&
-              searchResult.map((product) => (
-                <Product
-                  key={product._id}
-                  num={num}
-                  product={product}
-                  onAddToCartClicked={() => {
-                    addToCart(product._id);
-                    window.sessionStorage.setItem('cart', true);
-                    history.push(`/search?name=${search}`);
-                  }}
-                />
-              ))}
-          </div>
+            {!searchNum && <Loading />}
+            <div className="product-page " style={{marginBottom:'20vh'}}>
+              {searchNum &&
+                searchResult.map((product) => (
+                  <Product
+                    key={product._id}
+                    num={num}
+                    product={product}
+                    onAddToCartClicked={() => {
+                      addToCart(product._id);
+                      window.sessionStorage.setItem('cart', true);
+                      history.push(`/search?name=${search}`);
+                    }}
+                  />
+                ))}
+            </div>
           </>
         )}
 

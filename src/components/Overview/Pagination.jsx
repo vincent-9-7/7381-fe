@@ -16,7 +16,7 @@ function Pagi(props) {
   const pages = [];
 
   const onChange = page => {
-    console.log(page);
+    // console.log(page);
     setState(page);
     // return page;
     // sessionStorage.setItem('page', page);

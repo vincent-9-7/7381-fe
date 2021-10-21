@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { call, put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 import url from '../../api/api';
@@ -26,8 +27,8 @@ function* buyerRegister(action) {
     // console.log(user);
     const buyerInfo = yield call(axios.post, `${url}/buyer/registration`, action.payload, header());
     // items对应的是 reducer/user.js里的第35行的items
-    console.log(buyerInfo);
-    console.log(buyerInfo.data);
+    // console.log(buyerInfo);
+    // console.log(buyerInfo.data);
     // console.log(user);
     yield put({ type: 'BUYER_REGISTER_SUCCESS', payload: buyerInfo.data });
     // localStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
@@ -45,8 +46,8 @@ function* sellerRegister(action) {
 
     // const user = cookies.register;
     const sellerInfo = yield call(axios.post, `${url}/seller/registration`, action.payload, header());
-    console.log(sellerInfo);
-    console.log(sellerInfo.data);
+    // console.log(sellerInfo);
+    // console.log(sellerInfo.data);
     yield put({ type: 'SELLER_REGISTER_SUCCESS', payload: sellerInfo.data });
     localStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
     document.location.href = './';
@@ -60,16 +61,16 @@ function* buyerSignin(action) {
   try {
     // const user = sessionStorage.getItem('signin');
     const buyerInfo = yield call(axios.post, `${url}/buyer/login`, action.payload, header());
-    console.log(buyerInfo);
-    console.log(buyerInfo.data);
-    console.log(action.payload);
+    // console.log(buyerInfo);
+    // console.log(buyerInfo.data);
+    // console.log(action.payload);
 
     yield put({ type: 'BUYER_SIGNIN_SUCCESS', payload: buyerInfo.data });
     // 暂时啥都没有
     sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('buyerinfo', JSON.stringify(buyerInfo));
-    sessionStorage.setItem('buyerID', JSON.stringify(buyerInfo.data.ObjectId));
-    sessionStorage.setItem('buyerUsername', JSON.stringify(buyerInfo.data.username));
+    sessionStorage.setItem('userID', JSON.stringify(buyerInfo.data.ObjectId));
+    sessionStorage.setItem('Username', JSON.stringify(buyerInfo.data.username));
     document.location.href = './';
   } catch (e) {
     alert('Input is not correct. Please check your infofmation. ');
@@ -81,14 +82,14 @@ function* sellerSignin(action) {
   try {
     // const user = sessionStorage.getItem('signin');
     const sellerInfo = yield call(axios.post, `${url}/seller/login`, action.payload, header());
-    console.log(sellerInfo);
-    console.log(sellerInfo.data);
+    // console.log(sellerInfo);
+    // console.log(sellerInfo.data);
 
     yield put({ type: 'SELLER_SIGNIN_SUCCESS', payload: sellerInfo.data });
     sessionStorage.setItem('signed', 'yes');
     sessionStorage.setItem('sellerinfo', JSON.stringify(sellerInfo));
-    sessionStorage.setItem('sellerID', JSON.stringify(sellerInfo.data.ObjectId));
-    sessionStorage.setItem('sellerUsername', JSON.stringify(sellerInfo.data.username));
+    sessionStorage.setItem('userID', JSON.stringify(sellerInfo.data.ObjectId));
+    sessionStorage.setItem('Username', JSON.stringify(sellerInfo.data.username));
     document.location.href = './';
   } catch (e) {
     alert('Input is not correct. Please check your infofmation. ');

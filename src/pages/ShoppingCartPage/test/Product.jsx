@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export default class Product extends Component {
   
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const { brand, price, quantity, title, button, inventory } = this.props;
     return (
       <div>

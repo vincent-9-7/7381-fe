@@ -8,7 +8,7 @@ function TodayDeals(props) {
   const dispatch = useDispatch();
 
   const addCart = () => {
-    console.log("aa");
+    // console.log("aa");
     dispatch(AddCart(title));
   };
   return (

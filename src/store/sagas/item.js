@@ -21,13 +21,13 @@ function* getItems() {
 
 function* getItem(action) {
   try {
-    console.log(action);
+    // console.log(action);
     const { _id } = action.payload;
-    console.log(`${_id}`);
+    // console.log(`${_id}`);
     const getItemApi = `${url}/get/${_id}`;
     const data = yield call(axios.get, getItemApi, header());
-    console.log(data);
-    console.log(data.data[0]._id);
+    // console.log(data);
+    // console.log(data.data[0]._id);
     yield put({ type: 'GET_ITEM_SUCCESS', items: data.data });
   } catch (e) {
     console.log(e);
@@ -55,7 +55,7 @@ function* getAllVegetable() {
   try {
     const getItemsApi = `${url}/allVegetables`;
     const data = yield call(axios.get, getItemsApi, header());
-    console.log(data.data);
+    // console.log(data.data);
     yield put({ type: 'GET_ALLVEGETABLE_SUCCESS', items: data.data });
     // localStorage.setItem('Items', JSON.stringify(action.payload));
   } catch (e) {
@@ -66,12 +66,12 @@ function* getAllVegetable() {
 
 function* postItems(action) {
   try {
-    console.log(action);
+    // console.log(action);
     // const {} 
     const { condition } = action.payload;
-    console.log(condition);
+    // console.log(condition);
     const category = condition === "B-grade" ? 'item' : 'production';
-    console.log(category);
+    // console.log(category);
     const getItemsApi = `${url}/${category}`;
 
     const data = yield call(axios.post, getItemsApi, action.payload, header());

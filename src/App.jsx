@@ -34,6 +34,8 @@ function App() {
   window.onunload = function remove () {
     sessionStorage.removeItem('cart');
     sessionStorage.removeItem('total');
+    // sessionStorage.removeItem('currentLocation');
+    // sessionStorage.removeItem('filterLocation');
     sessionStorage.removeItem('checkout_products');
   };
   return (

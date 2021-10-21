@@ -54,7 +54,7 @@ class Cart extends Component {
     const { products, total} = this.props;
     // const checkoutAllowed = products.length > 0 && !checkoutPending;
     const { history } = this.props;
-    console.log(products);
+    // console.log(products);
     return (
       <>
         <Header />

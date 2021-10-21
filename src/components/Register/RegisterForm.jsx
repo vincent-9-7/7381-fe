@@ -14,12 +14,12 @@ function RegisterForm(props) {
   // const user = cookies.register
 
   const user = sessionStorage.getItem('register')
-  console.log(user);
+  // console.log(user);
   const { control, handleSubmit, register } = useForm()
   const dispatch = useDispatch();
   const onSubmit = (data) => {
     const { password, reenterpwd } = data;
-    console.log(data);
+    // console.log(data);
     if (password != reenterpwd) {
       alert("Password does not match! ")
     } else {
@@ -48,7 +48,7 @@ function RegisterForm(props) {
             {(user === 'seller') && <div style={{ fontSize: "2rem", fontWeight: 400, padding: "0.67rem 0rem" }}>{`Create account`}</div>}
             {/* <h1 className="title">{`Create account as Shop`}</h1> */}
           </div>
-          {/**下面的大块 */}
+          {/**Big parts */}
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {/**Left */}
             <div>
@@ -67,7 +67,7 @@ function RegisterForm(props) {
                 <label className="label">Address1: </label>
                 <input type="text" {...register("address1")} className="register-text" name="address1" required />
               </div>
-              {/**三小块  */}
+              {/**Thress parts  */}
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                 {/**City  */}
                 <div>
