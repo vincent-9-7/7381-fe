@@ -14,4 +14,3 @@
 9. package.json: Required third-party package
 10. /.eslintrc: Eslint coding style
 11. /.env: Environment variable to save API key
-
