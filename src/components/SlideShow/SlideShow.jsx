@@ -19,14 +19,14 @@ const content = [
   {
     ID: '#0088FE',
     Title: 'TOMATO',
-    Image: 'tomato',
+    Image: 'Tomatoes',
     Describe:
       'We’ll always source the ones for your local store from as close as possible, to minimise transport time. Our low prices don’t mean they’re lower quality than other supermarkets. Our zucchini come from the same farms all over Australia, in places like Bowen in QLD, Shepparton in VIC, Riverland in SA and Gingin in WA.',
   },
   {
     ID: '#00C49F',
-    Title: 'POTATO',
-    Image: 'potato',
+    Title: 'CHILI',
+    Image: 'chili',
     Describe:
       'It’s because of our Aussie first supplier policy, committing us to buy fresh produce from Aussie farmers, whenever possible. In fact, 97% of our entire fresh produce range comes from Australian farms. It’s just another reason why you should eat your greens.',
   },
@@ -35,7 +35,7 @@ const content = [
     Title: 'BANANA',
     Image: 'banana',
     Describe:
-      'Our Aussie first supplier policy means we’ll always source our fresh produce from local farms whenever we can. That’s why 97% of our entire fresh produce range is Australian grown. Grab a bunch in store and support Aussie farmers today.',
+      'Bananas are the best source of Vitamin B6. Bananas are composed of 75% water. At over 10,000 years old, bananas are the worlds oldest fruit!',
   },
   {
     ID: '#FFBB28',
@@ -69,7 +69,7 @@ function SlideShow() {
               <h1 style={{ color: '#E0A604', fontSize:'3.5rem', padding:'0' }}>{object.Title}</h1>
               <p>{object.Describe}</p>
               <div className="home-page__slide--button">
-                <button type="button" className="btn--see-more" onClick={() => (document.location.href = '/productions/all')}>
+                <button type="button" className="btn--see-more" onClick={() => (document.location.href = '/vegetable')}>
                   See More
                 </button>
               </div>
