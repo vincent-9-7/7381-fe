@@ -33,7 +33,7 @@ function ProfileContent() {
               <div className="checkout-form__content ">
                 <input type="text" name="Username" className="checkout-form__input" />
               </div>
-              <h4 style={{ marginLeft: '15px' }}>Phone Number</h4>
+              <h4 style={{ marginLeft: '15px' }}>Phone number</h4>
               <div className="checkout-form__content ">
                 <input type="text" name="Phone" className="checkout-form__input" />
               </div>
@@ -52,7 +52,7 @@ function ProfileContent() {
 
           <div id="passwordTitle">Change password</div>
           <div className="password" id="nothing">
-            <p className="password_inputName">Email Address</p>
+            <p className="password_inputName">Email address</p>
             <input className="password_inputFeature" />
             <p className="password_inputName">Change password</p>
             <input className="password_inputFeature" />
@@ -66,9 +66,9 @@ function ProfileContent() {
             </button>
           </div>
 
-          <div id="emailTitle">Change Email Address</div>
+          <div id="emailTitle">Change email address</div>
           <div className="email" id="nothing2">
-            <p className="email_inputName">Email Address</p>
+            <p className="email_inputName">Email address</p>
             <input className="email_inputFeature" />
             <p className="email_inputName">Change password</p>
             <input className="email_inputFeature" />

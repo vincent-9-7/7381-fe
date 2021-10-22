@@ -17,7 +17,6 @@ import SigninPage from './pages/SigninPage/SigninPage';
 import JoinInPage from './pages/RegisterPage/JoinInPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import OverviewPage from './pages/OverviewPage/OverviewPage';
-
 import ProfilePage from './pages/ProfilePage/Profile';
 
 import ErrorPage from './pages/ErrorPage/ErrorPage';
