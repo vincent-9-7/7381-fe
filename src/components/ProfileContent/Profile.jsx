@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import Tabs, { TabPane } from 'rc-tabs';
 import '../../../node_modules/rc-tabs/assets/index.css';
@@ -5,6 +6,7 @@ import './Profile.scss';
 import profile from '../../assets/img/profile.svg';
 import tomatoVerticality from '../../assets/img/tomato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/8016790/
 import message from '../../assets/img/message.svg';
+import setting from '../../assets/img/setting.png';
 
 function ProfileContent() {
   function callback() {
@@ -29,15 +31,16 @@ function ProfileContent() {
             </div>
 
             <div style={{ paddingTop: '10px', marginLeft: '100px' }}>
-              <h4 style={{ marginLeft: '15px' }}>Username</h4>
+              {/* <h4 style={{ marginLeft: '15px' }}>Username</h4> */}
+              <p id= "profile" style={{ marginLeft: '15px' }}>Username</p>
               <div className="checkout-form__content ">
                 <input type="text" name="Username" className="checkout-form__input" />
               </div>
-              <h4 style={{ marginLeft: '15px' }}>Phone number</h4>
+              <p id= "profile" style={{ marginLeft: '15px' }}>Phone number</p>
               <div className="checkout-form__content ">
                 <input type="text" name="Phone" className="checkout-form__input" />
               </div>
-              <h4 style={{ marginLeft: '15px' }}>Address</h4>
+              <p id= "profile" style={{ marginLeft: '15px' }}>Address</p>
               <div className="checkout-form__content ">
                 <input type="text" name="Address" className="checkout-form__input" />
               </div>
@@ -52,35 +55,37 @@ function ProfileContent() {
 
           <div id="passwordTitle">Change password</div>
           <div className="password" id="nothing">
-            <p className="password_inputName">Email address</p>
-            <input className="password_inputFeature" />
-            <p className="password_inputName">Change password</p>
-            <input className="password_inputFeature" />
-            <p className="password_inputName">New password</p>
-            <input className="password_inputFeature" />
-            <p className="password_inputName">Re-enter your new password</p>
-            <input className="password_inputFeature" />
-
+            <div style={{width:"300px",marginBottom:"2rem"}}>
+              <p className="password_inputName">Email address</p>
+              <input className="password_inputFeature" />
+              <p className="password_inputName">Change password</p>
+              <input className="password_inputFeature" />
+              <p className="password_inputName">New password</p>
+              <input className="password_inputFeature" />
+              <p className="password_inputName">Re-enter your new password</p>
+              <input className="password_inputFeature" />
+            </div>
             <button id="password_profile_save-button" className="btn--save" type="button">
-              Save
-            </button>
+                Save
+              </button>
           </div>
 
           <div id="emailTitle">Change email address</div>
           <div className="email" id="nothing2">
-            <p className="email_inputName">Email address</p>
-            <input className="email_inputFeature" />
-            <p className="email_inputName">Change password</p>
-            <input className="email_inputFeature" />
-            <p className="email_inputName">New password</p>
-            <input className="email_inputFeature" />
+            <div style={{width:"300px", marginBottom:"2rem"}}>
+              <p className="email_inputName">Email address</p>
+              <input className="email_inputFeature" />
+              <p className="email_inputName">Change password</p>
+              <input className="email_inputFeature" />
+              <p className="email_inputName">New password</p>
+              <input className="email_inputFeature" />
+            </div>
 
-            <button id="email-button" className="btn--save" type="button">
+            <button id="email-button" className="btn--save" type="button" >
               Save
             </button>
           </div>
         </TabPane>
-
         <TabPane tab="My shop" key="2">
           <h2>My Shop</h2>
           <div className="profile__box-shop">
@@ -248,7 +253,6 @@ function ProfileContent() {
             </div>
           </div>
         </TabPane>
-
         <TabPane tab="Messages" key="3">
           <h2>Messages</h2>
           <div className="profile__box-message">
