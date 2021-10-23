@@ -3,25 +3,35 @@ import React from 'react';
 import Tabs, { TabPane } from 'rc-tabs';
 import '../../../node_modules/rc-tabs/assets/index.css';
 import './Profile.scss';
+import { useHistory } from 'react-router-dom';
 import profile from '../../assets/img/profile.svg';
 import tomatoVerticality from '../../assets/img/tomato_ver.jpg'; // https://www.pexels.com/zh-cn/photo/8016790/
 import message from '../../assets/img/message.svg';
-import setting from '../../assets/img/setting.png';
+// import setting from '../../assets/img/setting.png';
+
 
 function ProfileContent() {
-  function callback() {
-    // console.log(e);
-  }
+ 
+  const history = useHistory();
+  const postfunc = () => {
+    if (sessionStorage.getItem('userID') != null) {
+      window.sessionStorage.setItem('total', total);
+      window.sessionStorage.setItem('checkout_products', JSON.stringify(product));
+      history.push('/post');
+    }else {
+      history.push('/role-select');
+    }
+  };
 
   return (
     <div className="container">
       <div style={{ display: 'flex', justifyContent: 'end', marginTop: '30px' }}>
-        <button className="btn--post" onClick={() => (document.location.href = '/post')} type="button">
+        <button className="btn--post" onClick={postfunc} type="button">
           Post Ad{' '}
         </button>
       </div>
 
-      <Tabs tabPosition="left" tabBarGutter={0} defaultActiveKey="1" onChange={callback}>
+      <Tabs tabPosition="left" tabBarGutter={0} defaultActiveKey="1">
         <TabPane tab="Profile setting" key="1">
           <h2>My Profile</h2>
           <div className="profile__box">

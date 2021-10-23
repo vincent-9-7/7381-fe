@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/jsx-props-no-spreading */
 
-import React, { useEffect, useState, } from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import MapboxGl from 'mapbox-gl/dist/mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import UploadImage from '../UploadImage/UploadImage';
@@ -14,7 +14,7 @@ import { postItemsRequest } from "../../store/actions/actionCreator";
 
 
 export default function PostForm() {
-  const history = useHistory();
+  // const history = useHistory();
   const [imageAddress, setImageAddress,] = React.useState([]);
   // const [latitude, setLatitude,] = React.useState(null);
   const [count, getCount] = React.useState(3000);
@@ -34,11 +34,11 @@ export default function PostForm() {
     // })
     console.log(imageAddress, "address");
   }
-  function handleDelete() {
-    imageAddress.pop();
-    setImageAddress(imageAddress);
-    console.log(imageAddress, "address");
-  }
+  // function handleDelete() {
+  //   imageAddress.pop();
+  //   setImageAddress(imageAddress);
+  //   console.log(imageAddress, "address");
+  // }
   const { register, handleSubmit,setValue,formState: { errors } } = useForm({
     defaultValues:{
         imageAddress:" ",
@@ -88,7 +88,7 @@ export default function PostForm() {
         ...data,
         latitude:latitude1,
         longitude:longitude1,
-      }
+      };
       console.log(data1);
       dispatch(postItemsRequest(data1));
       const type = data.category === "Fruit"? "fruit" : "vegetable";

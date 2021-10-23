@@ -9,7 +9,7 @@ import axios from 'axios';
 import React, { useState,useEffect } from 'react';
 import url from '../../api/api';
 import NoticeBoard from '../NoticeBoard/NoticeBoard';
-import upload from '../../assets/img/upload-background.png';
+// import upload from '../../assets/img/upload-background.png';
 
 
 function UploadImage(props){
