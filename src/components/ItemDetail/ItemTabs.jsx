@@ -41,17 +41,16 @@ function ItemTabs(props) {
             </div>}
           rightContent={
             <div>
-              <b>Return policy details</b>
+              <b style={{ textDecoration: "underline" }}>Accepting return</b>
               <p>
-                The seller won’t accept returns for this item.
-                You must return items in their original packaging and in the same condition as
-                when you received them.If you don’t follow our item condition policy for returns,
-                you may not receive a full refund.</p>
-              <b>Refunds by law: </b>
+                You must return the product in 7 days since you received it in its original packaging and in the
+                same condition as when you received them. If you don’t follow our item condition policy for returns,
+                you may not receive a full refund.
+                You can contact us if you have further questions about the return policy.</p>
+              <b style={{ textDecoration: "underline" }}>Not accepting return </b>
               <p>
-                In Australia, consumers have a legal right to obtain a refund from
-                a business if the goods purchased are faulty, not fit for purpose or don’t match the
-                seller’s description.More information at returns.
+                Unfortunately, this product cannot be returned or exchanged unless faulty or inconsistent as described,
+                as determined by the seller. You can contact us if you have further questions about the return policy.
               </p>
             </div>}
         />
