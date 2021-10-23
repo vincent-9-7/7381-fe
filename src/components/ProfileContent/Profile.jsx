@@ -7,7 +7,7 @@ import tomatoVerticality from '../../assets/img/tomato_ver.jpg'; // https://www.
 import message from '../../assets/img/message.svg';
 
 function ProfileContent() {
-  function callback(e) {
+  function callback() {
     // console.log(e);
   }
 
