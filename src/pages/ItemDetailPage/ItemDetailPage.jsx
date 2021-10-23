@@ -74,7 +74,7 @@ function ItemDetailPage(match) {
           description={initialState.description}
         />
       </>)}
-      <Footer />
+      <Footer color="white"/>
     </div>
   );
 }

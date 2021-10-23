@@ -240,7 +240,7 @@ export default function PostForm() {
                 type="text" placeholder="Address1" {...register("address1", { required: true, maxLength: 30 })} />
               {/* <div className="item item--space"/> */}
               <input className="item item--input__addrees2"
-                type="text" placeholder="Address2" {...register("address2", { required: true, maxLength: 30 })} />
+                type="text" placeholder="Address2" {...register("address2", { maxLength: 30 })} />
               <div className="item item--space" />
               <input className="item item--input__suburb"
                 type="text" placeholder="Suburb" {...register("suburb", { required: true, maxLength: 30 })} />
