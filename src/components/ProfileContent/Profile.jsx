@@ -34,15 +34,15 @@ function ProfileContent() {
               {/* <h4 style={{ marginLeft: '15px' }}>Username</h4> */}
               <p id= "profile" style={{ marginLeft: '15px' }}>Username</p>
               <div className="checkout-form__content ">
-                <input type="text" name="Username" className="checkout-form__input" />
+                <input type="text" name="Username" className="password_inputFeature" />
               </div>
               <p id= "profile" style={{ marginLeft: '15px' }}>Phone number</p>
               <div className="checkout-form__content ">
-                <input type="text" name="Phone" className="checkout-form__input" />
+                <input type="text" name="Phone" className="password_inputFeature" />
               </div>
               <p id= "profile" style={{ marginLeft: '15px' }}>Address</p>
               <div className="checkout-form__content ">
-                <input type="text" name="Address" className="checkout-form__input" />
+                <input type="text" name="Address" className="password_inputFeature" />
               </div>
             </div>
           </div>
