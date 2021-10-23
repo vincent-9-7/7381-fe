@@ -58,13 +58,13 @@ class Home extends Component {
               <div className="home-page__deals--cards">
                 {/* 需要展示几个这里就放几个，不填的话默认展示所有 */}
                 {/* <ProductList num={3} productType={4} history={history} /> */}
-                <div style={{display:'flex',justifyContent:'flex-start'}}>
-                  <h4 style={{fontWeight:'bold'}}>B-grade</h4>
+                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                  <h4 style={{ fontWeight: 'bold' }}>B-grade</h4>
                 </div>
                 <ProductList num={3} productType={5} history={history} />
 
-                <div style={{display:'flex',justifyContent:'flex-start'}}>
-                  <h4 style={{fontWeight:'bold'}}>Processed</h4>
+                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                  <h4 style={{ fontWeight: 'bold' }}>Processed</h4>
                 </div>
                 <ProductList num={3} productType={6} history={history} />
                 {/* <ProductDetails
@@ -94,19 +94,21 @@ class Home extends Component {
                 <h1 style={{ color: '#E0A604', fontSize: '2.1rem' }}>B-grade product?</h1>
                 <Star rating={4} totalRating={5} />
                 <p>
-                  Gmsdma dkasmkf gnjkdnfkdnsklaskldmlas. Sajndkasdm adskdkasdks sjndjs ds gf. Gjjd a Asn jksndksnid vd
-                  dkjf sjdnsldlakjiodjfkdm saknd Ansdaskjnd fjdngknnankal.
+                  The B-grade products on our website are defined as imperfect looking fruit and vegetables that still
+                  have high quality inside.
                 </p>
 
                 <h1 style={{ color: '#E0A604', fontSize: '2.1rem' }}>Save food, protect our earth.</h1>
                 <Star rating={5} totalRating={5} />
                 <p>
-                  Gmsdma dkasmkf gnjkdnfkdnsklaskldmlas. Sajndkasdm adskdkasdks sjndjs ds gf. Gjjd a Asn jksndksnid vd
-                  dkjf sjdnsldlakjiodjfkdm saknd Ansdaskjnd fjdngknnankal.
+                  Do you know that 31% of the food waste in Australia happens in primary production, and about 55%
+                  occurs before it reaches the customers?
                 </p>
                 <p>
-                  Gmsdma dkasmkf gnjkdnfkdnsklaskldmlas. Sajndkasdm adskdkasdks sjndjs ds gf. Gjjd a Asn jksndksnid vd
-                  dkjf sjdnsldlakjiodjfkdm saknd Ansdaskjnd fjdngknnankal.
+                  To save food and protect our Earth, we need to pay more attention to the B-grade market. It will help
+                  reduce the wastage of food also save you money. Our website aims to provide more opportunities for
+                  primary producers to sell B-grade products while the processors and general users can get cheaper
+                  resources. Let’s protect our Earth together.
                 </p>
               </div>
 

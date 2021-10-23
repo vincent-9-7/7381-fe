@@ -7,7 +7,7 @@ import './SearchBar.scss';
 
 
 const customStyles = {
-  control: (base, state) => ({
+  control: (base) => ({
     ...base,
     height: '45px',
     minHeight: '45px',
@@ -28,7 +28,7 @@ const customStyles = {
     ...base,
     padding: 0,
   }),
-  option: (base, { data, isDisabled, isFocused, isSelected }) => ({
+  option: (base, { isDisabled, isFocused, isSelected }) => ({
     ...base,
     backgroundColor: isDisabled
       ? null

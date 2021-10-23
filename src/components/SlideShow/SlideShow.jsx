@@ -21,28 +21,28 @@ const content = [
     Title: 'TOMATO',
     Image: 'Tomatoes',
     Describe:
-      'We’ll always source the ones for your local store from as close as possible, to minimise transport time. Our low prices don’t mean they’re lower quality than other supermarkets. Our zucchini come from the same farms all over Australia, in places like Bowen in QLD, Shepparton in VIC, Riverland in SA and Gingin in WA.',
+      'These tomatoes are not in the regular shape or regular size. They look strange or smaller than usual. However, they are as juicy and sweet as our other products. Perfect for eating, cooking, or juicing.',
   },
   {
     ID: '#00C49F',
     Title: 'CHILI',
     Image: 'chili',
     Describe:
-      'It’s because of our Aussie first supplier policy, committing us to buy fresh produce from Aussie farmers, whenever possible. In fact, 97% of our entire fresh produce range comes from Australian farms. It’s just another reason why you should eat your greens.',
+      'The chilli just doesn’t look perfect, but it is perfect inside. Perfect for any spicy dishes. Have a try!',
   },
   {
     ID: '#FFBB28',
     Title: 'BANANA',
     Image: 'banana',
     Describe:
-      'Bananas are the best source of Vitamin B6. Bananas are composed of 75% water. At over 10,000 years old, bananas are the worlds oldest fruit!',
+      'These bananas get their skin scratched or scuffed from the trees they grew in. However, they have high sweetness, providing vitamin B6, vitamin C, manganese and dietary fibre.',
   },
   {
     ID: '#FFBB28',
     Title: 'ORANGE',
     Image: 'orange',
     Describe:
-      'Imperial Mandarins are the first variety to be picked when mandarin season comes to town. Which is around about April. Since we get ours from local farmers, you’ll get them very quickly.',
+      'We’ve all suffered through a spotty day or two, so we know it’s only skin deep. These frostbitten oranges are out of WA’s bumper season and are super sweet on the inside. Perfect for juicing.',
   },
 ];
 

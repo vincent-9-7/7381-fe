@@ -3,7 +3,7 @@ import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 import './CheckoutSuccess.scss';
 
-export default function CheckoutSuccess({ orderData }) {
+export default function CheckoutSuccess() {
   // console.log(orderData);
 
   const refersh = () => {
