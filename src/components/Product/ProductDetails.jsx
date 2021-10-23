@@ -46,7 +46,7 @@ export default class ProductDetails extends Component {
         <div className="home-page__deals--describes">
           <h3 style={{ fontSize: '1.2rem', paddingBottom: '0' }}>{title}</h3>
           <p style={{ color: 'grey', fontSize: '1rem' }}>{delivery}</p>
-          <p style={{ fontSize: '1rem' }}>{description}</p>
+          {/* <p style={{ fontSize: '1rem' }}>{description}</p> */}
 
           <div className="home-page__deals--describe-price">
             {oldPrice && <p className="home-page__deals--describe-old-price">{oldPrice}</p>}
@@ -54,7 +54,7 @@ export default class ProductDetails extends Component {
             <p style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#E0A604' }}>{price}</p>
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center' }}>{button}</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop:'30px' }}>{button}</div>
         </div>
       </div>
     );
