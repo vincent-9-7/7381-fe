@@ -78,6 +78,26 @@ class ProductList extends Component {
           searchNum = true;
         }
       }
+      // 如果搜索框为空
+      else {
+        for (let i = 0; i < searchResult.length; i += 1) {
+          if (
+            !compareDistance(
+              getUserLocation.latitude,
+              getUserLocation.longitude,
+              searchResult[i].latitude,
+              searchResult[i].longitude,
+              getFileter,
+            )
+          ) {
+            searchResult.splice(i, 1); // 从i索引的位置，删除一个元素
+            i -= 1;
+          } 
+        }
+        if (searchResult.length !== 0) {
+          searchNum = true;
+        }
+      }
       // console.log(search);
       // console.log(searchResult);
     }
