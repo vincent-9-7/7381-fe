@@ -31,7 +31,13 @@ function VegetablePage() {
 
   const objectArray2 = [
     { key: 'Australia', value: 'Group 1' },
+    { key: 'New South Wales', value: 'Group 1' },
     { key: 'Queensland', value: 'Group 1' },
+    { key: 'South Australia', value: 'Group 1' },
+    { key: 'Tasmania', value: 'Group 1' },
+    { key: 'Victoria', value: 'Group 1' },
+    { key: 'Western Australia', value: 'Group 1' },
+
   ];
 
   const [state, setState] = React.useState(1);
