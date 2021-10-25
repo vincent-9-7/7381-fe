@@ -40,16 +40,22 @@ function ItemDetail(props) {
   const handleOnClick2 = () => {
     const submittedQuantity = document.getElementById("quantity").value;
     if (submittedQuantity === '') {
-      alert('Please input the quantity as 1 because you want to add it to cart. ');
+      alert('Please input the quantity. ');
     } else if (submittedQuantity > quantity) {
       alert('Please select correct number, the number you submit is bigger than we have. ');
     }
     else {
       sessionStorage.setItem('submittedQuantity', submittedQuantity);
+      for (let i = 0; i < submittedQuantity; i += 1) {
+        dispatch(addToCart(id));
+        // console.log(i);
+      }
       // document.location.href = "../shopping-cart";
       // console.log(submittedQuantity);
-      dispatch(addToCart(id));
+
       window.sessionStorage.setItem("cart", true);
+      // const total = submittedQuantity * price;
+      // sessionStorage.setItem('total', total);
       history.push(`./${id}`);
       // history.push("../shopping-cart");
     }

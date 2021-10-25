@@ -25,7 +25,7 @@ const content = [
   },
   {
     ID: '#00C49F',
-    Title: 'CHILI',
+    Title: 'CHILLI',
     Image: 'chili',
     Describe:
       'The chilli just doesn’t look perfect, but it is perfect inside. Perfect for any spicy dishes. Have a try!',
@@ -61,12 +61,12 @@ function SlideShow() {
     <>
       <Slide {...properties}>
         {content.map((object) => (
-          <div className="home-page__slide"key={object.Title}>
+          <div className="home-page__slide" key={object.Title}>
             <div className="home-page__slide--left">
               <div className="home-page__slide--title">
                 <h3 className="home-page__title--words">B-grade</h3>
               </div>
-              <h1 style={{ color: '#E0A604', fontSize:'3.5rem', padding:'0' }}>{object.Title}</h1>
+              <h1 style={{ color: '#E0A604', fontSize: '3.5rem', padding: '0' }}>{object.Title}</h1>
               <p>{object.Describe}</p>
               <div className="home-page__slide--button">
                 <button type="button" className="btn--see-more" onClick={() => (document.location.href = '/vegetable')}>
