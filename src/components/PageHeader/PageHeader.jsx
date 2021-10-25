@@ -152,7 +152,7 @@ function Header({ color }) {
                       onClick={removeSignin}
                       type="button"
                       className="page-header__desktop--button-words"
-                      style={{ fontSize: '15px' }}
+                      style={{ fontSize: '13px', marginBottom: '15px' }}
                     >
                       Sign out
                     </button>
