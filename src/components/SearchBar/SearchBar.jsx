@@ -62,8 +62,8 @@ function SearchBar() {
     if (navigator.geolocation) {
       // navigator.geolocation.getCurrentPosition((e)=>window.sessionStorage.setItem("currentLocation", JSON.stringify(e)));
       navigator.geolocation.getCurrentPosition((e)=>{
-        location.latitude = e.coords.latitude;
-        location.longitude = e.coords.longitude;
+        location.latitude = e.coords.longitude;
+        location.longitude = e.coords.latitude;
       });      
     } 
     setTimeout(() => {

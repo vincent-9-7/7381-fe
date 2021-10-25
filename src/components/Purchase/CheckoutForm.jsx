@@ -119,7 +119,7 @@ class CheckoutForm extends Component {
                     <p>Location: South Brisbane </p>
                     <div style={{display:'flex',flexDirection:'row'}}>
                       <p>Quantity: </p>
-                      <h3 style={{color:'#95AB14', fontWeight:'bold'}}>&nbsp;{item.shoppingcartQuantity} </h3>
+                      <p >&nbsp;{item.shoppingcartQuantity} </p>
                     </div>
                     <p>Price: ${item.price}</p>
                     <p>Postage: Standard parcel Delivery (Free)</p>
