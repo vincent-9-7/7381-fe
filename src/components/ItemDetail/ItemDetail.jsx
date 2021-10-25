@@ -32,6 +32,9 @@ function ItemDetail(props) {
       window.sessionStorage.setItem("cart", true);
       const total = submittedQuantity * price;
       sessionStorage.setItem('total', total);
+      object[0].shoppingcartQuantity = parseInt(submittedQuantity,10);
+      console.log(object[0]);
+      sessionStorage.setItem('checkout_products', JSON.stringify(object));
       history.push(`../checkout`);
     }
     // console.log(submittedQuantity);

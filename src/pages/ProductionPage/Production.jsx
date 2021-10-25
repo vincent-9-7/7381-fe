@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../../components/PageHeader/PageHeader';
 import Footer from '../../components/PageFooter/PageFooter';
 import ProductList from '../../components/Product/ProductList';
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 const queryString = require('query-string');
 
@@ -22,6 +23,7 @@ class ProductPage extends Component {
     return (
       <>
         <Header cart={false} />
+        <SearchBar />
         {/* 1:Fruit 2:Vegetable 3:ALL 4.Search items */}
         {match.path !== "/search" && <ProductList productType={3} history={history} />}
         {match.path === "/search" && <ProductList productType={4} history={history} search={searchItem} />}
