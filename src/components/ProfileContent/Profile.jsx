@@ -15,8 +15,8 @@ function ProfileContent() {
   const history = useHistory();
   const postfunc = () => {
     if (sessionStorage.getItem('userID') != null) {
-      window.sessionStorage.setItem('total', total);
-      window.sessionStorage.setItem('checkout_products', JSON.stringify(product));
+      // window.sessionStorage.setItem('total', total);
+      // window.sessionStorage.setItem('checkout_products', JSON.stringify(product));
       history.push('/post');
     }else {
       history.push('/role-select');
