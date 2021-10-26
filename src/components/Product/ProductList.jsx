@@ -100,6 +100,23 @@ class ProductList extends Component {
       }
       // console.log(search);
       // console.log(searchResult);
+    } 
+
+    if (productType === 5) {
+      for (let i = 0; i < firstThree.length; i += 1) {
+        if (firstThree[i].condition === 'Processed') {
+          firstThree.splice(i, 1); // 从i索引的位置，删除一个元素
+          i -= 1;
+        }
+      }
+    }
+    if (productType === 6) {
+      for (let i = 0; i < secondThree.length; i += 1) {
+        if (secondThree[i].condition === 'B-grade') {
+          secondThree.splice(i, 1); // 从i索引的位置，删除一个元素
+          i -= 1;
+        }
+      }
     }
     // console.log(products);
     const link = ['fruit', 'vegetable', 'productions', ''];
