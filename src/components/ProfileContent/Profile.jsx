@@ -9,26 +9,27 @@ import tomatoVerticality from '../../assets/img/tomato_ver.jpg'; // https://www.
 import message from '../../assets/img/message.svg';
 // import setting from '../../assets/img/setting.png';
 
-
 function ProfileContent() {
- 
   const history = useHistory();
   const postfunc = () => {
-    if (sessionStorage.getItem('userID') != null) {
+    if (sessionStorage.getItem('userID') != null && sessionStorage.getItem('signin') === 'buyer') {
       // window.sessionStorage.setItem('total', total);
       // window.sessionStorage.setItem('checkout_products', JSON.stringify(product));
       history.push('/post');
-    }else {
+    } else {
       history.push('/role-select');
     }
   };
+  const type = sessionStorage.getItem('signin');
 
   return (
     <div className="container">
-      <div style={{ display: 'flex', justifyContent: 'end', marginTop: '30px' }}>
-        <button className="btn--post" onClick={postfunc} type="button">
-          Post Ad{' '}
-        </button>
+      <div style={{ display: 'flex', justifyContent: 'end', marginTop: '40px' }}>
+        {type === 'buyer' && (
+          <button className="btn--post" onClick={postfunc} type="button">
+            Post Ad{' '}
+          </button>
+        )}
       </div>
 
       <Tabs tabPosition="left" tabBarGutter={0} defaultActiveKey="1">
@@ -42,15 +43,21 @@ function ProfileContent() {
 
             <div style={{ paddingTop: '10px', marginLeft: '100px' }}>
               {/* <h4 style={{ marginLeft: '15px' }}>Username</h4> */}
-              <p id= "profile" style={{ marginLeft: '15px' }}>Username</p>
+              <p id="profile" style={{ marginLeft: '15px' }}>
+                Username
+              </p>
               <div className="checkout-form__content ">
                 <input type="text" name="Username" className="password_inputFeature" />
               </div>
-              <p id= "profile" style={{ marginLeft: '15px' }}>Phone number</p>
+              <p id="profile" style={{ marginLeft: '15px' }}>
+                Phone number
+              </p>
               <div className="checkout-form__content ">
                 <input type="text" name="Phone" className="password_inputFeature" />
               </div>
-              <p id= "profile" style={{ marginLeft: '15px' }}>Address</p>
+              <p id="profile" style={{ marginLeft: '15px' }}>
+                Address
+              </p>
               <div className="checkout-form__content ">
                 <input type="text" name="Address" className="password_inputFeature" />
               </div>
@@ -65,7 +72,7 @@ function ProfileContent() {
 
           <div id="passwordTitle">Change password</div>
           <div className="password" id="nothing">
-            <div style={{width:"300px",marginBottom:"2rem"}}>
+            <div style={{ width: '300px', marginBottom: '2rem' }}>
               <p className="password_inputName">Email address</p>
               <input className="password_inputFeature" />
               <p className="password_inputName">Change password</p>
@@ -76,13 +83,13 @@ function ProfileContent() {
               <input className="password_inputFeature" />
             </div>
             <button id="password_profile_save-button" className="btn--save" type="button">
-                Save
-              </button>
+              Save
+            </button>
           </div>
 
           <div id="emailTitle">Change email address</div>
           <div className="email" id="nothing2">
-            <div style={{width:"300px", marginBottom:"2rem"}}>
+            <div style={{ width: '300px', marginBottom: '2rem' }}>
               <p className="email_inputName">Email address</p>
               <input className="email_inputFeature" />
               <p className="email_inputName">Change password</p>
@@ -91,7 +98,7 @@ function ProfileContent() {
               <input className="email_inputFeature" />
             </div>
 
-            <button id="email-button" className="btn--save" type="button" >
+            <button id="email-button" className="btn--save" type="button">
               Save
             </button>
           </div>
