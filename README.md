@@ -16,4 +16,4 @@ Step2: npm start (We didn't upload our .env file, so the payment can't work succ
 8. src/App.jsx: Website entry file, contain different routes
 9. package.json: Required third-party package
 10. /.eslintrc: Eslint coding style
-11. /.env: Environment variable to save API key
+11. /.env: Environment variable to save API key (We didn't upload it for safty)
