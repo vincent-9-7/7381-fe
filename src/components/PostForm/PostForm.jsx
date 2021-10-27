@@ -179,9 +179,9 @@ export default function PostForm() {
               <div className="item item--space" />
 
               <input className="item item--input__text"
-                type="number" placeholder="Quantity" {...register("quantity", { required: true, maxLength: 10 })} />
+                type="number" placeholder="Packs" {...register("quantity", { required: true, maxLength: 10 })} />
               <div className="item--label">
-                <span className="container--p3">Size</span>
+                <span className="container--p3">Weight per pack</span>
                 <span className="container--p4"> (Required)</span>
               </div>
               <div className="item item--space" />
@@ -190,7 +190,7 @@ export default function PostForm() {
                 <span className="container--p4"> (Required)</span>
               </div>
               <input className="item item--input__text"
-                type="number" placeholder="Size" {...register("size", { required: true })} />
+                type="number" placeholder="Kg" {...register("size", { required: true })} />
               <div className="item item--space" />
               {/* <input className="item item--input__text"
                 type="text" placeholder="Last name" {...register("Last name", {required: true, maxLength: 15})} />
