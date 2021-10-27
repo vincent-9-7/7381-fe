@@ -35,6 +35,7 @@ function Header({ color }) {
     sessionStorage.removeItem('checkout_products');
     sessionStorage.removeItem('currentLocation');
     sessionStorage.removeItem('filterLocation');
+    sessionStorage.removeItem('submittedQuantity');
     // history.push('./');
     document.location.href = '/';
   };

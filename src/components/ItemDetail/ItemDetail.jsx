@@ -23,7 +23,10 @@ function ItemDetail(props) {
     }
     else if (submittedQuantity > quantity) {
       alert('Please select correct number, the number you submit is bigger than we have. ');
-    } else {
+    } else if (sessionStorage.getItem('userID') == null) {
+      history.push('/role-select');
+    } 
+    else {
       sessionStorage.setItem('submittedQuantity', submittedQuantity);
       for (let i = 0; i < submittedQuantity; i += 1) {
         dispatch(addToCart(id));
