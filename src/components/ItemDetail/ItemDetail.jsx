@@ -109,7 +109,7 @@ function ItemDetail(props) {
               {/** Price */}
               <div className="item-detail-page__item-price"><h3>Price: ${price}</h3></div>
               {/** Payments */}
-              <div className="item-detail-page__item-payment"><h3>Payments: </h3></div>
+              {/* <div className="item-detail-page__item-payment"><h3>Payments: </h3></div> */}
               {/** Postage */}
               <div className="item-detail-page__item-postage"><h3>Postage: Free</h3></div>
               {/** Delivery */}
